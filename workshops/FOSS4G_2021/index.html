@@ -4143,7 +4143,7 @@ Licensed under the Apache License, Version 2.0.
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div id="cell-id=a8fb89d8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a5b7ec72" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4161,7 +4161,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div>
-<div id="cell-id=8bc1ec02" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1924eef7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4176,7 +4176,7 @@ Licensed under the Apache License, Version 2.0.
 <li>Pangeo Binder JupyterLab: <a href="https://gishub.org/foss4g-binder">https://gishub.org/foss4g-binder</a></li>
 <li>Pangeo Binder Jupyter Notebook: <a href="https://gishub.org/foss4g-binder-nb">https://gishub.org/foss4g-binder-nb</a></li>
 </ul>
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><h3 id="Workshop-description">Workshop description<a class="anchor-link" href="#Workshop-description">&#182;</a></h3><p><a href="https://leafmap.org">Leafmap</a> is a Python package for interactive mapping and geospatial analysis with minimal coding in a Jupyter environment. It is built upon a number of open-source packages, such as <a href="https://github.com/python-visualization/folium">folium</a> and <a href="https://github.com/jupyter-widgets/ipyleaflet">ipyleaflet</a> (for creating interactive maps), <a href="https://github.com/jblindsay/whitebox-tools">WhiteboxTools</a> and <a href="https://github.com/giswqs/whiteboxgui">whiteboxgui</a> (for analyzing geospatial data), and <a href="https://github.com/jupyter-widgets/ipywidgets">ipywidgets</a> (for designing interactive graphical user interface). The WhiteboxTools library currently contains 480+ tools for advanced geospatial analysis. Leafmap provides many convenient functions for loading and visualizing geospatial data with only one line of code. Users can also use the interactive user interface to load geospatial data without coding. Anyone with a web browser and Internet connection can use leafmap to perform geospatial analysis and data visualization in the cloud with minimal coding. The topics that will be covered in this workshop include:</p>
+<h2 id="introduction">Introduction<a class="anchor-link" href="#introduction">&#182;</a></h2><h3 id="workshop-description">Workshop description<a class="anchor-link" href="#workshop-description">&#182;</a></h3><p><a href="https://leafmap.org">Leafmap</a> is a Python package for interactive mapping and geospatial analysis with minimal coding in a Jupyter environment. It is built upon a number of open-source packages, such as <a href="https://github.com/python-visualization/folium">folium</a> and <a href="https://github.com/jupyter-widgets/ipyleaflet">ipyleaflet</a> (for creating interactive maps), <a href="https://github.com/jblindsay/whitebox-tools">WhiteboxTools</a> and <a href="https://github.com/giswqs/whiteboxgui">whiteboxgui</a> (for analyzing geospatial data), and <a href="https://github.com/jupyter-widgets/ipywidgets">ipywidgets</a> (for designing interactive graphical user interface). The WhiteboxTools library currently contains 480+ tools for advanced geospatial analysis. Leafmap provides many convenient functions for loading and visualizing geospatial data with only one line of code. Users can also use the interactive user interface to load geospatial data without coding. Anyone with a web browser and Internet connection can use leafmap to perform geospatial analysis and data visualization in the cloud with minimal coding. The topics that will be covered in this workshop include:</p>
 <ol>
 <li>Creating interactive maps</li>
 <li>Changing basemaps</li>
@@ -4191,7 +4191,7 @@ Licensed under the Apache License, Version 2.0.
 <li>Performing geospatial analysis (e.g., hydrological analysis and LiDAR data analysis) using whiteboxgui.</li>
 </ol>
 <p>This workshop is intended for scientific programmers, data scientists, geospatial analysts, and concerned citizens of Earth. The attendees are expected to have a basic understanding of Python and the Jupyter ecosystem. Familiarity with Earth science and geospatial datasets is useful but not required. More information about leafmap can be found at <a href="https://leafmap.org">https://leafmap.org</a></p>
-<h3 id="Jupyter-keyboard-shortcuts">Jupyter keyboard shortcuts<a class="anchor-link" href="#Jupyter-keyboard-shortcuts">&#182;</a></h3><ul>
+<h3 id="jupyter-keyboard-shortcuts">Jupyter keyboard shortcuts<a class="anchor-link" href="#jupyter-keyboard-shortcuts">&#182;</a></h3><ul>
 <li>Shift+Enter: run cell, select below</li>
 <li>Ctrl+Enter: : run selected cells</li>
 <li>Alt+Enter: run cell and insert below</li>
@@ -4204,25 +4204,25 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div>
-<div id="cell-id=2520eeec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d444e698" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Set-up-environment">Set up environment<a class="anchor-link" href="#Set-up-environment">&#182;</a></h2><h3 id="Required-Python-packages:">Required Python packages:<a class="anchor-link" href="#Required-Python-packages:">&#182;</a></h3><ul>
+<h2 id="set-up-environment">Set up environment<a class="anchor-link" href="#set-up-environment">&#182;</a></h2><h3 id="required-python-packages">Required Python packages:<a class="anchor-link" href="#required-python-packages">&#182;</a></h3><ul>
 <li><a href="https://github.com/giswqs/leafmap">leafmap</a> - A Python package for interactive mapping and geospatial analysis with minimal coding in a Jupyter environment</li>
 <li><a href="https://geopandas.org">geopandas</a> - An open source project to make working with geospatial data in python easier.</li>
 <li><a href="https://docs.kepler.gl/docs/keplergl-jupyter">keplergl</a> - A high-performance web-based application for visual exploration of large-scale geolocation data sets</li>
 <li><a href="https://datapane.com">datapane</a> - A Python library for building interactive reports in seconds</li>
 <li><a href="https://github.com/davidbrochart/xarray_leaflet">xarray-leaflet</a> - An xarray extension for tiled map plotting</li>
 </ul>
-<h3 id="Required-API-keys">Required API keys<a class="anchor-link" href="#Required-API-keys">&#182;</a></h3><ul>
+<h3 id="required-api-keys">Required API keys<a class="anchor-link" href="#required-api-keys">&#182;</a></h3><ul>
 <li><a href="https://developer.here.com">HERE Map</a> API key</li>
 <li><a href="https://datapane.com">datapane</a> API key</li>
 <li><a href="https://www.planet.com/nicfi">Planet</a> API key</li>
 </ul>
-<h3 id="Use-Google-Colab">Use Google Colab<a class="anchor-link" href="#Use-Google-Colab">&#182;</a></h3><p>Click the button below to open this notebook in Google Colab and execute code interactively.</p>
+<h3 id="use-google-colab">Use Google Colab<a class="anchor-link" href="#use-google-colab">&#182;</a></h3><p>Click the button below to open this notebook in Google Colab and execute code interactively.</p>
 <p><a href="https://demo.leafmap.org/lab/index.html?path=workshops/FOSS4G_2021.ipynb"><img src="https://jupyterlite.rtfd.io/en/latest/_static/badge.svg" alt="image" /></a>
 <a href="https://studiolab.sagemaker.aws/import/github/giswqs/leafmap/blob/master/examples/workshops/FOSS4G_2021.ipynb"><img src="https://studiolab.sagemaker.aws/studiolab.svg" alt="image" /></a>
 <a href="https://pccompute.westeurope.cloudapp.azure.com/compute/hub/user-redirect/git-pull?repo=https://github.com/giswqs/leafmap&amp;urlpath=lab/tree/leafmap/examples/workshops/FOSS4G_2021.ipynb&amp;branch=master"><img src="https://img.shields.io/badge/Open-Planetary%20Computer-black?style=flat&amp;logo=microsoft" alt="image" /></a>
@@ -4232,7 +4232,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=4da801ef" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8f482bb6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4264,7 +4264,7 @@ Licensed under the Apache License, Version 2.0.
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a059481c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c1b6e24f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4300,7 +4300,7 @@ import sys</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d925624a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=3aeaf3aa" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4336,7 +4336,7 @@ warnings.filterwarnings("ignore")</div>
 
 </div>
 </div>
-<div id="cell-id=55a46920" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=69de4828" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4348,7 +4348,7 @@ warnings.filterwarnings("ignore")</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=92f294bd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a068ebda" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4382,7 +4382,7 @@ warnings.filterwarnings("ignore")</div>
 
 </div>
 </div>
-<div id="cell-id=d6de284f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d238dfc8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4394,7 +4394,7 @@ warnings.filterwarnings("ignore")</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e5f4f7f6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=de647a3a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4452,13 +4452,13 @@ if "google.colab" in sys.modules:
 
 </div>
 </div>
-<div id="cell-id=a8d12091" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=714cdcbb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Use-Pangeo-Binder">Use Pangeo Binder<a class="anchor-link" href="#Use-Pangeo-Binder">&#182;</a></h3><p>Click the buttons below to open this notebook in JupyterLab (first button) or Jupyter Notebook (second button) and execute code interactively.</p>
+<h3 id="use-pangeo-binder">Use Pangeo Binder<a class="anchor-link" href="#use-pangeo-binder">&#182;</a></h3><p>Click the buttons below to open this notebook in JupyterLab (first button) or Jupyter Notebook (second button) and execute code interactively.</p>
 <p><a href="https://gishub.org/foss4g-binder"><img src="https://mybinder.org/badge_logo.svg" alt="image" /></a>
 <a href="https://gishub.org/foss4g-binder-nb"><img src="https://mybinder.org/badge_logo.svg" alt="image" /></a></p>
 <ul>
@@ -4470,13 +4470,13 @@ if "google.colab" in sys.modules:
 </div>
 </div>
 </div>
-<div id="cell-id=678934af" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ecdc6aed" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Use-Miniconda/Anaconda">Use Miniconda/Anaconda<a class="anchor-link" href="#Use-Miniconda/Anaconda">&#182;</a></h3><p>If you have
+<h3 id="use-minicondaanaconda">Use Miniconda/Anaconda<a class="anchor-link" href="#use-minicondaanaconda">&#182;</a></h3><p>If you have
 <a href="https://www.anaconda.com/distribution/#download-section">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> installed on your computer, you can install leafmap using the following commands. Leafmap has an optional dependency - <a href="https://geopandas.org">geopandas</a>, which can be challenging to install on some computers, especially Windows. It is highly recommended that you create a fresh conda environment to install geopandas and leafmap. Follow the commands below to set up a conda env and install geopandas, leafmap, datapane, keplergl, and xarray_leaflet.</p>
 <pre><code>conda create -n geo python=3.9
 conda activate geo
@@ -4491,7 +4491,7 @@ jupyter lab
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=75b18e3b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b7fbbc69" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4529,25 +4529,25 @@ except ImportError:
 
 </div>
 </div>
-<div id="cell-id=f7a54cf7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2b79ef3f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Create-an-interactive-map">Create an interactive map<a class="anchor-link" href="#Create-an-interactive-map">&#182;</a></h2><p><code>leafmap</code> has four plotting backends: <a href="https://github.com/python-visualization/folium">folium</a>, <a href="https://github.com/jupyter-widgets/ipyleaflet">ipyleaflet</a>, <a href="https://github.com/heremaps/here-map-widget-for-jupyter">here-map</a>, and <a href="https://docs.kepler.gl/docs/keplergl-jupyter">kepler.gl</a>. Note that the backends do not offer equal functionality. Some interactive functionality in <code>ipyleaflet</code> might not be available in other plotting backends. To use a specific plotting backend, use one of the following:</p>
+<h2 id="create-an-interactive-map">Create an interactive map<a class="anchor-link" href="#create-an-interactive-map">&#182;</a></h2><p><code>leafmap</code> has four plotting backends: <a href="https://github.com/python-visualization/folium">folium</a>, <a href="https://github.com/jupyter-widgets/ipyleaflet">ipyleaflet</a>, <a href="https://github.com/heremaps/here-map-widget-for-jupyter">here-map</a>, and <a href="https://docs.kepler.gl/docs/keplergl-jupyter">kepler.gl</a>. Note that the backends do not offer equal functionality. Some interactive functionality in <code>ipyleaflet</code> might not be available in other plotting backends. To use a specific plotting backend, use one of the following:</p>
 <ul>
 <li><code>import leafmap.leafmap as leafmap</code></li>
 <li><code>import leafmap.foliumap as leafmap</code></li>
 <li><code>import leafmap.heremap as leafmap</code></li>
 <li><code>import leafmap.kepler as leafmap</code></li>
 </ul>
-<h3 id="Use-ipyleaflet">Use ipyleaflet<a class="anchor-link" href="#Use-ipyleaflet">&#182;</a></h3>
+<h3 id="use-ipyleaflet">Use ipyleaflet<a class="anchor-link" href="#use-ipyleaflet">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ff329be9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=22ca9c2a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4579,7 +4579,7 @@ except ImportError:
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d50dd1c7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2c2c63fb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4613,18 +4613,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=4ab02d44" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cce75ce6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Customize-the-default-map">Customize the default map<a class="anchor-link" href="#Customize-the-default-map">&#182;</a></h2><h3 id="Specify-map-center-and-zoom-level">Specify map center and zoom level<a class="anchor-link" href="#Specify-map-center-and-zoom-level">&#182;</a></h3>
+<h2 id="customize-the-default-map">Customize the default map<a class="anchor-link" href="#customize-the-default-map">&#182;</a></h2><h3 id="specify-map-center-and-zoom-level">Specify map center and zoom level<a class="anchor-link" href="#specify-map-center-and-zoom-level">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d1a27311" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=882b6f1d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4658,7 +4658,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=01d756ab" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=52e96bc0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4692,18 +4692,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=96c125cd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=92584113" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Change-map-size">Change map size<a class="anchor-link" href="#Change-map-size">&#182;</a></h3>
+<h3 id="change-map-size">Change map size<a class="anchor-link" href="#change-map-size">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=0be46ecf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9546489b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4737,13 +4737,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=f32498cf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d91a536e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Set-control-visibility">Set control visibility<a class="anchor-link" href="#Set-control-visibility">&#182;</a></h3><p>When creating a map, set the following controls to either <code>True</code> or <code>False</code> as appropriate.</p>
+<h3 id="set-control-visibility">Set control visibility<a class="anchor-link" href="#set-control-visibility">&#182;</a></h3><p>When creating a map, set the following controls to either <code>True</code> or <code>False</code> as appropriate.</p>
 <ul>
 <li>attribution_control</li>
 <li>draw_control</li>
@@ -4758,7 +4758,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=bda86210" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=46594c97" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4802,7 +4802,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=abfdd1b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4807f329" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4814,7 +4814,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d5559b1b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=bd9632f0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4850,19 +4850,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=89c6c004" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=79095fd4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Change-basemaps">Change basemaps<a class="anchor-link" href="#Change-basemaps">&#182;</a></h2><p>Specify a Google basemap to use, can be one of [&quot;ROADMAP&quot;, &quot;TERRAIN&quot;, &quot;SATELLITE&quot;, &quot;HYBRID&quot;].</p>
+<h2 id="change-basemaps">Change basemaps<a class="anchor-link" href="#change-basemaps">&#182;</a></h2><p>Specify a Google basemap to use, can be one of [&quot;ROADMAP&quot;, &quot;TERRAIN&quot;, &quot;SATELLITE&quot;, &quot;HYBRID&quot;].</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9f3c1183" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=5df76804" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4896,7 +4896,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=78f75d4f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=474c9b53" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4908,7 +4908,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=112923d2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2134a699" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4944,7 +4944,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=f2e10b56" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0a263ac4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4956,7 +4956,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=dcd2c487" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=900f2543" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4990,18 +4990,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=effc1781" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0ec14bc8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-tile-layers">Add tile layers<a class="anchor-link" href="#Add-tile-layers">&#182;</a></h2><h3 id="Add-XYZ-tile-layer">Add XYZ tile layer<a class="anchor-link" href="#Add-XYZ-tile-layer">&#182;</a></h3>
+<h2 id="add-tile-layers">Add tile layers<a class="anchor-link" href="#add-tile-layers">&#182;</a></h2><h3 id="add-xyz-tile-layer">Add XYZ tile layer<a class="anchor-link" href="#add-xyz-tile-layer">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e45b6b05" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=42513c47" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5045,13 +5045,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=354bb248" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fe5c12a7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-WMS-tile-layer">Add WMS tile layer<a class="anchor-link" href="#Add-WMS-tile-layer">&#182;</a></h3><p>More WMS basemaps can be found at the following websites:</p>
+<h3 id="add-wms-tile-layer">Add WMS tile layer<a class="anchor-link" href="#add-wms-tile-layer">&#182;</a></h3><p>More WMS basemaps can be found at the following websites:</p>
 <ul>
 <li>USGS National Map: <a href="https://viewer.nationalmap.gov/services">https://viewer.nationalmap.gov/services</a></li>
 <li>MRLC NLCD Land Cover data: <a href="https://www.mrlc.gov/data-services-page">https://www.mrlc.gov/data-services-page</a></li>
@@ -5062,7 +5062,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=676cda76" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=ce7d004f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5104,19 +5104,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=c3ccd15b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=23ab7e7f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-xyzservices-provider">Add xyzservices provider<a class="anchor-link" href="#Add-xyzservices-provider">&#182;</a></h3><p>Add a layer from <a href="https://github.com/geopandas/xyzservices">xyzservices</a> provider object.</p>
+<h3 id="add-xyzservices-provider">Add xyzservices provider<a class="anchor-link" href="#add-xyzservices-provider">&#182;</a></h3><p>Add a layer from <a href="https://github.com/geopandas/xyzservices">xyzservices</a> provider object.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=3adbe2d7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e9c5ba8e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5148,7 +5148,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=0e1b36c1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c4a42f53" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5182,7 +5182,7 @@ basemap</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=5477056a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=934a0b9d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5218,18 +5218,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=75116974" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d6ee4d48" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-vector-tile-layer">Add vector tile layer<a class="anchor-link" href="#Add-vector-tile-layer">&#182;</a></h2>
+<h2 id="add-vector-tile-layer">Add vector tile layer<a class="anchor-link" href="#add-vector-tile-layer">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9cc89fe6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=63c427f9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5261,7 +5261,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=3add63ba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0f21278a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5273,7 +5273,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f10741fc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=28a8d131" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5305,7 +5305,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=08974168" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f7fedb93" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5317,7 +5317,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1564c298" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e11a2a8e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5349,7 +5349,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=2c0a3f6a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7fda8f35" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5361,7 +5361,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f7cb81d0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=60deb4bc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5393,7 +5393,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=9e116e5c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3884c5d6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5405,7 +5405,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=594beb59" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=bda14666" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5439,13 +5439,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=a950d8ed" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=631b32d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-COG/STAC-layers">Add COG/STAC layers<a class="anchor-link" href="#Add-COG/STAC-layers">&#182;</a></h2><p>A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud. It does this by leveraging the ability of clients issuing HTTP GET range requests to ask for just the parts of a file they need.</p>
+<h2 id="add-cogstac-layers">Add COG/STAC layers<a class="anchor-link" href="#add-cogstac-layers">&#182;</a></h2><p>A Cloud Optimized GeoTIFF (COG) is a regular GeoTIFF file, aimed at being hosted on a HTTP file server, with an internal organization that enables more efficient workflows on the cloud. It does this by leveraging the ability of clients issuing HTTP GET range requests to ask for just the parts of a file they need.</p>
 <p>More information about COG can be found at <a href="https://www.cogeo.org/in-depth.html">https://www.cogeo.org/in-depth.html</a></p>
 <p>Some publicly available Cloud Optimized GeoTIFFs:</p>
 <ul>
@@ -5455,12 +5455,12 @@ m</div>
 <li><a href="https://earthexplorer.usgs.gov/">https://earthexplorer.usgs.gov/</a></li>
 </ul>
 <p>For this demo, we will use data from <a href="https://www.maxar.com/open-data/california-colorado-fires">https://www.maxar.com/open-data/california-colorado-fires</a> for mapping California and Colorado fires. A list of COGs can be found <a href="https://github.com/giswqs/leafmap/blob/master/examples/data/cog_files.txt">here</a>.</p>
-<h3 id="Add-COG-layer">Add COG layer<a class="anchor-link" href="#Add-COG-layer">&#182;</a></h3>
+<h3 id="add-cog-layer">Add COG layer<a class="anchor-link" href="#add-cog-layer">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b572122a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=3fe70dc5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5504,7 +5504,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=2b928438" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4950f5b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5516,7 +5516,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=2a30a002" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=122142fd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5548,7 +5548,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=e8b50b4f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a1c2dfc3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5560,7 +5560,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e474b1e5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d68b8398" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5592,7 +5592,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=13fabba8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9eac5554" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5604,7 +5604,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=0be6f358" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=89514f3b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5636,13 +5636,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=db034be0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ac3fd75f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-STAC-layer">Add STAC layer<a class="anchor-link" href="#Add-STAC-layer">&#182;</a></h3><p>The SpatioTemporal Asset Catalog (STAC) specification provides a common language to describe a range of geospatial information, so it can more easily be indexed and discovered. A 'spatiotemporal asset' is any file that represents information about the earth captured in a certain space and time. The initial focus is primarily remotely-sensed imagery (from satellites, but also planes, drones, balloons, etc), but the core is designed to be extensible to SAR, full motion video, point clouds, hyperspectral, LiDAR and derived data like NDVI, Digital Elevation Models, mosaics, etc. More information about STAC can be found at <a href="https://stacspec.org/">https://stacspec.org/</a></p>
+<h3 id="add-stac-layer">Add STAC layer<a class="anchor-link" href="#add-stac-layer">&#182;</a></h3><p>The SpatioTemporal Asset Catalog (STAC) specification provides a common language to describe a range of geospatial information, so it can more easily be indexed and discovered. A 'spatiotemporal asset' is any file that represents information about the earth captured in a certain space and time. The initial focus is primarily remotely-sensed imagery (from satellites, but also planes, drones, balloons, etc), but the core is designed to be extensible to SAR, full motion video, point clouds, hyperspectral, LiDAR and derived data like NDVI, Digital Elevation Models, mosaics, etc. More information about STAC can be found at <a href="https://stacspec.org/">https://stacspec.org/</a></p>
 <p>Some publicly available SpatioTemporal Asset Catalog (STAC):</p>
 <ul>
 <li><a href="https://stacindex.org">https://stacindex.org</a></li>
@@ -5653,7 +5653,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=108fa854" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=632bf784" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5691,7 +5691,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=5908fad4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=94669a63" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5703,7 +5703,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=837048b3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=3ba18694" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5735,7 +5735,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=179d1ed9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4f04c620" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5747,7 +5747,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1b9aa8c4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=4ff36dbd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5779,7 +5779,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=b8577d80" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fea2ba6f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5791,7 +5791,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=84e0de94" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f01df935" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5823,7 +5823,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=34512b09" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=666eef52" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5835,7 +5835,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=4f31b05c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=56048c21" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5867,19 +5867,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=b80c78f6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=919ecec7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-local-raster-datasets">Add local raster datasets<a class="anchor-link" href="#Add-local-raster-datasets">&#182;</a></h2><p>The <code>add_raster</code> function relies on the <code>xarray_leaflet</code> package and is only available for the ipyleaflet plotting backend. Therefore, Google Colab is not supported. Note that <code>xarray_leaflet</code> does not work properly on Windows (<a href="https://github.com/davidbrochart/xarray_leaflet/issues/30">source</a>).</p>
+<h2 id="add-local-raster-datasets">Add local raster datasets<a class="anchor-link" href="#add-local-raster-datasets">&#182;</a></h2><p>The <code>add_raster</code> function relies on the <code>xarray_leaflet</code> package and is only available for the ipyleaflet plotting backend. Therefore, Google Colab is not supported. Note that <code>xarray_leaflet</code> does not work properly on Windows (<a href="https://github.com/davidbrochart/xarray_leaflet/issues/30">source</a>).</p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=22640ad3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=df3ae8a2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5892,7 +5892,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c31666de" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d6eefada" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5926,7 +5926,7 @@ dem = 'dem.tif'</div>
 
 </div>
 </div>
-<div id="cell-id=7023dd95" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ff267597" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5938,7 +5938,7 @@ dem = 'dem.tif'</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=74db0f58" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f016a8cb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5976,7 +5976,7 @@ leafmap.download_file(landsat_url, 'landsat.tif', unzip=False)</div>
 
 </div>
 </div>
-<div id="cell-id=48e07b8f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=99e657b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5988,7 +5988,7 @@ leafmap.download_file(landsat_url, 'landsat.tif', unzip=False)</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a72500e4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c81a828c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6026,7 +6026,7 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=0851f5f0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8c7a2848" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6058,7 +6058,7 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 
 </div>
 </div>
-<div id="cell-id=367cad7e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=db7ff071" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6071,7 +6071,7 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=36d80c80" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=0928aefa" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6103,7 +6103,7 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=3ae13532" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=96cbbca3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6135,7 +6135,7 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=eac6cdfa" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=fff17eab" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6167,18 +6167,18 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 
 </div>
 </div>
-<div id="cell-id=cd718fa8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f4b47a9e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-legend">Add legend<a class="anchor-link" href="#Add-legend">&#182;</a></h2><h3 id="Add-built-in-legend">Add built-in legend<a class="anchor-link" href="#Add-built-in-legend">&#182;</a></h3>
+<h2 id="add-legend">Add legend<a class="anchor-link" href="#add-legend">&#182;</a></h2><h3 id="add-built-in-legend">Add built-in legend<a class="anchor-link" href="#add-built-in-legend">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=6737cc6b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=efc1ec9a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6190,7 +6190,7 @@ leafmap.download_file(dem_url, 'dem.tif', unzip=False)</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1ac714f4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=919a62ed" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6226,7 +6226,7 @@ for legend in legends:
 
 </div>
 </div>
-<div id="cell-id=703b6956" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7b5f6ba7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6238,7 +6238,7 @@ for legend in legends:
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=6692d4c4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7796f797" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6290,7 +6290,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=0da94c92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8a6d515f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6302,7 +6302,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=07eec58d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=78d06cbf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6360,13 +6360,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=c92837cd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b7810874" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-custom-legend">Add custom legend<a class="anchor-link" href="#Add-custom-legend">&#182;</a></h3><p>There are two ways you can add custom legends:</p>
+<h3 id="add-custom-legend">Add custom legend<a class="anchor-link" href="#add-custom-legend">&#182;</a></h3><p>There are two ways you can add custom legends:</p>
 <ol>
 <li>Define legend labels and colors</li>
 <li>Define legend dictionary</li>
@@ -6377,7 +6377,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=2262ca46" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=01d63ca6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6425,7 +6425,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=fc680a68" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0ec9a7f8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6437,7 +6437,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b4efd00f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=6a970cd1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6539,19 +6539,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=d754e230" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d6c95086" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-colorbar">Add colorbar<a class="anchor-link" href="#Add-colorbar">&#182;</a></h2><h3 id="Continuous-color">Continuous color<a class="anchor-link" href="#Continuous-color">&#182;</a></h3><p>Add a continuous colorbar with a custom palette to the map.</p>
+<h2 id="add-colorbar">Add colorbar<a class="anchor-link" href="#add-colorbar">&#182;</a></h2><h3 id="continuous-color">Continuous color<a class="anchor-link" href="#continuous-color">&#182;</a></h3><p>Add a continuous colorbar with a custom palette to the map.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=08c34bc3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c5bd9154" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6591,18 +6591,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=824b1802" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0e3685bd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Categorical-colorbar">Categorical colorbar<a class="anchor-link" href="#Categorical-colorbar">&#182;</a></h3>
+<h3 id="categorical-colorbar">Categorical colorbar<a class="anchor-link" href="#categorical-colorbar">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ab49a67e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=337f1d98" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6660,19 +6660,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=b0a403b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=60e8155b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-colormap">Add colormap<a class="anchor-link" href="#Add-colormap">&#182;</a></h2><p>The colormap functionality requires the ipyleaflet plotting backend. Folium is not supported.</p>
+<h2 id="add-colormap">Add colormap<a class="anchor-link" href="#add-colormap">&#182;</a></h2><p>The colormap functionality requires the ipyleaflet plotting backend. Folium is not supported.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=670bcf9b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=794c4472" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6704,19 +6704,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=97781fa5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=be3c1234" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Common-colormaps">Common colormaps<a class="anchor-link" href="#Common-colormaps">&#182;</a></h3><p>Color palette for DEM data.</p>
+<h3 id="common-colormaps">Common colormaps<a class="anchor-link" href="#common-colormaps">&#182;</a></h3><p>Color palette for DEM data.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=6ed742c4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=311017ba" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6748,7 +6748,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=4fdca6ad" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cc206ab9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6760,7 +6760,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=96f58c3c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=14094313" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6792,7 +6792,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=b9479e09" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e4498977" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6804,7 +6804,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=15bb0771" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=baea2f94" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6836,7 +6836,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=0cd428fb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b79a96a2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6848,7 +6848,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a9062cdf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=eeae0a1f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6880,19 +6880,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=6691d2eb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=14faf972" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Custom-colormaps">Custom colormaps<a class="anchor-link" href="#Custom-colormaps">&#182;</a></h3><p>Specify the number of classes for a palette.</p>
+<h3 id="custom-colormaps">Custom colormaps<a class="anchor-link" href="#custom-colormaps">&#182;</a></h3><p>Specify the number of classes for a palette.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1d13199a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f8c0ac95" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6924,7 +6924,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=1419eea5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=825d1958" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6936,7 +6936,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f0b2517e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a9c5d126" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6968,7 +6968,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=8eb86939" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3422c5dd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6980,7 +6980,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=17e65631" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=67a59445" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7012,7 +7012,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=7fea21e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=902ba6b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7024,7 +7024,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c5652a10" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d38f4481" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7060,7 +7060,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=a2fb7c61" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9f0efa96" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7072,7 +7072,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=8bb7e95e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a7196497" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7120,7 +7120,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=3bda8bfa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fa7e68ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7132,7 +7132,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1f17b13c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=12987aeb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7180,19 +7180,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=bb201b13" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7273cfdd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Horizontal-colormap">Horizontal colormap<a class="anchor-link" href="#Horizontal-colormap">&#182;</a></h3><p>Add a horizontal colorbar to an interactive map.</p>
+<h3 id="horizontal-colormap">Horizontal colormap<a class="anchor-link" href="#horizontal-colormap">&#182;</a></h3><p>Add a horizontal colorbar to an interactive map.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c9a70708" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9648d74d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7246,19 +7246,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=7a422aa9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1cf6af66" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Vertical-colormap">Vertical colormap<a class="anchor-link" href="#Vertical-colormap">&#182;</a></h3><p>Add a vertical colorbar to an interactive map.</p>
+<h3 id="vertical-colormap">Vertical colormap<a class="anchor-link" href="#vertical-colormap">&#182;</a></h3><p>Add a vertical colorbar to an interactive map.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a6eed686" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=ea539931" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7312,18 +7312,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=a3345203" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8e74cd16" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="List-of-available-colormaps">List of available colormaps<a class="anchor-link" href="#List-of-available-colormaps">&#182;</a></h3>
+<h3 id="list-of-available-colormaps">List of available colormaps<a class="anchor-link" href="#list-of-available-colormaps">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=0c5e9247" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a1c665b1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7355,19 +7355,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=d07840aa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=377c0463" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-vector-datasets">Add vector datasets<a class="anchor-link" href="#Add-vector-datasets">&#182;</a></h2><h3 id="Add-CSV">Add CSV<a class="anchor-link" href="#Add-CSV">&#182;</a></h3><p>Read a CSV as a Pandas DataFrame.</p>
+<h2 id="add-vector-datasets">Add vector datasets<a class="anchor-link" href="#add-vector-datasets">&#182;</a></h2><h3 id="add-csv">Add CSV<a class="anchor-link" href="#add-csv">&#182;</a></h3><p>Read a CSV as a Pandas DataFrame.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=1f20cb47" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=01b67c89" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7403,7 +7403,7 @@ df</div>
 
 </div>
 </div>
-<div id="cell-id=8e3ae216" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=68bcab1a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7415,7 +7415,7 @@ df</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=64df8cb4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=be964a82" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7451,7 +7451,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=f1b913ac" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6279910d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7463,7 +7463,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=439b970b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=0a601f2e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7497,7 +7497,7 @@ out_shp = os.path.join(out_dir, 'world_cities.shp')</div>
 
 </div>
 </div>
-<div id="cell-id=f685f758" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=99328f8d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7509,7 +7509,7 @@ out_shp = os.path.join(out_dir, 'world_cities.shp')</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e54ca449" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=94ae175c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7541,7 +7541,7 @@ out_shp = os.path.join(out_dir, 'world_cities.shp')</div>
 
 </div>
 </div>
-<div id="cell-id=a4a98cc8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=38d5a335" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7553,7 +7553,7 @@ out_shp = os.path.join(out_dir, 'world_cities.shp')</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a1f634d9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b170baf1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7587,7 +7587,7 @@ leafmap.csv_to_geojson(in_csv, out_geojson)</div>
 
 </div>
 </div>
-<div id="cell-id=fd43ba9b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a351dd26" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7599,7 +7599,7 @@ leafmap.csv_to_geojson(in_csv, out_geojson)</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e3f0dc43" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2387977f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7633,19 +7633,19 @@ gdf</div>
 
 </div>
 </div>
-<div id="cell-id=c766e36e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2d824fe4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-GeoJSON">Add GeoJSON<a class="anchor-link" href="#Add-GeoJSON">&#182;</a></h3><p>Add a GeoJSON to the map.</p>
+<h3 id="add-geojson">Add GeoJSON<a class="anchor-link" href="#add-geojson">&#182;</a></h3><p>Add a GeoJSON to the map.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f4a5d138" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=16ccfd67" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7683,7 +7683,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=12c634a2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cd5097f7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7695,7 +7695,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=65a02fed" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2b99bf57" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7737,7 +7737,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=400c2b50" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3549a46e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7749,7 +7749,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a7ebede9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=02a32e23" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7811,7 +7811,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=2512c222" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=12942ed1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7823,7 +7823,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c4d67f3c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7ba31c7a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7881,18 +7881,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=058ae1be" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8d6ba0a4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-shapefile">Add shapefile<a class="anchor-link" href="#Add-shapefile">&#182;</a></h3>
+<h3 id="add-shapefile">Add shapefile<a class="anchor-link" href="#add-shapefile">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c74fede0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=40ccb36b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7930,18 +7930,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=e8ff2b37" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e44146e2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-KML">Add KML<a class="anchor-link" href="#Add-KML">&#182;</a></h3>
+<h3 id="add-kml">Add KML<a class="anchor-link" href="#add-kml">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=54701f0b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=97771ea5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7979,18 +7979,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=abfc1fb7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f81ba2ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-GeoDataFrame">Add GeoDataFrame<a class="anchor-link" href="#Add-GeoDataFrame">&#182;</a></h3>
+<h3 id="add-geodataframe">Add GeoDataFrame<a class="anchor-link" href="#add-geodataframe">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=8ceeeb64" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7b12f07a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8022,7 +8022,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=6999518c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8504e262" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8064,7 +8064,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=bb396f70" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d8a24383" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8076,7 +8076,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=bc18962f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=3b27e509" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8112,7 +8112,7 @@ gdf</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=6957598c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=65bb29d3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8148,20 +8148,20 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=b994f6c5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0e3fbc08" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-point-layer">Add point layer<a class="anchor-link" href="#Add-point-layer">&#182;</a></h3><p>Add a point layer using the interactive GUI.</p>
+<h3 id="add-point-layer">Add point layer<a class="anchor-link" href="#add-point-layer">&#182;</a></h3><p>Add a point layer using the interactive GUI.</p>
 <p><img src="https://i.imgur.com/1QVEtlN.gif" alt="" /></p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=772a1218" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b2e04131" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8195,7 +8195,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=a55c59ac" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=630386f0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8207,7 +8207,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=916f11cb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7be16b7e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8245,19 +8245,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=7cb27429" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a4683a4c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-vector">Add vector<a class="anchor-link" href="#Add-vector">&#182;</a></h3><p>The <code>add_vector</code> function supports any vector data format supported by GeoPandas.</p>
+<h3 id="add-vector">Add vector<a class="anchor-link" href="#add-vector">&#182;</a></h3><p>The <code>add_vector</code> function supports any vector data format supported by GeoPandas.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=6d0038f5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8641a46b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8299,19 +8299,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=d400475f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7c91eb16" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Download-OSM-data">Download OSM data<a class="anchor-link" href="#Download-OSM-data">&#182;</a></h2><h3 id="OSM-from-geocode">OSM from geocode<a class="anchor-link" href="#OSM-from-geocode">&#182;</a></h3><p>Add OSM data of place(s) by name or ID to the map. Note that the leafmap custom layer control does not support GeoJSON, we need to use the ipyleaflet built-in layer control.</p>
+<h2 id="download-osm-data">Download OSM data<a class="anchor-link" href="#download-osm-data">&#182;</a></h2><h3 id="osm-from-geocode">OSM from geocode<a class="anchor-link" href="#osm-from-geocode">&#182;</a></h3><p>Add OSM data of place(s) by name or ID to the map. Note that the leafmap custom layer control does not support GeoJSON, we need to use the ipyleaflet built-in layer control.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=7ee70c79" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=fab79782" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8347,7 +8347,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=cdeb255e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c52893fd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8383,19 +8383,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=48171b00" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8c53d226" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="OSM-from-place">OSM from place<a class="anchor-link" href="#OSM-from-place">&#182;</a></h3><p>Add OSM entities within boundaries of geocodable place(s) to the map.</p>
+<h3 id="osm-from-place">OSM from place<a class="anchor-link" href="#osm-from-place">&#182;</a></h3><p>Add OSM entities within boundaries of geocodable place(s) to the map.</p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=31f62a94" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6c3ff2ec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8408,7 +8408,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9925ca99" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=bf39eb31" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8440,18 +8440,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=5a00e62d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6980af38" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="OSM-from-address">OSM from address<a class="anchor-link" href="#OSM-from-address">&#182;</a></h3>
+<h3 id="osm-from-address">OSM from address<a class="anchor-link" href="#osm-from-address">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=af1357a1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=975fdf09" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8491,7 +8491,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=419bc71e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d6bdaa62" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8537,18 +8537,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=5aa36970" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=645a7e79" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="OSM-from-bbox">OSM from bbox<a class="anchor-link" href="#OSM-from-bbox">&#182;</a></h3>
+<h3 id="osm-from-bbox">OSM from bbox<a class="anchor-link" href="#osm-from-bbox">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b5a9ad14" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9d8f3f86" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8590,19 +8590,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=b75adf58" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6d0f7752" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="OSM-from-point">OSM from point<a class="anchor-link" href="#OSM-from-point">&#182;</a></h3><p>Add OSM entities within some distance N, S, E, W of a point to the map.</p>
+<h3 id="osm-from-point">OSM from point<a class="anchor-link" href="#osm-from-point">&#182;</a></h3><p>Add OSM entities within some distance N, S, E, W of a point to the map.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a07a6902" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f96b644a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8652,7 +8652,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=5401b585" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=30b8e386" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8702,19 +8702,19 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=eb83cee5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=dd0b16f2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="OSM-from-view">OSM from view<a class="anchor-link" href="#OSM-from-view">&#182;</a></h3><p>Add OSM entities within the current map view to the map.</p>
+<h3 id="osm-from-view">OSM from view<a class="anchor-link" href="#osm-from-view">&#182;</a></h3><p>Add OSM entities within the current map view to the map.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a8499159" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=4a42d21f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8750,7 +8750,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9169ceba" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=5f5d4336" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8782,7 +8782,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=3c048804" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=86099da9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8794,7 +8794,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=877ebe99" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=52ce3385" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8828,20 +8828,20 @@ gdf</div>
 
 </div>
 </div>
-<div id="cell-id=39d8e3c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1bef4ce4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-WhiteboxTools">Use WhiteboxTools<a class="anchor-link" href="#Use-WhiteboxTools">&#182;</a></h2><p>Use the built-in toolbox to perform geospatial analysis. For example, you can perform depression filling using the sample DEM dataset downloaded in the above step.</p>
+<h2 id="use-whiteboxtools">Use WhiteboxTools<a class="anchor-link" href="#use-whiteboxtools">&#182;</a></h2><p>Use the built-in toolbox to perform geospatial analysis. For example, you can perform depression filling using the sample DEM dataset downloaded in the above step.</p>
 <p><img src="https://i.imgur.com/KGHly63.png" alt="" /></p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=0eff33cf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=17deabe5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8853,7 +8853,7 @@ gdf</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=42e6ecbd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8bd7a5b2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8885,7 +8885,7 @@ gdf</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a73801fb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=402e4871" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8917,7 +8917,7 @@ gdf</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=fc444470" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=4817d2ac" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8951,7 +8951,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=1569ff46" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1d6a3143" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8963,7 +8963,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e13f5b01" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f1239391" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8995,7 +8995,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=e7329ee9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b8a9d6a2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9007,7 +9007,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=37b58306" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=1cac21ad" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9039,7 +9039,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=e8cdd409" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a9f2c0ec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9051,7 +9051,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a7ee662a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=14694aa5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9083,7 +9083,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=04ef838f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d38268af" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9117,7 +9117,7 @@ wbt.verbose = False</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f3944f5f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e412703f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9149,7 +9149,7 @@ wbt.verbose = False</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=86ff2151" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e9270626" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9183,7 +9183,7 @@ wbt.set_working_dir(data_dir)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b43492c9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=82a3d4ca" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9219,7 +9219,7 @@ wbt.d_inf_flow_accumulation("breached.tif", "flow_accum.tif")</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=fa73637e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=61432dcf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9257,7 +9257,7 @@ import imageio
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=8c6620b6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a68660a2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9295,7 +9295,7 @@ flow_accum = imageio.imread(os.path.join(data_dir, 'flow_accum.tif'))</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e2d16392" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9bd03339" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9363,18 +9363,18 @@ plt.show()</div>
 
 </div>
 </div>
-<div id="cell-id=08bc5f2c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c60d85d7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Create-basemap-gallery">Create basemap gallery<a class="anchor-link" href="#Create-basemap-gallery">&#182;</a></h2>
+<h2 id="create-basemap-gallery">Create basemap gallery<a class="anchor-link" href="#create-basemap-gallery">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f30eea0c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f115900b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9408,7 +9408,7 @@ plt.show()</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=8f5b681a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e3ce9b1d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9440,7 +9440,7 @@ plt.show()</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=98b35705" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=70cd4dd0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9472,18 +9472,18 @@ plt.show()</div>
 
 </div>
 </div>
-<div id="cell-id=0ef78619" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=78966168" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Create-linked-map">Create linked map<a class="anchor-link" href="#Create-linked-map">&#182;</a></h2>
+<h2 id="create-linked-map">Create linked map<a class="anchor-link" href="#create-linked-map">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=357ae6a5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=28515de5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9515,7 +9515,7 @@ plt.show()</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=2938289a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2f252de3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9549,7 +9549,7 @@ leafmap.linked_maps(rows=1, cols=2, height='400px', layers=layers)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=60a2b3a7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2b361dbf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9583,7 +9583,7 @@ leafmap.linked_maps(rows=1, cols=2, height='400px', layers=layers)</div>
 
 </div>
 </div>
-<div id="cell-id=b88f1e84" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1db00c18" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9595,7 +9595,7 @@ leafmap.linked_maps(rows=1, cols=2, height='400px', layers=layers)</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b8e3b8f6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d38ed492" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9647,19 +9647,19 @@ leafmap.linked_maps(
 
 </div>
 </div>
-<div id="cell-id=3c00e7cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ab0b810b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Create-split-panel-map">Create split-panel map<a class="anchor-link" href="#Create-split-panel-map">&#182;</a></h2><p>Create a split-panel map by specifying the <code>left_layer</code> and <code>right_layer</code>, which can be chosen from the basemap names, or any custom XYZ tile layer.</p>
+<h2 id="create-split-panel-map">Create split-panel map<a class="anchor-link" href="#create-split-panel-map">&#182;</a></h2><p>Create a split-panel map by specifying the <code>left_layer</code> and <code>right_layer</code>, which can be chosen from the basemap names, or any custom XYZ tile layer.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=bc44010f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2362b54c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9691,7 +9691,7 @@ leafmap.linked_maps(
 
 </div>
 </div>
-<div id="cell-id=f5972c34" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3e274237" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9703,7 +9703,7 @@ leafmap.linked_maps(
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=bac684fd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=65848f3f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9739,7 +9739,7 @@ leafmap.linked_maps(
 
 </div>
 </div>
-<div id="cell-id=0c8224ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5511b214" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9751,7 +9751,7 @@ leafmap.linked_maps(
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=15e334f0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=0805ddea" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9799,19 +9799,19 @@ leafmap.linked_maps(
 
 </div>
 </div>
-<div id="cell-id=29f0436e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b005c147" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Create-heat-map">Create heat map<a class="anchor-link" href="#Create-heat-map">&#182;</a></h2><p>Specify the file path to the CSV. It can either be a file locally or on the Internet.</p>
+<h2 id="create-heat-map">Create heat map<a class="anchor-link" href="#create-heat-map">&#182;</a></h2><p>Specify the file path to the CSV. It can either be a file locally or on the Internet.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=82b5c465" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a4017ece" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9863,7 +9863,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=d9613b3d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=871f4e69" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9875,7 +9875,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=02a9e54d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f91981bc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9907,7 +9907,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=cf0283ac" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=45d5e879" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9957,7 +9957,7 @@ m.add_heatmap(
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b73604e1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=172f5471" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9995,18 +9995,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=fb3f73a1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ef70fd76" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Save-map-to-HTML">Save map to HTML<a class="anchor-link" href="#Save-map-to-HTML">&#182;</a></h2>
+<h2 id="save-map-to-html">Save map to HTML<a class="anchor-link" href="#save-map-to-html">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=82d07f98" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=5edeb331" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10038,7 +10038,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9cba7ca1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=034e134c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10074,7 +10074,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=e70ed241" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e5254823" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10086,7 +10086,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=4e97b9ae" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b733a960" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10118,7 +10118,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=a05af521" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8c823189" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10130,7 +10130,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=7e115481" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=23f885e6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10162,7 +10162,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c2b51785" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=3b04c25f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10194,13 +10194,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=0a56e97f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=73f0b37f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Publish-maps">Publish maps<a class="anchor-link" href="#Publish-maps">&#182;</a></h2><p>To follow this tutorial, you will need to <a href="https://datapane.com/accounts/signup/">sign up</a> for an account with <a href="https://datapane.com">https://datapane.com</a>, then install and authenticate the <code>datapane</code> Python package. More information can be found <a href="https://docs.datapane.com/tutorials/tut-getting-started">here</a>.</p>
+<h2 id="publish-maps">Publish maps<a class="anchor-link" href="#publish-maps">&#182;</a></h2><p>To follow this tutorial, you will need to <a href="https://datapane.com/accounts/signup/">sign up</a> for an account with <a href="https://datapane.com">https://datapane.com</a>, then install and authenticate the <code>datapane</code> Python package. More information can be found <a href="https://docs.datapane.com/tutorials/tut-getting-started">here</a>.</p>
 <ul>
 <li><code>pip install datapane</code></li>
 <li><code>datapane login</code></li>
@@ -10213,7 +10213,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9b72c14f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b5296b31" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10247,7 +10247,7 @@ import leafmap.foliumap as leafmap</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=2d594447" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=ca4aeb87" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10279,7 +10279,7 @@ import leafmap.foliumap as leafmap</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=6bab4b8b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=bf74120c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10313,7 +10313,7 @@ import leafmap.foliumap as leafmap</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ba76bc4d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c2cf26a4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10345,18 +10345,18 @@ import leafmap.foliumap as leafmap</div>
 
 </div>
 </div>
-<div id="cell-id=1dadda31" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e6fdedaf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Elevation-map">Elevation map<a class="anchor-link" href="#Elevation-map">&#182;</a></h3>
+<h3 id="elevation-map">Elevation map<a class="anchor-link" href="#elevation-map">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=667d712d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b6519195" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10400,7 +10400,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=96dedd26" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7e2ae5f4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10432,18 +10432,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=904b217a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=55a17f58" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Land-cover-map">Land cover map<a class="anchor-link" href="#Land-cover-map">&#182;</a></h3>
+<h3 id="land-cover-map">Land cover map<a class="anchor-link" href="#land-cover-map">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=448e0c22" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=deb6af23" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10481,7 +10481,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=78545fa9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8001280e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10513,18 +10513,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=22d6f178" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d4ee0e96" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Population-heat-map">Population heat map<a class="anchor-link" href="#Population-heat-map">&#182;</a></h3>
+<h3 id="population-heat-map">Population heat map<a class="anchor-link" href="#population-heat-map">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9dd628d3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=637ae0e8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10574,7 +10574,7 @@ m.add_heatmap(
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b77aa7b3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b1745323" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10614,7 +10614,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9566f8a6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=fe7f64dc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10646,20 +10646,20 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=f4662c94" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=73ad24e1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-planet-imagery">Use planet imagery<a class="anchor-link" href="#Use-planet-imagery">&#182;</a></h2><p>First, you need to sign up a Planet account and get an API key. See <a href="https://www.planet.com/nicfi">https://www.planet.com/nicfi</a> &amp; <a href="https://developers.planet.com/quickstart/apis">https://developers.planet.com/quickstart/apis</a>.
+<h2 id="use-planet-imagery">Use planet imagery<a class="anchor-link" href="#use-planet-imagery">&#182;</a></h2><p>First, you need to sign up a Planet account and get an API key. See <a href="https://www.planet.com/nicfi">https://www.planet.com/nicfi</a> &amp; <a href="https://developers.planet.com/quickstart/apis">https://developers.planet.com/quickstart/apis</a>.
 Uncomment the following line to pass in your API key.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ce0970b3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=52ba0539" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10693,7 +10693,7 @@ Uncomment the following line to pass in your API key.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ff2e53d2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c36468ed" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10725,7 +10725,7 @@ Uncomment the following line to pass in your API key.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=35c195a3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a3044645" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10759,7 +10759,7 @@ Uncomment the following line to pass in your API key.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=789efc2c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c98f8187" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10791,7 +10791,7 @@ Uncomment the following line to pass in your API key.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d9aaf20d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=0ffbfb75" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10825,7 +10825,7 @@ Uncomment the following line to pass in your API key.</p>
 
 </div>
 </div>
-<div id="cell-id=758725d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=595e1e35" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10837,7 +10837,7 @@ Uncomment the following line to pass in your API key.</p>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=9f80e5ac" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=354a15e2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10875,7 +10875,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=8aaab40a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b3fb0100" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10913,18 +10913,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=42644ac4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a562d51e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-timeseries-inspector">Use timeseries inspector<a class="anchor-link" href="#Use-timeseries-inspector">&#182;</a></h2>
+<h2 id="use-timeseries-inspector">Use timeseries inspector<a class="anchor-link" href="#use-timeseries-inspector">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d67cf8fc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9fe47f18" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10958,7 +10958,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=2d02979d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=83cd13be" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10990,7 +10990,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c7b39c9f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=adcc6d37" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11022,7 +11022,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=35c1ffc2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=1a9bb1d0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11054,7 +11054,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=7e18cfc5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=3f4d43c0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11086,7 +11086,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=43eb080e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9d3ae039" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11118,7 +11118,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=97ab1361" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=21e5907b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11150,18 +11150,18 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=4d50deab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c0898b34" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-time-slider">Use time slider<a class="anchor-link" href="#Use-time-slider">&#182;</a></h2>
+<h2 id="use-time-slider">Use time slider<a class="anchor-link" href="#use-time-slider">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=13d3cc3f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=be4c9ccb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11173,7 +11173,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=0daec2d5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=49afab67" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11207,7 +11207,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f58262b9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=23b814a2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11245,7 +11245,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=17e9f80e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=06148b79" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11283,7 +11283,7 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=5733522a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f011ec19" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11295,7 +11295,7 @@ m</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=c62b7853" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e16c830a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11335,13 +11335,13 @@ m</div>
 
 </div>
 </div>
-<div id="cell-id=7afdaa7d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4a724f02" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Use-PostGIS">Use PostGIS<a class="anchor-link" href="#Use-PostGIS">&#182;</a></h2><p>Setting up the conda env:</p>
+<h2 id="use-postgis">Use PostGIS<a class="anchor-link" href="#use-postgis">&#182;</a></h2><p>Setting up the conda env:</p>
 <pre><code>conda create -n geo python=3.9
 conda activate geo
 conda install geopandas
@@ -11352,14 +11352,14 @@ mamba install leafmap sqlalchemy psycopg2 -c conda-forge
 <ul>
 <li><a href="https://github.com/giswqs/postgis/raw/master/data/nyc_data.zip">nyc_data.zip</a> (Watch this <a href="https://youtu.be/fROzLrjNDrs">video</a> to load data into PostGIS)</li>
 </ul>
-<h3 id="Connect-to-the-database">Connect to the database<a class="anchor-link" href="#Connect-to-the-database">&#182;</a></h3><p>You can directly pass in the user name and password to access the database. Alternative, you can define environment variables. The default environment variables for user and password are <code>SQL_USER</code> and <code>SQL_PASSWORD</code>, respectively.</p>
+<h3 id="connect-to-the-database">Connect to the database<a class="anchor-link" href="#connect-to-the-database">&#182;</a></h3><p>You can directly pass in the user name and password to access the database. Alternative, you can define environment variables. The default environment variables for user and password are <code>SQL_USER</code> and <code>SQL_PASSWORD</code>, respectively.</p>
 <p>The <code>try...except...</code> statements are only used for building the documentation website (<a href="https://leafmap.org">https://leafmap.org</a>) because the PostGIS database is not available on GitHub. If you are running the notebook with Jupyter installed locally and PostGIS set up properly, you don't need these <code>try...except...</code> statements.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=55f8d294" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=a684572d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11401,19 +11401,19 @@ except:
 
 </div>
 </div>
-<div id="cell-id=707eb28d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e904b633" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Perform-SQL-queries">Perform SQL queries<a class="anchor-link" href="#Perform-SQL-queries">&#182;</a></h3><p>Create a GeoDataFrame from a sql query.</p>
+<h3 id="perform-sql-queries">Perform SQL queries<a class="anchor-link" href="#perform-sql-queries">&#182;</a></h3><p>Create a GeoDataFrame from a sql query.</p>
 
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=233fc58b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e820d1d1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11445,7 +11445,7 @@ except:
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=adeb85e6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=68418215" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11485,18 +11485,18 @@ except:
 
 </div>
 </div>
-<div id="cell-id=bdac08f9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cd2ba3c8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Display-data-on-the-map">Display data on the map<a class="anchor-link" href="#Display-data-on-the-map">&#182;</a></h3>
+<h3 id="display-data-on-the-map">Display data on the map<a class="anchor-link" href="#display-data-on-the-map">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=67fdea30" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=fac7f946" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11542,7 +11542,7 @@ except:
 
 </div>
 </div>
-<div id="cell-id=df527d61" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=05c43caf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11554,18 +11554,18 @@ except:
 </div>
 </div>
 </div>
-<div id="cell-id=a75ff617" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=75f0e64a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Add-widget-to-the-map">Add widget to the map<a class="anchor-link" href="#Add-widget-to-the-map">&#182;</a></h2>
+<h2 id="add-widget-to-the-map">Add widget to the map<a class="anchor-link" href="#add-widget-to-the-map">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=336b9b88" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=008308d9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11605,7 +11605,7 @@ from ipyleaflet import WidgetControl</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=edde1b20" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=49577791" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11685,7 +11685,7 @@ m.add_control(output_control)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=08706596" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7a4d4070" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11717,18 +11717,18 @@ m.add_control(output_control)</div>
 
 </div>
 </div>
-<div id="cell-id=d09fc052" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5aeb38c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Develop-custom-widgets">Develop custom widgets<a class="anchor-link" href="#Develop-custom-widgets">&#182;</a></h2>
+<h2 id="develop-custom-widgets">Develop custom widgets<a class="anchor-link" href="#develop-custom-widgets">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=ab938c2c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2580fcfc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11764,18 +11764,18 @@ from ipyleaflet import WidgetControl</div>
 
 </div>
 </div>
-<div id="cell-id=2f5efc68" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=30bc463d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Create-a-toolbar-button">Create a toolbar button<a class="anchor-link" href="#Create-a-toolbar-button">&#182;</a></h3>
+<h3 id="create-a-toolbar-button">Create a toolbar button<a class="anchor-link" href="#create-a-toolbar-button">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=453d16b2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=5b18a0bf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11839,7 +11839,7 @@ close_button = widgets.ToggleButton(
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=e225538f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7d99faad" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11873,18 +11873,18 @@ toolbar</div>
 
 </div>
 </div>
-<div id="cell-id=2c6091d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2877fcbb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-toolbar-event">Add toolbar event<a class="anchor-link" href="#Add-toolbar-event">&#182;</a></h3>
+<h3 id="add-toolbar-event">Add toolbar event<a class="anchor-link" href="#add-toolbar-event">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=a2e0e47e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=dfd86dfa" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11930,7 +11930,7 @@ toolbar_button.observe(toolbar_click, "value")</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=540c81af" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=ba73f125" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11978,18 +11978,18 @@ toolbar</div>
 
 </div>
 </div>
-<div id="cell-id=d0689ff8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6fb1e426" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-a-toolbar-grid">Add a toolbar grid<a class="anchor-link" href="#Add-a-toolbar-grid">&#182;</a></h3>
+<h3 id="add-a-toolbar-grid">Add a toolbar grid<a class="anchor-link" href="#add-a-toolbar-grid">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=5863ec4d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9cdb2789" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12029,7 +12029,7 @@ grid = widgets.GridspecLayout(
 
 </div>
 </div>
-<div id="cell-id=724af7bb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a173cbdc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12041,7 +12041,7 @@ grid = widgets.GridspecLayout(
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=d712153d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=31a9eeb1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12093,7 +12093,7 @@ grid</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=95a419db" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=cd7cfcd3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12125,7 +12125,7 @@ grid</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=fbb89ba8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=6e953d94" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12173,18 +12173,18 @@ toolbar</div>
 
 </div>
 </div>
-<div id="cell-id=a20477b8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=01341931" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Add-toolbar-to-leafmap">Add toolbar to leafmap<a class="anchor-link" href="#Add-toolbar-to-leafmap">&#182;</a></h3>
+<h3 id="add-toolbar-to-leafmap">Add toolbar to leafmap<a class="anchor-link" href="#add-toolbar-to-leafmap">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=2c1e2906" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f251309c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12216,7 +12216,7 @@ toolbar</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=8de3ad90" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=744e6f89" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12252,7 +12252,7 @@ m</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=543ce399" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=c8877f8f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12288,7 +12288,7 @@ m.add_control(output_ctrl)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=21998a54" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=e0506c2f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12326,7 +12326,7 @@ m.add_control(output_ctrl)</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=218a45d4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=f81c53d9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -12364,7 +12364,7 @@ m.add_control(output_ctrl)</div>
 
 </div>
 </div>
-<div id="cell-id=f508a2e6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c12deb08" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
