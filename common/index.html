@@ -838,6 +838,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.create_timelapse" class="md-nav__link">
+    create_timelapse()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.csv_points_to_shp" class="md-nav__link">
     csv_points_to_shp()
   </a>
@@ -1484,6 +1491,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.numpy_to_cog" class="md-nav__link">
     numpy_to_cog()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.numpy_to_image" class="md-nav__link">
+    numpy_to_image()
   </a>
   
 </li>
@@ -3219,6 +3233,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/72_timelapse/" class="md-nav__link">
+        72 timelapse
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -3540,6 +3568,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.create_legend" class="md-nav__link">
     create_legend()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.create_timelapse" class="md-nav__link">
+    create_timelapse()
   </a>
   
 </li>
@@ -4191,6 +4226,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.numpy_to_cog" class="md-nav__link">
     numpy_to_cog()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.numpy_to_image" class="md-nav__link">
+    numpy_to_image()
   </a>
   
 </li>
@@ -6071,7 +6113,7 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
       <tr>
         <td><code>duration</code></td>
         <td><code>int</code></td>
-        <td><p>controls how long each frame will be displayed for, in milliseconds. It is the inverse of the frame rate. Setting it to 100 milliseconds gives 10 frames per second. You can decrease the duration to give a smoother animation.. Defaults to 100.</p></td>
+        <td><p>controls how long each frame will be displayed for, in milliseconds. It is the inverse of the frame rate. Setting it to 100 milliseconds gives 10 frames per second. You can decrease the duration to give a smoother animation. Defaults to 100.</p></td>
         <td><code>100</code></td>
       </tr>
       <tr>
@@ -6099,7 +6141,7 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 <span class="sd">        out_gif (str): The file path to the output GIF image.</span>
 <span class="sd">        progress_bar_color (str, optional): Color for the progress bar. Defaults to &#39;white&#39;.</span>
 <span class="sd">        progress_bar_height (int, optional): Height of the progress bar. Defaults to 5.</span>
-<span class="sd">        duration (int, optional): controls how long each frame will be displayed for, in milliseconds. It is the inverse of the frame rate. Setting it to 100 milliseconds gives 10 frames per second. You can decrease the duration to give a smoother animation.. Defaults to 100.</span>
+<span class="sd">        duration (int, optional): controls how long each frame will be displayed for, in milliseconds. It is the inverse of the frame rate. Setting it to 100 milliseconds gives 10 frames per second. You can decrease the duration to give a smoother animation. Defaults to 100.</span>
 <span class="sd">        loop (int, optional): controls how many times the animation repeats. The default, 1, means that the animation will play once and then stop (displaying the last frame). A value of 0 means that the animation will repeat forever. Defaults to 0.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -9337,6 +9379,276 @@ style = {
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">legend_text</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">legend_text</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.create_timelapse" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">create_timelapse</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">out_gif</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;.tif&#39;</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">add_progress_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">progress_bar_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">progress_bar_height</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">add_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">text_xy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">text_sequence</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">font_type</span><span class="o">=</span><span class="s1">&#39;arial.ttf&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">mp4</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">reduce_size</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">clean_up</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.create_timelapse" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Creates a timelapse gif from a list of images.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>images</code></td>
+        <td><code>Union[list, str]</code></td>
+        <td><p>The list of images or input directory to create the gif from.
+For example, '/path/to/images/*.tif' or ['/path/to/image1.tif', '/path/to/image2.tif', ...]</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_gif</code></td>
+        <td><code>str</code></td>
+        <td><p>File path to the output gif.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>ext</code></td>
+        <td><code>str</code></td>
+        <td><p>The extension of the images. Defaults to '.tif'.</p></td>
+        <td><code>&#39;.tif&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>bands</code></td>
+        <td><code>Optional[list]</code></td>
+        <td><p>The bands to use for the gif. For example, [0, 1, 2] for RGB, and [0] for grayscale. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>size</code></td>
+        <td><code>Optional[tuple]</code></td>
+        <td><p>The size of the gif. For example, (500, 500). Defaults to None, using the original size.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>fps</code></td>
+        <td><code>int</code></td>
+        <td><p>The frames per second of the gif. Defaults to 5.</p></td>
+        <td><code>5</code></td>
+      </tr>
+      <tr>
+        <td><code>loop</code></td>
+        <td><code>int</code></td>
+        <td><p>The number of times to loop the gif. Defaults to 0, looping forever.</p></td>
+        <td><code>0</code></td>
+      </tr>
+      <tr>
+        <td><code>add_progress_bar</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to add a progress bar to the gif. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>progress_bar_color</code></td>
+        <td><code>str</code></td>
+        <td><p>The color of the progress bar, can be color name or hex code. Defaults to 'blue'.</p></td>
+        <td><code>&#39;blue&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>progress_bar_height</code></td>
+        <td><code>int</code></td>
+        <td><p>The height of the progress bar. Defaults to 5.</p></td>
+        <td><code>5</code></td>
+      </tr>
+      <tr>
+        <td><code>add_text</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to add text to the gif. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>text_xy</code></td>
+        <td><code>Optional[tuple]</code></td>
+        <td><p>The x, y coordinates of the text. For example, ('10%', '10%').
+Defaults to None, using the bottom left corner.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>text_sequence</code></td>
+        <td><code>Optional[list]</code></td>
+        <td><p>The sequence of text to add to the gif. For example, ['year 1', 'year 2', ...].</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>font_type</code></td>
+        <td><code>str</code></td>
+        <td><p>The font type of the text, can be 'arial.ttf' or 'alibaba.otf', or any system font. Defaults to 'arial.ttf'.</p></td>
+        <td><code>&#39;arial.ttf&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>font_size</code></td>
+        <td><code>int</code></td>
+        <td><p>The font size of the text. Defaults to 20.</p></td>
+        <td><code>20</code></td>
+      </tr>
+      <tr>
+        <td><code>font_color</code></td>
+        <td><code>str</code></td>
+        <td><p>The color of the text, can be color name or hex code. Defaults to 'black'.</p></td>
+        <td><code>&#39;black&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>mp4</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to convert the gif to mp4. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>quiet</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to print the progress. Defaults to False.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>reduce_size</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to reduce the size of the gif using ffmpeg. Defaults to False.</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>clean_up</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to clean up the temporary files. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">create_timelapse</span><span class="p">(</span>
+    <span class="n">images</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="n">out_gif</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">ext</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;.tif&quot;</span><span class="p">,</span>
+    <span class="n">bands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">fps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">loop</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">add_progress_bar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">progress_bar_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">progress_bar_height</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">add_text</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">text_xy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">text_sequence</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">font_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;arial.ttf&quot;</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="n">font_color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">mp4</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">quiet</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">reduce_size</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">clean_up</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creates a timelapse gif from a list of images.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        images (Union[list, str]): The list of images or input directory to create the gif from.</span>
+<span class="sd">            For example, &#39;/path/to/images/*.tif&#39; or [&#39;/path/to/image1.tif&#39;, &#39;/path/to/image2.tif&#39;, ...]</span>
+<span class="sd">        out_gif (str): File path to the output gif.</span>
+<span class="sd">        ext (str, optional): The extension of the images. Defaults to &#39;.tif&#39;.</span>
+<span class="sd">        bands (Optional[list], optional): The bands to use for the gif. For example, [0, 1, 2] for RGB, and [0] for grayscale. Defaults to None.</span>
+<span class="sd">        size (Optional[tuple], optional): The size of the gif. For example, (500, 500). Defaults to None, using the original size.</span>
+<span class="sd">        fps (int, optional): The frames per second of the gif. Defaults to 5.</span>
+<span class="sd">        loop (int, optional): The number of times to loop the gif. Defaults to 0, looping forever.</span>
+<span class="sd">        add_progress_bar (bool, optional): Whether to add a progress bar to the gif. Defaults to True.</span>
+<span class="sd">        progress_bar_color (str, optional): The color of the progress bar, can be color name or hex code. Defaults to &#39;blue&#39;.</span>
+<span class="sd">        progress_bar_height (int, optional): The height of the progress bar. Defaults to 5.</span>
+<span class="sd">        add_text (bool, optional): Whether to add text to the gif. Defaults to False.</span>
+<span class="sd">        text_xy (Optional[tuple], optional): The x, y coordinates of the text. For example, (&#39;10%&#39;, &#39;10%&#39;).</span>
+<span class="sd">            Defaults to None, using the bottom left corner.</span>
+<span class="sd">        text_sequence (Optional[list], optional): The sequence of text to add to the gif. For example, [&#39;year 1&#39;, &#39;year 2&#39;, ...].</span>
+<span class="sd">        font_type (str, optional): The font type of the text, can be &#39;arial.ttf&#39; or &#39;alibaba.otf&#39;, or any system font. Defaults to &#39;arial.ttf&#39;.</span>
+<span class="sd">        font_size (int, optional): The font size of the text. Defaults to 20.</span>
+<span class="sd">        font_color (str, optional): The color of the text, can be color name or hex code. Defaults to &#39;black&#39;.</span>
+<span class="sd">        mp4 (bool, optional): Whether to convert the gif to mp4. Defaults to False.</span>
+<span class="sd">        quiet (bool, optional): Whether to print the progress. Defaults to False.</span>
+<span class="sd">        reduce_size (bool, optional): Whether to reduce the size of the gif using ffmpeg. Defaults to False.</span>
+<span class="sd">        clean_up (bool, optional): Whether to clean up the temporary files. Defaults to True.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">glob</span>
+    <span class="kn">import</span> <span class="nn">tempfile</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">images</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ext</span><span class="p">):</span>
+            <span class="n">images</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;*</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">images</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;images must be a list or a path to the image directory.&quot;</span><span class="p">)</span>
+
+    <span class="n">images</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+    <span class="n">temp_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s2">&quot;timelapse&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">image</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+            <span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ext</span><span class="p">,</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">basename</span><span class="si">}</span><span class="s2"> ...&quot;</span><span class="p">)</span>
+
+            <span class="c1"># ignore GDAL warnings</span>
+            <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
+                <span class="n">numpy_to_image</span><span class="p">(</span>
+                    <span class="n">image</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="n">basename</span><span class="p">),</span> <span class="n">bands</span><span class="o">=</span><span class="n">bands</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span>
+                <span class="p">)</span>
+        <span class="n">make_gif</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="n">out_gif</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="n">loop</span><span class="p">,</span> <span class="n">mp4</span><span class="o">=</span><span class="n">mp4</span><span class="p">,</span> <span class="n">clean_up</span><span class="o">=</span><span class="n">clean_up</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">add_text</span><span class="p">:</span>
+            <span class="n">add_text_to_gif</span><span class="p">(</span>
+                <span class="n">out_gif</span><span class="p">,</span>
+                <span class="n">out_gif</span><span class="p">,</span>
+                <span class="n">text_xy</span><span class="p">,</span>
+                <span class="n">text_sequence</span><span class="p">,</span>
+                <span class="n">font_type</span><span class="p">,</span>
+                <span class="n">font_size</span><span class="p">,</span>
+                <span class="n">font_color</span><span class="p">,</span>
+                <span class="n">add_progress_bar</span><span class="p">,</span>
+                <span class="n">progress_bar_color</span><span class="p">,</span>
+                <span class="n">progress_bar_height</span><span class="p">,</span>
+                <span class="mi">1000</span> <span class="o">/</span> <span class="n">fps</span><span class="p">,</span>
+                <span class="n">loop</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">add_progress_bar</span><span class="p">:</span>
+            <span class="n">add_progress_bar_to_gif</span><span class="p">(</span>
+                <span class="n">out_gif</span><span class="p">,</span>
+                <span class="n">out_gif</span><span class="p">,</span>
+                <span class="n">progress_bar_color</span><span class="p">,</span>
+                <span class="n">progress_bar_height</span><span class="p">,</span>
+                <span class="mi">1000</span> <span class="o">/</span> <span class="n">fps</span><span class="p">,</span>
+                <span class="n">loop</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">reduce_size</span><span class="p">:</span>
+            <span class="n">reduce_gif_size</span><span class="p">(</span><span class="n">out_gif</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -16658,13 +16970,16 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">rasterio</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;The provided input file could not be found.&quot;</span><span class="p">)</span>
+    <span class="c1"># from osgeo import gdal</span>
+    <span class="c1"># # ... and suppress errors</span>
+    <span class="c1"># gdal.PushErrorHandler(&#39;CPLQuietErrorHandler&#39;)</span>
 
-    <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
-        <span class="n">arr</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># read all raster values</span>
-
-    <span class="k">return</span> <span class="n">arr</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+            <span class="n">arr</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># read all raster values</span>
+        <span class="k">return</span> <span class="n">arr</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -19042,6 +19357,146 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
                 <span class="n">in_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="n">quiet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.numpy_to_image" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">numpy_to_image</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">transpose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resize_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.numpy_to_image" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts a numpy array to an image in the specified format, such as JPG, PNG, TIFF, etc.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>np_array</code></td>
+        <td><code>np.ndarray</code></td>
+        <td><p>A numpy array or a path to a raster file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>filename</code></td>
+        <td><code>str</code></td>
+        <td><p>The output filename.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>transpose</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to transpose the array from (bands, rows, cols) to (rows, cols, bands). Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>bands</code></td>
+        <td><code>int | list</code></td>
+        <td><p>The band(s) to use, starting from 0. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">numpy_to_image</span><span class="p">(</span>
+    <span class="n">np_array</span><span class="p">,</span>
+    <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">transpose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">bands</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">resize_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts a numpy array to an image in the specified format, such as JPG, PNG, TIFF, etc.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        np_array (np.ndarray): A numpy array or a path to a raster file.</span>
+<span class="sd">        filename (str): The output filename.</span>
+<span class="sd">        transpose (bool, optional): Whether to transpose the array from (bands, rows, cols) to (rows, cols, bands). Defaults to True.</span>
+<span class="sd">        bands (int | list, optional): The band(s) to use, starting from 0. Defaults to None.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">warnings</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+    <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">np_array</span> <span class="o">=</span> <span class="n">image_to_numpy</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The provided input must be a numpy array.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">np_array</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span> <span class="ow">or</span> <span class="n">np_array</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">:</span>
+        <span class="c1"># Convert the array to uint8</span>
+        <span class="c1"># np_array = (np_array * 255).astype(np.uint8)</span>
+        <span class="n">np_array</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="p">(</span><span class="n">np_array</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">np_array</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">uint8</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># The array is already uint8</span>
+        <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span>
+
+    <span class="k">if</span> <span class="n">np_array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">np_array</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">transpose</span><span class="p">:</span>
+            <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">bands</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">np_array</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bands</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">bands</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">bands</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">np_array</span> <span class="o">=</span> <span class="n">np_array</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">bands</span><span class="p">]</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;The provided input must be a 2D or 3D numpy array.&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">resize</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                <span class="s2">&quot;The scikit-image package is not installed. Please install it with `pip install scikit-image` </span><span class="se">\</span>
+<span class="s2">                  or `conda install scikit-image -c conda-forge`.&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">resize_args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">resize_args</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="s2">&quot;preserve_range&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">resize_args</span><span class="p">:</span>
+            <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;preserve_range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">np_array</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">np_array</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="o">**</span><span class="n">resize_args</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np_array</span><span class="p">)</span>
+
+    <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -22176,13 +22631,18 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 <span class="sd">        in_gif (str): The input file path to the GIF image.</span>
 <span class="sd">        out_gif (str, optional): The output file path to the GIF image. Defaults to None.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">ffmpeg</span>
     <span class="kn">import</span> <span class="nn">warnings</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">ffmpeg</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ffmpeg is not installed on your computer. Skip reducing gif size.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
 
     <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_tool</span><span class="p">(</span><span class="s2">&quot;ffmpeg&quot;</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ffmpeg is not installed on your computer.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ffmpeg is not installed on your computer. Skip reducing gif size.&quot;</span><span class="p">)</span>
         <span class="k">return</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">in_gif</span><span class="p">):</span>
@@ -23759,7 +24219,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You need set both width and height.&quot;</span><span class="p">)</span>
                 <span class="k">return</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
