@@ -18,8 +18,10 @@
         <link rel="prev" href="../71_aws_s3/">
       
       
+        <link rel="next" href="../73_custom_stac/">
+      
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
     
     
       
@@ -27,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7a7fce14.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
@@ -196,7 +198,7 @@
         <a href="https://github.com/opengeos/leafmap" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -240,7 +242,7 @@
       <a href="https://github.com/opengeos/leafmap" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -1863,6 +1865,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../73_custom_stac/" class="md-nav__link">
+        73 custom stac
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2992,7 +3008,7 @@ Licensed under the Apache License, Version 2.0.
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div id="cell-id=0ff4955d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=aded7107" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3010,7 +3026,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=53b79e8f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=1ae8ad6e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3042,7 +3058,7 @@ Licensed under the Apache License, Version 2.0.
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=dfb64f43" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=b7b5fc01" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3074,7 +3090,7 @@ Licensed under the Apache License, Version 2.0.
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=b178f05e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=4fa4cd26" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3106,7 +3122,7 @@ Licensed under the Apache License, Version 2.0.
 
 </div>
 </div>
-<div id="cell-id=aad47343" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=75b7ba5b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3118,7 +3134,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=4c57347f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=1149cc05" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3165,7 +3181,7 @@ leafmap.download_file(url)</div>
 <pre>Downloading...
 From: https://github.com/opengeos/data/raw/main/landsat/peru.zip
 To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
-100%|██████████| 33.8M/33.8M [00:00&lt;00:00, 168MB/s] 
+100%|██████████| 33.8M/33.8M [00:00&lt;00:00, 58.1MB/s]
 </pre>
 </div>
 </div>
@@ -3198,7 +3214,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
 
 </div>
 </div>
-<div id="cell-id=23d79dd6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=56571f0e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3210,7 +3226,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=49c1df80" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=02382561" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3242,7 +3258,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
 
 </div>
 </div>
-<div id="cell-id=13ed87d8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b9443b59" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3254,7 +3270,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=aa94189e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=cf3376e3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3312,7 +3328,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=2a14b1e4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=e67b2cd2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3358,12 +3374,12 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/peru.zip
 
 
 
-<div id="d67ed8f9-1efe-4b24-8649-416ead862489" class="jupyter-widgets jp-OutputArea-output ">
+<div id="21d724a2-9e6b-405e-81ee-ddb9e2074432" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('d67ed8f9-1efe-4b24-8649-416ead862489');
+var element = document.getElementById('21d724a2-9e6b-405e-81ee-ddb9e2074432');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "f73ebf3e0bf2446fbaffb01aad881abe"}
+{"version_major": 2, "version_minor": 0, "model_id": "fccc2cf3710847d1bf955883106aa97d"}
 </script>
 </div>
 
@@ -3375,7 +3391,7 @@ var element = document.getElementById('d67ed8f9-1efe-4b24-8649-416ead862489');
 
 </div>
 </div>
-<div id="cell-id=7308e815" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6f1280b1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3387,7 +3403,7 @@ var element = document.getElementById('d67ed8f9-1efe-4b24-8649-416ead862489');
 </div>
 </div>
 </div>
-<div id="cell-id=53b11e84" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e2331fe4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3399,7 +3415,7 @@ var element = document.getElementById('d67ed8f9-1efe-4b24-8649-416ead862489');
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=efc84b27" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=861a3898" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3453,7 +3469,7 @@ var element = document.getElementById('d67ed8f9-1efe-4b24-8649-416ead862489');
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=6b8c489c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=e445a0d8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3499,12 +3515,12 @@ var element = document.getElementById('d67ed8f9-1efe-4b24-8649-416ead862489');
 
 
 
-<div id="b504db0e-cf12-4ac8-b832-5865d8f33b0e" class="jupyter-widgets jp-OutputArea-output ">
+<div id="abb9c4f2-90b9-4253-9e3d-b309485f130b" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('b504db0e-cf12-4ac8-b832-5865d8f33b0e');
+var element = document.getElementById('abb9c4f2-90b9-4253-9e3d-b309485f130b');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "56bceaffd0ff4d80a24b656bd8cacc76"}
+{"version_major": 2, "version_minor": 0, "model_id": "81ac76723a6a4245870ed14668a8c4c9"}
 </script>
 </div>
 
@@ -3516,7 +3532,7 @@ var element = document.getElementById('b504db0e-cf12-4ac8-b832-5865d8f33b0e');
 
 </div>
 </div>
-<div id="cell-id=fca7dc32" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3421f051" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3528,7 +3544,7 @@ var element = document.getElementById('b504db0e-cf12-4ac8-b832-5865d8f33b0e');
 </div>
 </div>
 </div>
-<div id="cell-id=3c585d29" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9d0f60a8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3540,7 +3556,7 @@ var element = document.getElementById('b504db0e-cf12-4ac8-b832-5865d8f33b0e');
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=6581a358" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=9b14c84e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3597,7 +3613,7 @@ years</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=05888ce5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=97b8bb54" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3661,7 +3677,7 @@ images</div>
 
 </div>
 </div>
-<div id="cell-id=722e3cc4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=745ddb05" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3673,7 +3689,7 @@ images</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=a82b6aac" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=16ddd7f5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3750,7 +3766,7 @@ images</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=5ea1acdf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=d55450f0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3796,12 +3812,12 @@ images</div>
 
 
 
-<div id="586761aa-9e20-43fb-9420-d2021986f1b6" class="jupyter-widgets jp-OutputArea-output ">
+<div id="7d8cc018-c699-431c-8533-41275beedf17" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('586761aa-9e20-43fb-9420-d2021986f1b6');
+var element = document.getElementById('7d8cc018-c699-431c-8533-41275beedf17');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "25de932fe0194414ab1db29d762d1410"}
+{"version_major": 2, "version_minor": 0, "model_id": "ba58fc660f9c4cacbce28d18e8e55a07"}
 </script>
 </div>
 
@@ -3813,7 +3829,7 @@ var element = document.getElementById('586761aa-9e20-43fb-9420-d2021986f1b6');
 
 </div>
 </div>
-<div id="cell-id=35585cac" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d8722c75" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3825,7 +3841,7 @@ var element = document.getElementById('586761aa-9e20-43fb-9420-d2021986f1b6');
 </div>
 </div>
 </div>
-<div id="cell-id=02369d55" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2935f375" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3837,7 +3853,7 @@ var element = document.getElementById('586761aa-9e20-43fb-9420-d2021986f1b6');
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=14be05d6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=2b1a70ae" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3884,7 +3900,7 @@ leafmap.download_file(url)</div>
 <pre>Downloading...
 From: https://github.com/opengeos/data/raw/main/naip/naip.zip
 To: /home/runner/work/leafmap/leafmap/docs/notebooks/naip.zip
-100%|██████████| 25.7M/25.7M [00:00&lt;00:00, 163MB/s] 
+100%|██████████| 25.7M/25.7M [00:00&lt;00:00, 45.7MB/s]
 </pre>
 </div>
 </div>
@@ -3917,7 +3933,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/naip.zip
 
 </div>
 </div>
-<div id="cell-id=6fcef007" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1f9256e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3929,7 +3945,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/naip.zip
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=f02c0f00" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=938f33fb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3961,7 +3977,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/naip.zip
 
 </div>
 </div>
-<div id="cell-id=0173f55e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c2156bfd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3973,7 +3989,7 @@ To: /home/runner/work/leafmap/leafmap/docs/notebooks/naip.zip
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=a0b06605" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=464386d8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4043,7 +4059,7 @@ text_sequence</div>
 
 </div>
 </div>
-<div id="cell-id=5cec20e6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=71168711" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4055,7 +4071,7 @@ text_sequence</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=43849012" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=d3cf8795" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4111,7 +4127,7 @@ text_sequence</div>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=8a2bdd4a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=f959d65b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4157,12 +4173,12 @@ text_sequence</div>
 
 
 
-<div id="cb22d5c8-1487-410e-94f8-2caec2707037" class="jupyter-widgets jp-OutputArea-output ">
+<div id="c2be7b23-2b7a-45eb-9615-3d763014cfb0" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('cb22d5c8-1487-410e-94f8-2caec2707037');
+var element = document.getElementById('c2be7b23-2b7a-45eb-9615-3d763014cfb0');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "dfa48c48f903444f92f6afb8d07175a5"}
+{"version_major": 2, "version_minor": 0, "model_id": "2d831b77c4444e1a8b410157052f7383"}
 </script>
 </div>
 
@@ -4174,7 +4190,7 @@ var element = document.getElementById('cb22d5c8-1487-410e-94f8-2caec2707037');
 
 </div>
 </div>
-<div id="cell-id=bb469e91" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cd8740ba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4186,7 +4202,7 @@ var element = document.getElementById('cb22d5c8-1487-410e-94f8-2caec2707037');
 </div>
 </div>
 </div>
-<div id="cell-id=16d21997" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9a7d777b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4198,7 +4214,7 @@ var element = document.getElementById('cb22d5c8-1487-410e-94f8-2caec2707037');
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=db288c65" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=2ea49a5b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4254,7 +4270,7 @@ var element = document.getElementById('cb22d5c8-1487-410e-94f8-2caec2707037');
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=0302a1af" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=bbf5dc5f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4300,12 +4316,12 @@ var element = document.getElementById('cb22d5c8-1487-410e-94f8-2caec2707037');
 
 
 
-<div id="d133b55d-6622-4ec0-b93c-cabd0304c51b" class="jupyter-widgets jp-OutputArea-output ">
+<div id="17a30b4b-d6e3-4d83-846d-7614c0a4523d" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('d133b55d-6622-4ec0-b93c-cabd0304c51b');
+var element = document.getElementById('17a30b4b-d6e3-4d83-846d-7614c0a4523d');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "eb816b08400b4d1ab0d31f796e93b6e6"}
+{"version_major": 2, "version_minor": 0, "model_id": "1308c5794c2642e080ae2924136e2fb1"}
 </script>
 </div>
 
@@ -4317,7 +4333,7 @@ var element = document.getElementById('d133b55d-6622-4ec0-b93c-cabd0304c51b');
 
 </div>
 </div>
-<div id="cell-id=2770e2e2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b1f5787b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4399,7 +4415,7 @@ var element = document.getElementById('d133b55d-6622-4ec0-b93c-cabd0304c51b');
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.407015b8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
