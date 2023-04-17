@@ -2484,6 +2484,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/74_tms_to_geotiff/" class="md-nav__link">
+        74 tms to geotiff
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -6100,6 +6114,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">icon_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;info&quot;</span><span class="p">],</span>
         <span class="n">spin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">max_cluster_radius</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
@@ -6116,6 +6131,9 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            icon_names (list, optional): A list of names to be used for the icons. More icons can be found at https://fontawesome.com/v4/icons. Defaults to [&#39;info&#39;].</span>
 <span class="sd">            spin (bool, optional): If True, the icon will spin. Defaults to False.</span>
 <span class="sd">            add_legend (bool, optional): If True, a legend will be added to the map. Defaults to True.</span>
+<span class="sd">            max_cluster_radius (int, optional): The maximum cluster radius. Defaults to 80.</span>
+<span class="sd">            **kwargs: Other keyword arguments to pass to ipyleaflet.MarkerCluster(). For a list of available options,</span>
+<span class="sd">                see https://github.com/Leaflet/Leaflet.markercluster.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -6306,7 +6324,12 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="p">)</span>
                 <span class="n">markers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
 
-        <span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">MarkerCluster</span><span class="p">(</span><span class="n">markers</span><span class="o">=</span><span class="n">markers</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span>
+        <span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">MarkerCluster</span><span class="p">(</span>
+            <span class="n">markers</span><span class="o">=</span><span class="n">markers</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
+            <span class="n">max_cluster_radius</span><span class="o">=</span><span class="n">max_cluster_radius</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">marker_cluster</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">add_legend</span><span class="p">:</span>
@@ -11836,7 +11859,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
 
 <h3 id="leafmap.leafmap.Map.add_points_from_xy" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_points_from_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Marker Cluster&#39;</span><span class="p">,</span> <span class="n">color_column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;white&#39;</span><span class="p">],</span> <span class="n">icon_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">],</span> <span class="n">spin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_points_from_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Marker Cluster&#39;</span><span class="p">,</span> <span class="n">color_column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">marker_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;white&#39;</span><span class="p">],</span> <span class="n">icon_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">],</span> <span class="n">spin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_cluster_radius</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_points_from_xy" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -11922,6 +11945,19 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <td><p>If True, a legend will be added to the map. Defaults to True.</p></td>
         <td><code>True</code></td>
       </tr>
+      <tr>
+        <td><code>max_cluster_radius</code></td>
+        <td><code>int</code></td>
+        <td><p>The maximum cluster radius. Defaults to 80.</p></td>
+        <td><code>80</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Other keyword arguments to pass to ipyleaflet.MarkerCluster(). For a list of available options,
+see https://github.com/Leaflet/Leaflet.markercluster.</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
@@ -11939,6 +11975,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">icon_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;info&quot;</span><span class="p">],</span>
     <span class="n">spin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">add_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">max_cluster_radius</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a marker cluster to the map.</span>
@@ -11955,6 +11992,9 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 <span class="sd">        icon_names (list, optional): A list of names to be used for the icons. More icons can be found at https://fontawesome.com/v4/icons. Defaults to [&#39;info&#39;].</span>
 <span class="sd">        spin (bool, optional): If True, the icon will spin. Defaults to False.</span>
 <span class="sd">        add_legend (bool, optional): If True, a legend will be added to the map. Defaults to True.</span>
+<span class="sd">        max_cluster_radius (int, optional): The maximum cluster radius. Defaults to 80.</span>
+<span class="sd">        **kwargs: Other keyword arguments to pass to ipyleaflet.MarkerCluster(). For a list of available options,</span>
+<span class="sd">            see https://github.com/Leaflet/Leaflet.markercluster.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -12145,7 +12185,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
             <span class="p">)</span>
             <span class="n">markers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">marker</span><span class="p">)</span>
 
-    <span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">MarkerCluster</span><span class="p">(</span><span class="n">markers</span><span class="o">=</span><span class="n">markers</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span>
+    <span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">MarkerCluster</span><span class="p">(</span>
+        <span class="n">markers</span><span class="o">=</span><span class="n">markers</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
+        <span class="n">max_cluster_radius</span><span class="o">=</span><span class="n">max_cluster_radius</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">marker_cluster</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">items</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">add_legend</span><span class="p">:</span>
