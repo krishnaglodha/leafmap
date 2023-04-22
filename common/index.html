@@ -21,7 +21,7 @@
         <link rel="next" href="../examples/">
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.7">
     
     
       
@@ -81,7 +81,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     
@@ -137,13 +137,17 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </label>
           
         
+          
+          
           
           <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -1846,6 +1850,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.tif_to_jp2" class="md-nav__link">
+    tif_to_jp2()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.tms_to_geotiff" class="md-nav__link">
     tms_to_geotiff()
   </a>
@@ -3282,6 +3293,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/75_segment_anything/" class="md-nav__link">
+        75 segment anything
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4611,6 +4636,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.temp_file_path" class="md-nav__link">
     temp_file_path()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.tif_to_jp2" class="md-nav__link">
+    tif_to_jp2()
   </a>
   
 </li>
@@ -14744,7 +14776,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 <h2 id="leafmap.common.get_stac_collections" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_stac_collections</span><span class="p">(</span><span class="n">url</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">get_stac_collections</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.get_stac_collections" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -14772,6 +14804,13 @@ Credits to Mykola Kozyr.</p>
         <td><p>A URL to a STAC catalog.</p></td>
         <td><em>required</em></td>
       </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the pystac Client.open() method.
+See https://pystac-client.readthedocs.io/en/stable/api.html#pystac_client.Client.open</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -14791,13 +14830,15 @@ Credits to Mykola Kozyr.</p>
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_stac_collections</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_stac_collections</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve a list of STAC collections from a URL.</span>
 <span class="sd">    This function is adapted from https://github.com/mykolakozyr/stacdiscovery/blob/a5d1029aec9c428a7ce7ae615621ea8915162824/app.py#L31.</span>
 <span class="sd">    Credits to Mykola Kozyr.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        url (str): A URL to a STAC catalog.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to pass to the pystac Client.open() method.</span>
+<span class="sd">            See https://pystac-client.readthedocs.io/en/stable/api.html#pystac_client.Client.open</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        list: A list of STAC collections.</span>
@@ -14807,7 +14848,7 @@ Credits to Mykola Kozyr.</p>
     <span class="c1"># Expensive function. Added cache for it.</span>
 
     <span class="c1"># Empty list that would be used for a dataframe to collect and visualize info about collections</span>
-    <span class="n">root_catalog</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">root_catalog</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="n">collections_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># Reading collections in the Catalog</span>
     <span class="n">collections</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">root_catalog</span><span class="o">.</span><span class="n">get_collections</span><span class="p">())</span>
@@ -14835,7 +14876,7 @@ Credits to Mykola Kozyr.</p>
 
 
 <h2 id="leafmap.common.get_stac_items" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_stac_items</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">collection</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datetime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">intersects</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">get_stac_items</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">collection</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datetime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">intersects</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">open_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.get_stac_items" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -14900,6 +14941,18 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
         <td><p>A list of item ids to return.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>open_args</code></td>
+        <td><code>dict</code></td>
+        <td><p>A dictionary of arguments to pass to the pystac Client.open() method. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments to pass to the Catalog.search() method.</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -14927,6 +14980,7 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
     <span class="n">datetime</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">intersects</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">open_args</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve a list of STAC items from a URL and a collection.</span>
@@ -14942,6 +14996,8 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
 <span class="sd">        datetime (str, optional): Single date+time, or a range (&#39;/&#39; separator), formatted to RFC 3339, section 5.6. Use double dots .. for open date ranges.</span>
 <span class="sd">        intersects (dict, optional): A dictionary representing a GeoJSON Geometry. Searches items by performing intersection between their geometry and provided GeoJSON geometry. All GeoJSON geometry types must be supported.</span>
 <span class="sd">        ids (list, optional): A list of item ids to return.</span>
+<span class="sd">        open_args (dict, optional): A dictionary of arguments to pass to the pystac Client.open() method. Defaults to None.</span>
+<span class="sd">        **kwargs: Additional keyword arguments to pass to the Catalog.search() method.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        GeoPandas.GeoDataFraem: A GeoDataFrame with the STAC items.</span>
@@ -14954,6 +15010,10 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
 
     <span class="c1"># Empty list that would be used for a dataframe to collect and visualize info about collections</span>
     <span class="n">items_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">open_args</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">open_args</span> <span class="o">=</span> <span class="p">{}</span>
+
     <span class="n">root_catalog</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">limit</span><span class="p">:</span>
@@ -25120,8 +25180,77 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
 
 
+<h2 id="leafmap.common.tif_to_jp2" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">tif_to_jp2</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.tif_to_jp2" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Converts a GeoTIFF to JPEG2000.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>filename</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the GeoTIFF file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>output</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the output JPEG2000 file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tif_to_jp2</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts a GeoTIFF to JPEG2000.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): The path to the GeoTIFF file.</span>
+<span class="sd">        output (str): The path to the output JPEG2000 file.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">output</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.jp2&quot;</span><span class="p">):</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;.jp2&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+
+    <span class="n">in_ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">in_ds</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;JP2OpenJPEG&quot;</span><span class="p">)</span>
+    <span class="n">in_ds</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.common.tms_to_geotiff" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">tms_to_geotiff</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">,</span> <span class="n">to_cog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">tms_to_geotiff</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">to_cog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.tms_to_geotiff" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -25174,6 +25303,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <td><code>&#39;OpenStreetMap&#39;</code></td>
       </tr>
       <tr>
+        <td><code>crs</code></td>
+        <td><code>str</code></td>
+        <td><p>The coordinate reference system. Defaults to "EPSG:4326".</p></td>
+        <td><code>&#39;EPSG:4326&#39;</code></td>
+      </tr>
+      <tr>
         <td><code>to_cog</code></td>
         <td><code>bool</code></td>
         <td><p>Convert to Cloud Optimized GeoTIFF. Defaults to False.</p></td>
@@ -25201,6 +25336,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">source</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
     <span class="n">to_cog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
@@ -25215,6 +25351,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 <span class="sd">        resolution (float, optional): The resolution in meters. Defaults to None.</span>
 <span class="sd">        source (str, optional): The tile source. It can be one of the following: &quot;OPENSTREETMAP&quot;, &quot;ROADMAP&quot;,</span>
 <span class="sd">            &quot;SATELLITE&quot;, &quot;TERRAIN&quot;, &quot;HYBRID&quot;, or an HTTP URL. Defaults to &quot;OpenStreetMap&quot;.</span>
+<span class="sd">        crs (str, optional): The coordinate reference system. Defaults to &quot;EPSG:4326&quot;.</span>
 <span class="sd">        to_cog (bool, optional): Convert to Cloud Optimized GeoTIFF. Defaults to False.</span>
 <span class="sd">        quiet (bool, optional): Suppress output. Defaults to False.</span>
 <span class="sd">        **kwargs: Additional arguments to pass to gdal.GetDriverByName(&quot;GTiff&quot;).Create().</span>
@@ -25472,7 +25609,9 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">draw_tile</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">south</span><span class="p">,</span> <span class="n">west</span><span class="p">,</span> <span class="n">north</span><span class="p">,</span> <span class="n">east</span><span class="p">,</span> <span class="n">zoom</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">to_cog</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">crs</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;EPSG:4326&quot;</span><span class="p">:</span>
+            <span class="n">reproject</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">to_cog</span><span class="o">=</span><span class="n">to_cog</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">to_cog</span><span class="p">:</span>
             <span class="n">image_to_cog</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
