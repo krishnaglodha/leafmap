@@ -25209,7 +25209,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
 
 <h2 id="leafmap.common.tif_to_jp2" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">tif_to_jp2</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">tif_to_jp2</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">creationOptions</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.tif_to_jp2" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -25241,16 +25241,29 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <td><p>The path to the output JPEG2000 file.</p></td>
         <td><em>required</em></td>
       </tr>
+      <tr>
+        <td><code>creationOptions</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of creation options for the JPEG2000 file. See
+https://gdal.org/drivers/raster/jp2openjpeg.html. For example, to specify the compression
+ratio, use <code>["QUALITY=20"]</code>. A value of 20 means the file will be 20% of the size in comparison
+to uncompressed data.</p></td>
+        <td><code>None</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tif_to_jp2</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">tif_to_jp2</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">creationOptions</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts a GeoTIFF to JPEG2000.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        filename (str): The path to the GeoTIFF file.</span>
 <span class="sd">        output (str): The path to the output JPEG2000 file.</span>
+<span class="sd">        creationOptions (list): A list of creation options for the JPEG2000 file. See</span>
+<span class="sd">            https://gdal.org/drivers/raster/jp2openjpeg.html. For example, to specify the compression</span>
+<span class="sd">            ratio, use ``[&quot;QUALITY=20&quot;]``. A value of 20 means the file will be 20% of the size in comparison</span>
+<span class="sd">            to uncompressed data.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -25263,7 +25276,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
 
     <span class="n">in_ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">in_ds</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;JP2OpenJPEG&quot;</span><span class="p">)</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">in_ds</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;JP2OpenJPEG&quot;</span><span class="p">,</span> <span class="n">creationOptions</span><span class="o">=</span><span class="n">creationOptions</span><span class="p">)</span>
     <span class="n">in_ds</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
@@ -25278,7 +25291,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
 
 <h2 id="leafmap.common.tms_to_geotiff" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">tms_to_geotiff</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">to_cog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">tms_to_geotiff</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">bbox</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span> <span class="n">to_cog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.tms_to_geotiff" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -25333,8 +25346,8 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
       <tr>
         <td><code>crs</code></td>
         <td><code>str</code></td>
-        <td><p>The coordinate reference system. Defaults to "EPSG:4326".</p></td>
-        <td><code>&#39;EPSG:4326&#39;</code></td>
+        <td><p>The coordinate reference system. Defaults to "EPSG:3857".</p></td>
+        <td><code>&#39;EPSG:3857&#39;</code></td>
       </tr>
       <tr>
         <td><code>to_cog</code></td>
@@ -25364,7 +25377,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
     <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">source</span><span class="o">=</span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="p">,</span>
-    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:3857&quot;</span><span class="p">,</span>
     <span class="n">to_cog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">quiet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
@@ -25379,7 +25392,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 <span class="sd">        resolution (float, optional): The resolution in meters. Defaults to None.</span>
 <span class="sd">        source (str, optional): The tile source. It can be one of the following: &quot;OPENSTREETMAP&quot;, &quot;ROADMAP&quot;,</span>
 <span class="sd">            &quot;SATELLITE&quot;, &quot;TERRAIN&quot;, &quot;HYBRID&quot;, or an HTTP URL. Defaults to &quot;OpenStreetMap&quot;.</span>
-<span class="sd">        crs (str, optional): The coordinate reference system. Defaults to &quot;EPSG:4326&quot;.</span>
+<span class="sd">        crs (str, optional): The coordinate reference system. Defaults to &quot;EPSG:3857&quot;.</span>
 <span class="sd">        to_cog (bool, optional): Convert to Cloud Optimized GeoTIFF. Defaults to False.</span>
 <span class="sd">        quiet (bool, optional): Suppress output. Defaults to False.</span>
 <span class="sd">        **kwargs: Additional arguments to pass to gdal.GetDriverByName(&quot;GTiff&quot;).Create().</span>
@@ -25637,7 +25650,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">draw_tile</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">south</span><span class="p">,</span> <span class="n">west</span><span class="p">,</span> <span class="n">north</span><span class="p">,</span> <span class="n">east</span><span class="p">,</span> <span class="n">zoom</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">crs</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;EPSG:4326&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">crs</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">:</span>
             <span class="n">reproject</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">crs</span><span class="p">,</span> <span class="n">to_cog</span><span class="o">=</span><span class="n">to_cog</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">to_cog</span><span class="p">:</span>
             <span class="n">image_to_cog</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
