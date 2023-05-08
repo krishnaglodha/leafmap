@@ -21,7 +21,7 @@
         <link rel="next" href="../examples/">
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
@@ -29,10 +29,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -1273,6 +1273,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.image_client" class="md-nav__link">
     image_client()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.image_comparison" class="md-nav__link">
+    image_comparison()
   </a>
   
 </li>
@@ -3309,6 +3316,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../notebooks/76_image_comparison/" class="md-nav__link">
+        76 image comparison
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4064,6 +4085,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.image_client" class="md-nav__link">
     image_client()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.image_comparison" class="md-nav__link">
+    image_comparison()
   </a>
   
 </li>
@@ -6958,7 +6986,11 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
         <span class="k">if</span> <span class="n">view</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">setExtent</span><span class="p">(</span>
                 <span class="n">arcpy</span><span class="o">.</span><span class="n">Extent</span><span class="p">(</span>
-                    <span class="n">xmin</span><span class="p">,</span> <span class="n">ymin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">ymax</span><span class="p">,</span> <span class="n">spatial_reference</span><span class="o">=</span><span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="mi">4326</span><span class="p">)</span>
+                    <span class="n">xmin</span><span class="p">,</span>
+                    <span class="n">ymin</span><span class="p">,</span>
+                    <span class="n">xmax</span><span class="p">,</span>
+                    <span class="n">ymax</span><span class="p">,</span>
+                    <span class="n">spatial_reference</span><span class="o">=</span><span class="n">arcpy</span><span class="o">.</span><span class="n">SpatialReference</span><span class="p">(</span><span class="mi">4326</span><span class="p">),</span>
                 <span class="p">)</span>
             <span class="p">)</span>
 
@@ -10716,32 +10748,80 @@ on their relationship to the features from this layer.</p></td>
 
 
 <h2 id="leafmap.common.display_html" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">display_html</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">display_html</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;600px&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.display_html" class="headerlink" title="Permanent link">&para;</a></h2>
 
     <div class="doc doc-contents ">
 
-      <p>Display an HTML file in a Jupyter Notebook.</p>
-<p>Args
-    src (str): File path to HTML file.
-    width (int, optional): Width of the map. Defaults to 950.
-    height (int, optional): Height of the map. Defaults to 600.</p>
+      <p>Show an HTML file in a Jupyter notebook.</p>
 
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>filename</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the HTML file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>width</code></td>
+        <td><code>str</code></td>
+        <td><p>The width of the HTML file. Defaults to "100%".</p></td>
+        <td><code>&#39;100%&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>height</code></td>
+        <td><code>str</code></td>
+        <td><p>The height of the HTML file. Defaults to "600px".</p></td>
+        <td><code>&#39;600px&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>IFrame</code></td>
+      <td><p>An IFrame object.</p></td>
+    </tr>
+  </tbody>
+</table>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">display_html</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">950</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display an HTML file in a Jupyter Notebook.</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">display_html</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s2">&quot;600px&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Show an HTML file in a Jupyter notebook.</span>
 
-<span class="sd">    Args</span>
-<span class="sd">        src (str): File path to HTML file.</span>
-<span class="sd">        width (int, optional): Width of the map. Defaults to 950.</span>
-<span class="sd">        height (int, optional): Height of the map. Defaults to 600.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): The path to the HTML file.</span>
+<span class="sd">        width (str, optional): The width of the HTML file. Defaults to &quot;100%&quot;.</span>
+<span class="sd">        height (str, optional): The height of the HTML file. Defaults to &quot;600px&quot;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        IFrame: An IFrame object.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">src</span><span class="si">}</span><span class="s2"> is not a valid file path.&quot;</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> does not exist&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">IFrame</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -16314,6 +16394,358 @@ Available parameters can be found at https://github.com/radiantearth/stac-api-sp
 
     <span class="n">_</span><span class="p">,</span> <span class="n">client</span> <span class="o">=</span> <span class="n">get_local_tile_layer</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">return_client</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">client</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.image_comparison" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">image_comparison</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">label1</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">label2</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">704</span><span class="p">,</span> <span class="n">show_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">starting_position</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">make_responsive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">in_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">out_html</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.image_comparison" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Create a comparison slider for two images. The source code is adapted from
+    https://github.com/fcakyon/streamlit-image-comparison. Credits to the GitHub user @fcakyon.
+    Users can also use https://juxtapose.knightlab.com to create a comparison slider.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>img1</code></td>
+        <td><code>str</code></td>
+        <td><p>Path to the first image. It can be a local file path, a URL, or a numpy array.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>img2</code></td>
+        <td><code>str</code></td>
+        <td><p>Path to the second image. It can be a local file path, a URL, or a numpy array.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>label1</code></td>
+        <td><code>str</code></td>
+        <td><p>Label for the first image. Defaults to "1".</p></td>
+        <td><code>&#39;1&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>label2</code></td>
+        <td><code>str</code></td>
+        <td><p>Label for the second image. Defaults to "2".</p></td>
+        <td><code>&#39;2&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>width</code></td>
+        <td><code>int</code></td>
+        <td><p>Width of the component in pixels. Defaults to 704.</p></td>
+        <td><code>704</code></td>
+      </tr>
+      <tr>
+        <td><code>show_labels</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to show labels on the images. Default is True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>starting_position</code></td>
+        <td><code>int</code></td>
+        <td><p>Starting position of the slider as a percentage (0-100). Default is 50.</p></td>
+        <td><code>50</code></td>
+      </tr>
+      <tr>
+        <td><code>make_responsive</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to enable responsive mode. Default is True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>in_memory</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to handle pillow to base64 conversion in memory without saving to local. Default is True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>out_html</code></td>
+        <td><code>str</code></td>
+        <td><p>Whether to handle pillow to base64 conversion in memory without saving to local. Default is True.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">image_comparison</span><span class="p">(</span>
+    <span class="n">img1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">img2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">label1</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="n">label2</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">704</span><span class="p">,</span>
+    <span class="n">show_labels</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">starting_position</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+    <span class="n">make_responsive</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">in_memory</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">out_html</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a comparison slider for two images. The source code is adapted from</span>
+<span class="sd">        https://github.com/fcakyon/streamlit-image-comparison. Credits to the GitHub user @fcakyon.</span>
+<span class="sd">        Users can also use https://juxtapose.knightlab.com to create a comparison slider.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        img1 (str): Path to the first image. It can be a local file path, a URL, or a numpy array.</span>
+<span class="sd">        img2 (str): Path to the second image. It can be a local file path, a URL, or a numpy array.</span>
+<span class="sd">        label1 (str, optional): Label for the first image. Defaults to &quot;1&quot;.</span>
+<span class="sd">        label2 (str, optional): Label for the second image. Defaults to &quot;2&quot;.</span>
+<span class="sd">        width (int, optional): Width of the component in pixels. Defaults to 704.</span>
+<span class="sd">        show_labels (bool, optional): Whether to show labels on the images. Default is True.</span>
+<span class="sd">        starting_position (int, optional): Starting position of the slider as a percentage (0-100). Default is 50.</span>
+<span class="sd">        make_responsive (bool, optional): Whether to enable responsive mode. Default is True.</span>
+<span class="sd">        in_memory (bool, optional): Whether to handle pillow to base64 conversion in memory without saving to local. Default is True.</span>
+<span class="sd">        out_html (str, optional): Whether to handle pillow to base64 conversion in memory without saving to local. Default is True.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+    <span class="kn">import</span> <span class="nn">base64</span>
+    <span class="kn">import</span> <span class="nn">io</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">uuid</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+    <span class="kn">import</span> <span class="nn">requests</span>
+    <span class="kn">import</span> <span class="nn">tempfile</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+
+    <span class="n">TEMP_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="n">random_string</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">exif_transpose</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transpose a PIL image accordingly if it has an EXIF Orientation tag.</span>
+<span class="sd">        Inplace version of https://github.com/python-pillow/Pillow/blob/master/src/PIL/ImageOps.py exif_transpose()</span>
+<span class="sd">        :param image: The image to transpose.</span>
+<span class="sd">        :return: An image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">exif</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">getexif</span><span class="p">()</span>
+        <span class="n">orientation</span> <span class="o">=</span> <span class="n">exif</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mh">0x0112</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># default 1</span>
+        <span class="k">if</span> <span class="n">orientation</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">method</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="mi">2</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">FLIP_LEFT_RIGHT</span><span class="p">,</span>
+                <span class="mi">3</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">ROTATE_180</span><span class="p">,</span>
+                <span class="mi">4</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">FLIP_TOP_BOTTOM</span><span class="p">,</span>
+                <span class="mi">5</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">TRANSPOSE</span><span class="p">,</span>
+                <span class="mi">6</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">ROTATE_270</span><span class="p">,</span>
+                <span class="mi">7</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">TRANSVERSE</span><span class="p">,</span>
+                <span class="mi">8</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">ROTATE_90</span><span class="p">,</span>
+            <span class="p">}</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">orientation</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+                <span class="k">del</span> <span class="n">exif</span><span class="p">[</span><span class="mh">0x0112</span><span class="p">]</span>
+                <span class="n">image</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">&quot;exif&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">exif</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">image</span>
+
+    <span class="k">def</span> <span class="nf">read_image_as_pil</span><span class="p">(</span>
+        <span class="n">image</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">],</span> <span class="n">exif_fix</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Loads an image as PIL.Image.Image.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            image : Can be image path or url (str), numpy image (np.ndarray) or PIL.Image</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># https://stackoverflow.com/questions/56174099/how-to-load-images-larger-than-max-image-pixels-with-pil</span>
+        <span class="n">Image</span><span class="o">.</span><span class="n">MAX_IMAGE_PIXELS</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span>
+            <span class="n">image_pil</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="c1"># read image if str image path is provided</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+                    <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span>
+                    <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span>
+                    <span class="k">else</span> <span class="n">image</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">exif_fix</span><span class="p">:</span>
+                    <span class="n">image_pil</span> <span class="o">=</span> <span class="n">exif_transpose</span><span class="p">(</span><span class="n">image_pil</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>  <span class="c1"># handle large/tiff image reading</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="kn">import</span> <span class="nn">skimage.io</span>
+                <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+                        <span class="s2">&quot;Please run &#39;pip install -U scikit-image imagecodecs&#39; for large image handling.&quot;</span>
+                    <span class="p">)</span>
+                <span class="n">image_sk</span> <span class="o">=</span> <span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_sk</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># b&amp;w</span>
+                    <span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">image_sk</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">image_sk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>  <span class="c1"># rgba</span>
+                    <span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">image_sk</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;RGBA&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">image_sk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># rgb</span>
+                    <span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">image_sk</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;image with shape: </span><span class="si">{</span><span class="n">image_sk</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> is not supported.&quot;</span>
+                    <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>  <span class="c1"># image in CHW</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:,</span> <span class="p">:,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">image_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;read image with &#39;pillow&#39; using &#39;Image.open()&#39;&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">image_pil</span>
+
+    <span class="k">def</span> <span class="nf">pillow_to_base64</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a PIL image to a base64-encoded string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        image: PIL.Image.Image</span>
+<span class="sd">            The image to be converted.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The base64-encoded string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">in_mem_file</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">()</span>
+        <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">in_mem_file</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;JPEG&quot;</span><span class="p">,</span> <span class="n">subsampling</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">img_bytes</span> <span class="o">=</span> <span class="n">in_mem_file</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>  <span class="c1"># bytes</span>
+        <span class="n">image_str</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">img_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">base64_src</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;data:image/jpg;base64,</span><span class="si">{</span><span class="n">image_str</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">base64_src</span>
+
+    <span class="k">def</span> <span class="nf">local_file_to_base64</span><span class="p">(</span><span class="n">image_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a local image file to a base64-encoded string.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        image_path: str</span>
+<span class="sd">            The path to the image file.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            The base64-encoded string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">file_</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
+        <span class="n">img_bytes</span> <span class="o">=</span> <span class="n">file_</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">image_str</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">img_bytes</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="n">file_</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">base64_src</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;data:image/jpg;base64,</span><span class="si">{</span><span class="n">image_str</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">base64_src</span>
+
+    <span class="k">def</span> <span class="nf">pillow_local_file_to_base64</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">Image</span><span class="o">.</span><span class="n">Image</span><span class="p">,</span> <span class="n">temp_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert a Pillow image to a base64 string, using a temporary file on disk.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        image : PIL.Image.Image</span>
+<span class="sd">            The Pillow image to convert.</span>
+<span class="sd">        temp_dir : str</span>
+<span class="sd">            The directory to use for the temporary file.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        str</span>
+<span class="sd">            A base64-encoded string representing the image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Create temporary file path using os.path.join()</span>
+        <span class="n">img_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span> <span class="o">+</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Save image to temporary file</span>
+        <span class="n">image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="n">subsampling</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="c1"># Convert temporary file to base64 string</span>
+        <span class="n">base64_src</span> <span class="o">=</span> <span class="n">local_file_to_base64</span><span class="p">(</span><span class="n">img_path</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">base64_src</span>
+
+    <span class="c1"># Prepare images</span>
+    <span class="n">img1_pillow</span> <span class="o">=</span> <span class="n">read_image_as_pil</span><span class="p">(</span><span class="n">img1</span><span class="p">)</span>
+    <span class="n">img2_pillow</span> <span class="o">=</span> <span class="n">read_image_as_pil</span><span class="p">(</span><span class="n">img2</span><span class="p">)</span>
+
+    <span class="n">img_width</span><span class="p">,</span> <span class="n">img_height</span> <span class="o">=</span> <span class="n">img1_pillow</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">h_to_w</span> <span class="o">=</span> <span class="n">img_height</span> <span class="o">/</span> <span class="n">img_width</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">width</span> <span class="o">*</span> <span class="n">h_to_w</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.95</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">in_memory</span><span class="p">:</span>
+        <span class="c1"># Convert images to base64 strings</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">pillow_to_base64</span><span class="p">(</span><span class="n">img1_pillow</span><span class="p">)</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="n">pillow_to_base64</span><span class="p">(</span><span class="n">img2_pillow</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Create base64 strings from temporary files</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file_</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">file_</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.jpg&quot;</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">,</span> <span class="n">file_</span><span class="p">))</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">pillow_local_file_to_base64</span><span class="p">(</span><span class="n">img1_pillow</span><span class="p">,</span> <span class="n">TEMP_DIR</span><span class="p">)</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="n">pillow_local_file_to_base64</span><span class="p">(</span><span class="n">img2_pillow</span><span class="p">,</span> <span class="n">TEMP_DIR</span><span class="p">)</span>
+
+    <span class="c1"># Load CSS and JS</span>
+    <span class="n">cdn_path</span> <span class="o">=</span> <span class="s2">&quot;https://cdn.knightlab.com/libs/juxtapose/latest&quot;</span>
+    <span class="n">css_block</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;link rel=&quot;stylesheet&quot; href=&quot;</span><span class="si">{</span><span class="n">cdn_path</span><span class="si">}</span><span class="s1">/css/juxtapose.css&quot;&gt;&#39;</span>
+    <span class="n">js_block</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;script src=&quot;</span><span class="si">{</span><span class="n">cdn_path</span><span class="si">}</span><span class="s1">/js/juxtapose.min.js&quot;&gt;&lt;/script&gt;&#39;</span>
+
+    <span class="c1"># write html block</span>
+    <span class="n">htmlcode</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;html&gt;</span>
+<span class="s2">        &lt;head&gt;</span>
+<span class="s2">        &lt;style&gt;body </span><span class="se">{{</span><span class="s2"> margin: unset; </span><span class="se">}}</span><span class="s2">&lt;/style&gt;</span>
+<span class="s2">        </span><span class="si">{</span><span class="n">css_block</span><span class="si">}</span>
+<span class="s2">        </span><span class="si">{</span><span class="n">js_block</span><span class="si">}</span>
+<span class="s2">        &lt;div id=&quot;foo&quot; style=&quot;height: </span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s2">; width: </span><span class="si">{</span><span class="n">width</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">&#39;100%&#39;</span><span class="si">}</span><span class="s2">;&quot;&gt;&lt;/div&gt;</span>
+<span class="s2">        &lt;script&gt;</span>
+<span class="s2">        slider = new juxtapose.JXSlider(&#39;#foo&#39;,</span>
+<span class="s2">            [</span>
+<span class="s2">                </span><span class="se">{{</span>
+<span class="s2">                    src: &#39;</span><span class="si">{</span><span class="n">img1</span><span class="si">}</span><span class="s2">&#39;,</span>
+<span class="s2">                    label: &#39;</span><span class="si">{</span><span class="n">label1</span><span class="si">}</span><span class="s2">&#39;,</span>
+<span class="s2">                </span><span class="se">}}</span><span class="s2">,</span>
+<span class="s2">                </span><span class="se">{{</span>
+<span class="s2">                    src: &#39;</span><span class="si">{</span><span class="n">img2</span><span class="si">}</span><span class="s2">&#39;,</span>
+<span class="s2">                    label: &#39;</span><span class="si">{</span><span class="n">label2</span><span class="si">}</span><span class="s2">&#39;,</span>
+<span class="s2">                </span><span class="se">}}</span>
+<span class="s2">            ],</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                animate: true,</span>
+<span class="s2">                showLabels: </span><span class="si">{</span><span class="s1">&#39;true&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">show_labels</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="si">}</span><span class="s2">,</span>
+<span class="s2">                showCredits: true,</span>
+<span class="s2">                startingPosition: &quot;</span><span class="si">{</span><span class="n">starting_position</span><span class="si">}</span><span class="s2">%&quot;,</span>
+<span class="s2">                makeResponsive: </span><span class="si">{</span><span class="s1">&#39;true&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">make_responsive</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;false&#39;</span><span class="si">}</span><span class="s2">,</span>
+<span class="s2">            </span><span class="se">}}</span><span class="s2">);</span>
+<span class="s2">        &lt;/script&gt;</span>
+<span class="s2">        &lt;/head&gt;</span>
+<span class="s2">        &lt;/html&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">out_html</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_html</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">htmlcode</span><span class="p">)</span>
+
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">)</span>
+
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">htmlcode</span><span class="p">))</span>
 </code></pre></div>
         </details>
     </div>
@@ -27562,7 +27994,7 @@ meaningful property names.. Defaults to False.</p></td>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
       
         <script src="../js/timeago.min.js"></script>
       
