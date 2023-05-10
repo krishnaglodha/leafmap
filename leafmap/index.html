@@ -21,7 +21,7 @@
         <link rel="next" href="../legends/">
       
       <link rel="icon" href="../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
@@ -1009,6 +1009,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.basemap_demo" class="md-nav__link">
     basemap_demo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.clear_drawings" class="md-nav__link">
+    clear_drawings()
   </a>
   
 </li>
@@ -2958,6 +2965,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.clear_drawings" class="md-nav__link">
+    clear_drawings()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.edit_vector" class="md-nav__link">
     edit_vector()
   </a>
@@ -3462,16 +3476,35 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="k">if</span> <span class="s2">&quot;draw_control&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;draw_control&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="s2">&quot;repeat_mode&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">repeat_mode</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">repeat_mode</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;repeat_mode&quot;</span><span class="p">]</span>
+            <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;repeat_mode&quot;</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;draw_control&quot;</span><span class="p">]:</span>
             <span class="n">draw_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">DrawControl</span><span class="p">(</span>
-                <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shapeOptions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#3388ff&quot;</span><span class="p">}},</span>
-                <span class="n">rectangle</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shapeOptions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#3388ff&quot;</span><span class="p">}},</span>
-                <span class="n">circle</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shapeOptions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#3388ff&quot;</span><span class="p">}},</span>
-                <span class="n">circlemarker</span><span class="o">=</span><span class="p">{},</span>
+                <span class="n">polyline</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;repeatMode&quot;</span><span class="p">:</span> <span class="n">repeat_mode</span><span class="p">},</span>
+                <span class="n">polygon</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;repeatMode&quot;</span><span class="p">:</span> <span class="n">repeat_mode</span><span class="p">},</span>
+                <span class="n">marker</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;shapeOptions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#3388ff&quot;</span><span class="p">},</span>
+                    <span class="s2">&quot;repeatMode&quot;</span><span class="p">:</span> <span class="n">repeat_mode</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">rectangle</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;shapeOptions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#3388ff&quot;</span><span class="p">},</span>
+                    <span class="s2">&quot;repeatMode&quot;</span><span class="p">:</span> <span class="n">repeat_mode</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="n">circle</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;shapeOptions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#3388ff&quot;</span><span class="p">},</span>
+                    <span class="s2">&quot;repeatMode&quot;</span><span class="p">:</span> <span class="n">repeat_mode</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="c1"># circlemarker={&quot;repeatMode&quot;: repeat_mode},</span>
                 <span class="n">edit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="n">remove</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span>
             <span class="p">)</span>
+            <span class="n">draw_control</span><span class="o">.</span><span class="n">circlemarker</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">draw_control</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">draw_control</span> <span class="o">=</span> <span class="n">draw_control</span>
 
@@ -4184,6 +4217,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
@@ -4196,6 +4230,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            shown (bool, optional): A flag indicating whether the layer should be on by default. Defaults to True.</span>
 <span class="sd">            bands (list, optional): A list of bands to use for the layer. Defaults to None.</span>
 <span class="sd">            titiler_endpoint (str, optional): Titiler endpoint. Defaults to &quot;https://titiler.xyz&quot;.</span>
+<span class="sd">            zoom_to_layer (bool, optional): Whether to zoom to the layer extent. Defaults to True.</span>
 <span class="sd">            **kwargs: Arbitrary keyword arguments, including bidx, expression, nodata, unscale, resampling, rescale,</span>
 <span class="sd">                color_formula, colormap, colormap_name, return_mask. See https://developmentseed.org/titiler/endpoints/cog/</span>
 <span class="sd">                and https://cogeotiff.github.io/rio-tiler/colormap/. To select a certain bands, use bidx=[1, 2, 3].</span>
@@ -4204,8 +4239,9 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">tile_url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">bands</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="n">bounds</span> <span class="o">=</span> <span class="n">cog_bounds</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">tile_url</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribution</span><span class="p">,</span> <span class="n">opacity</span><span class="p">,</span> <span class="n">shown</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
-        <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
+            <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cog_layer_dict&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cog_layer_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -5190,6 +5226,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
+        <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
@@ -5208,6 +5245,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            nodata (float, optional): The value from the band to use to interpret as not valid data. Defaults to None.</span>
 <span class="sd">            attribution (str, optional): Attribution for the source raster. This defaults to a message about it being a local file.. Defaults to None.</span>
 <span class="sd">            layer_name (str, optional): The layer name to use. Defaults to &#39;Local COG&#39;.</span>
+<span class="sd">            zoom_to_layer (bool, optional): Whether to zoom to the extent of the layer. Defaults to True.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">tile_layer</span><span class="p">,</span> <span class="n">tile_client</span> <span class="o">=</span> <span class="n">get_local_tile_layer</span><span class="p">(</span>
@@ -5232,10 +5270,12 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
             <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
         <span class="p">)</span>  <span class="c1"># [minx, miny, maxx, maxy]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
         <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">tile_layer</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-        <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+            <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cog_layer_dict&quot;</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cog_layer_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -7235,6 +7275,13 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">catalog_source</span> <span class="o">=</span> <span class="p">{}</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_STAC_CATALOGS</span> <span class="o">=</span> <span class="n">source</span>
+
+    <span class="k">def</span> <span class="nf">clear_drawings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear drawings on the map.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_control</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_features</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_rois</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_roi</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
 
@@ -7575,7 +7622,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
 
 <h3 id="leafmap.leafmap.Map.add_cog_layer" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_cog_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_cog_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_cog_layer" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -7638,6 +7685,12 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <td><code>None</code></td>
       </tr>
       <tr>
+        <td><code>zoom_to_layer</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to zoom to the layer extent. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
         <td><code>**kwargs</code></td>
         <td></td>
         <td><p>Arbitrary keyword arguments, including bidx, expression, nodata, unscale, resampling, rescale,
@@ -7659,6 +7712,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">shown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">bands</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">titiler_endpoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a COG TileLayer to the map.</span>
@@ -7671,6 +7725,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
 <span class="sd">        shown (bool, optional): A flag indicating whether the layer should be on by default. Defaults to True.</span>
 <span class="sd">        bands (list, optional): A list of bands to use for the layer. Defaults to None.</span>
 <span class="sd">        titiler_endpoint (str, optional): Titiler endpoint. Defaults to &quot;https://titiler.xyz&quot;.</span>
+<span class="sd">        zoom_to_layer (bool, optional): Whether to zoom to the layer extent. Defaults to True.</span>
 <span class="sd">        **kwargs: Arbitrary keyword arguments, including bidx, expression, nodata, unscale, resampling, rescale,</span>
 <span class="sd">            color_formula, colormap, colormap_name, return_mask. See https://developmentseed.org/titiler/endpoints/cog/</span>
 <span class="sd">            and https://cogeotiff.github.io/rio-tiler/colormap/. To select a certain bands, use bidx=[1, 2, 3].</span>
@@ -7679,8 +7734,9 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
     <span class="n">tile_url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">bands</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="n">bounds</span> <span class="o">=</span> <span class="n">cog_bounds</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">titiler_endpoint</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">tile_url</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribution</span><span class="p">,</span> <span class="n">opacity</span><span class="p">,</span> <span class="n">shown</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
-    <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">]]])</span>
+        <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cog_layer_dict&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cog_layer_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -9917,7 +9973,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
 
 <h3 id="leafmap.leafmap.Map.add_local_tile" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_local_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Local COG&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_local_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Local COG&#39;</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_local_tile" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -9991,6 +10047,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <td><p>The layer name to use. Defaults to 'Local COG'.</p></td>
         <td><code>&#39;Local COG&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>zoom_to_layer</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to zoom to the extent of the layer. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
@@ -10005,6 +10067,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
+    <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
@@ -10023,6 +10086,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="sd">        nodata (float, optional): The value from the band to use to interpret as not valid data. Defaults to None.</span>
 <span class="sd">        attribution (str, optional): Attribution for the source raster. This defaults to a message about it being a local file.. Defaults to None.</span>
 <span class="sd">        layer_name (str, optional): The layer name to use. Defaults to &#39;Local COG&#39;.</span>
+<span class="sd">        zoom_to_layer (bool, optional): Whether to zoom to the extent of the layer. Defaults to True.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">tile_layer</span><span class="p">,</span> <span class="n">tile_client</span> <span class="o">=</span> <span class="n">get_local_tile_layer</span><span class="p">(</span>
@@ -10047,10 +10111,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
         <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
     <span class="p">)</span>  <span class="c1"># [minx, miny, maxx, maxy]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
     <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">tile_layer</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-    <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+        <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cog_layer_dict&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cog_layer_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -12247,7 +12313,7 @@ see https://github.com/Leaflet/Leaflet.markercluster.</p></td>
 
 
 <h3 id="leafmap.leafmap.Map.add_raster" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Local COG&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_raster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Local COG&#39;</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_raster" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -12321,6 +12387,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <td><p>The layer name to use. Defaults to 'Local COG'.</p></td>
         <td><code>&#39;Local COG&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>zoom_to_layer</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to zoom to the extent of the layer. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
   </tbody>
 </table>
         <details class="quote">
@@ -12335,6 +12407,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">attribution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Local COG&quot;</span><span class="p">,</span>
+    <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
@@ -12353,6 +12426,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="sd">        nodata (float, optional): The value from the band to use to interpret as not valid data. Defaults to None.</span>
 <span class="sd">        attribution (str, optional): Attribution for the source raster. This defaults to a message about it being a local file.. Defaults to None.</span>
 <span class="sd">        layer_name (str, optional): The layer name to use. Defaults to &#39;Local COG&#39;.</span>
+<span class="sd">        zoom_to_layer (bool, optional): Whether to zoom to the extent of the layer. Defaults to True.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">tile_layer</span><span class="p">,</span> <span class="n">tile_client</span> <span class="o">=</span> <span class="n">get_local_tile_layer</span><span class="p">(</span>
@@ -12377,10 +12451,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
         <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
     <span class="p">)</span>  <span class="c1"># [minx, miny, maxx, maxy]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
 
     <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">tile_layer</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
-    <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">zoom_to_layer</span><span class="p">:</span>
+        <span class="n">arc_zoom_to_extent</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;cog_layer_dict&quot;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cog_layer_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -14515,6 +14591,36 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
     <span class="n">basemap_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">dropdown</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">basemap_control</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.clear_drawings" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">clear_drawings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.clear_drawings" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Clear drawings on the map.</p>
+
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">clear_drawings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Clear drawings on the map.&quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">draw_control</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">draw_features</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">user_rois</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">user_roi</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
     </div>
