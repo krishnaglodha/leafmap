@@ -21,7 +21,7 @@
         <link rel="next" href="../34_add_points_from_xy/">
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -2993,7 +2993,7 @@ Licensed under the Apache License, Version 2.0.
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --><div class="jupyter-wrapper">
-<div id="cell-id=3b48d0b1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d6b430d6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3010,7 +3010,7 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=28f51e9f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=8b0b9a22" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3042,7 +3042,7 @@ Licensed under the Apache License, Version 2.0.
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=7ff061bf" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=9865d9f7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3076,7 +3076,7 @@ from leafmap import leafmap</div>
 
 </div>
 </div>
-<div id="cell-id=34c32713" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=45e364e5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3089,7 +3089,7 @@ from leafmap import leafmap</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=d9704661" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=7dc87ac4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3109,13 +3109,15 @@ from leafmap import leafmap</div>
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;06Q1fSz.png&#39;</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;weather.png&#39;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://opengeos.github.io/data/images/weather.png&#39;</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="n">leafmap</span><span class="o">.</span><span class="n">download_from_url</span><span class="p">(</span><span class="s2">&quot;https://i.imgur.com/06Q1fSz.png&quot;</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
+    <span class="n">leafmap</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">filepath = '06Q1fSz.png'
+<div id="cell-3" class="clipboard-copy-txt">filepath = 'weather.png'
+url = 'https://opengeos.github.io/data/images/weather.png'
 if not os.path.exists(filepath):
-    leafmap.download_from_url("https://i.imgur.com/06Q1fSz.png", filepath)</div>
+    leafmap.download_file(url, filepath)</div>
         
         </div>
     </div>
@@ -3134,9 +3136,11 @@ if not os.path.exists(filepath):
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Downloading https://i.imgur.com/06Q1fSz.png ...
-Data downloaded to: /home/runner/work/leafmap/leafmap/docs/notebooks/06Q1fSz.png
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Downloading...
+From: https://opengeos.github.io/data/images/weather.png
+To: /home/runner/work/leafmap/leafmap/docs/notebooks/weather.png
+100%|██████████| 489k/489k [00:00&lt;00:00, 8.30MB/s]
 </pre>
 </div>
 </div>
@@ -3147,7 +3151,7 @@ Data downloaded to: /home/runner/work/leafmap/leafmap/docs/notebooks/06Q1fSz.png
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=2c7c22a1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=9760e88f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3203,12 +3207,12 @@ m</div>
 
 
 
-<div id="937a77ed-0cbb-432b-a601-6b37dda94e4f" class="jupyter-widgets jp-OutputArea-output ">
+<div id="a1ad544e-0ed7-4b64-bfd1-c935aaf14f0a" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('937a77ed-0cbb-432b-a601-6b37dda94e4f');
+var element = document.getElementById('a1ad544e-0ed7-4b64-bfd1-c935aaf14f0a');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ffcf5363dc614391a61113fde7ca65cd"}
+{"version_major": 2, "version_minor": 0, "model_id": "7cc9832cc9e14a11ac791bfce02b0dd3"}
 </script>
 </div>
 
@@ -3220,7 +3224,7 @@ var element = document.getElementById('937a77ed-0cbb-432b-a601-6b37dda94e4f');
 
 </div>
 </div>
-<div id="cell-id=8c08bc41" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6bcdc785" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3232,7 +3236,7 @@ var element = document.getElementById('937a77ed-0cbb-432b-a601-6b37dda94e4f');
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div id="cell-id=6c420934" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div id="cell-id=54a209b9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3255,7 +3259,7 @@ var element = document.getElementById('937a77ed-0cbb-432b-a601-6b37dda94e4f');
             <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="o">-</span><span class="mi">115</span><span class="p">),</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="n">image</span> <span class="o">=</span> <span class="n">leafmap</span><span class="o">.</span><span class="n">ImageOverlay</span><span class="p">(</span>
-    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://i.imgur.com/06Q1fSz.png&quot;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">((</span><span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">130</span><span class="p">),</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">))</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">((</span><span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">130</span><span class="p">),</span> <span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">))</span>
 <span class="p">)</span>
 
 <span class="n">m</span><span class="o">.</span><span class="n">add_layer</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
@@ -3264,7 +3268,7 @@ var element = document.getElementById('937a77ed-0cbb-432b-a601-6b37dda94e4f');
 <div id="cell-5" class="clipboard-copy-txt">m = leafmap.Map(center=(25, -115), zoom=4)
 
 image = leafmap.ImageOverlay(
-    url="https://i.imgur.com/06Q1fSz.png", bounds=((13, -130), (32, -100))
+    url=url, bounds=((13, -130), (32, -100))
 )
 
 m.add_layer(image)
@@ -3292,12 +3296,12 @@ m</div>
 
 
 
-<div id="eb815bfc-e59d-4a52-b095-9561b523998b" class="jupyter-widgets jp-OutputArea-output ">
+<div id="42f4337e-473a-433b-ac87-6f532d048eb1" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('eb815bfc-e59d-4a52-b095-9561b523998b');
+var element = document.getElementById('42f4337e-473a-433b-ac87-6f532d048eb1');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "9823dd9a6eaf4dbb9663d05587ed6006"}
+{"version_major": 2, "version_minor": 0, "model_id": "c03572032f614690a97f6721ac50f0f8"}
 </script>
 </div>
 
@@ -3309,7 +3313,7 @@ var element = document.getElementById('eb815bfc-e59d-4a52-b095-9561b523998b');
 
 </div>
 </div>
-<div id="cell-id=c462df93" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1200fff9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3321,7 +3325,7 @@ var element = document.getElementById('eb815bfc-e59d-4a52-b095-9561b523998b');
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div id="cell-id=5037b1a4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div id="cell-id=7e0d89b0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3341,9 +3345,9 @@ var element = document.getElementById('eb815bfc-e59d-4a52-b095-9561b523998b');
                     </div>
                 </clipboard-copy>
             </div>
-            <div class="highlight-ipynb hl-python "><pre><span></span><span class="n">image</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://i.imgur.com/J9qCf4E.png&quot;</span>
+            <div class="highlight-ipynb hl-python "><pre><span></span><span class="c1"># image.url = &quot;https://i.imgur.com/J9qCf4E.png&quot;</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">image.url = "https://i.imgur.com/J9qCf4E.png"</div>
+<div id="cell-6" class="clipboard-copy-txt"># image.url = "https://i.imgur.com/J9qCf4E.png"</div>
         
         </div>
     </div>
@@ -3362,7 +3366,7 @@ var element = document.getElementById('eb815bfc-e59d-4a52-b095-9561b523998b');
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-04-05T04:23:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-04-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-05-21T02:13:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-05-21</span>
       
         <br>
         Created:
@@ -3423,7 +3427,7 @@ var element = document.getElementById('eb815bfc-e59d-4a52-b095-9561b523998b');
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
