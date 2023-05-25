@@ -25193,6 +25193,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="kn">import</span> <span class="nn">shapefile</span>
 
         <span class="n">in_shp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">in_shp</span><span class="p">)</span>
+        <span class="n">out_shp</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="n">out_json</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">out_json</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
@@ -25215,7 +25216,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">in_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">in_shp</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
                 <span class="n">out_gdf</span> <span class="o">=</span> <span class="n">in_gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="s2">&quot;4326&quot;</span><span class="p">)</span>
-                <span class="n">out_shp</span> <span class="o">=</span> <span class="n">in_shp</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.shp&quot;</span><span class="p">,</span> <span class="s2">&quot;_gcs.shp&quot;</span><span class="p">)</span>
+                <span class="n">out_shp</span> <span class="o">=</span> <span class="n">temp_file_path</span><span class="p">(</span><span class="s2">&quot;.shp&quot;</span><span class="p">)</span>
                 <span class="n">out_gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">out_shp</span><span class="p">)</span>
                 <span class="n">in_shp</span> <span class="o">=</span> <span class="n">out_shp</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -25227,6 +25228,12 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="k">else</span><span class="p">:</span>
             <span class="n">reader</span> <span class="o">=</span> <span class="n">shapefile</span><span class="o">.</span><span class="n">Reader</span><span class="p">(</span><span class="n">in_shp</span><span class="p">)</span>
         <span class="n">out_dict</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">__geo_interface__</span>
+
+        <span class="k">if</span> <span class="n">out_shp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_shp</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">delete_shp</span><span class="p">(</span><span class="n">out_shp</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
 
         <span class="k">if</span> <span class="n">out_json</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">json</span>
@@ -25848,7 +25855,7 @@ to uncompressed data.</p></td>
       <tr>
         <td><code>bbox</code></td>
         <td><code>list</code></td>
-        <td><p>The bounding box [minx, miny, maxx, maxy], e.g., [-122.5216, 37.733, -122.3661, 37.8095]</p></td>
+        <td><p>The bounding box [minx, miny, maxx, maxy] coordinates in EPSG:4326, e.g., [-122.5216, 37.733, -122.3661, 37.8095]</p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
@@ -25914,7 +25921,7 @@ to uncompressed data.</p></td>
 
 <span class="sd">    Args:</span>
 <span class="sd">        output (str): The output GeoTIFF file.</span>
-<span class="sd">        bbox (list): The bounding box [minx, miny, maxx, maxy], e.g., [-122.5216, 37.733, -122.3661, 37.8095]</span>
+<span class="sd">        bbox (list): The bounding box [minx, miny, maxx, maxy] coordinates in EPSG:4326, e.g., [-122.5216, 37.733, -122.3661, 37.8095]</span>
 <span class="sd">        zoom (int, optional): The map zoom level. Defaults to None.</span>
 <span class="sd">        resolution (float, optional): The resolution in meters. Defaults to None.</span>
 <span class="sd">        source (str, optional): The tile source. It can be one of the following: &quot;OPENSTREETMAP&quot;, &quot;ROADMAP&quot;,</span>
