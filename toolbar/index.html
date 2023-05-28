@@ -559,20 +559,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../heremap/" class="md-nav__link">
-        heremap module
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../kepler/" class="md-nav__link">
         kepler module
       </a>
@@ -7515,7 +7501,7 @@
 
 
 <h2 id="leafmap.toolbar.stac_custom_gui" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">stac_custom_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">stac_custom_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.toolbar.stac_custom_gui" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -7541,6 +7527,12 @@
         <td><p>The leaflet Map object. Defaults to None.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td></td>
+        <td><p>Additional keyword arguments that will be passed to the pystac Client.open() function.</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -7560,11 +7552,12 @@
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/toolbar.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_custom_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_custom_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates a tool GUI template using ipywidgets.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        m (leafmap.Map, optional): The leaflet Map object. Defaults to None.</span>
+<span class="sd">        **kwargs: Additional keyword arguments that will be passed to the pystac Client.open() function.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        ipywidgets: The tool GUI widget.</span>
@@ -7947,7 +7940,9 @@
                     <span class="n">collection</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
                     <span class="n">collection</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
 
-                    <span class="n">collections</span> <span class="o">=</span> <span class="n">stac_collections</span><span class="p">(</span><span class="n">endpoint</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">collections</span> <span class="o">=</span> <span class="n">stac_collections</span><span class="p">(</span>
+                        <span class="n">endpoint</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+                    <span class="p">)</span>
                     <span class="k">if</span> <span class="n">collections</span><span class="p">:</span>
                         <span class="n">collections</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
                         <span class="n">collection</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">collections</span>
@@ -8038,7 +8033,7 @@
                             <span class="n">collections</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">_STAC_COLLECTIONS</span><span class="p">[</span><span class="n">catalog</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="n">collections</span> <span class="o">=</span> <span class="n">stac_collections</span><span class="p">(</span>
-                                <span class="n">endpoint</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span>
+                                <span class="n">endpoint</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">return_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
                             <span class="p">)</span>
 
                         <span class="k">if</span> <span class="n">collections</span><span class="p">:</span>
@@ -8107,6 +8102,7 @@
                             <span class="n">intersects</span><span class="o">=</span><span class="n">intersects</span><span class="p">,</span>
                             <span class="n">datetime</span><span class="o">=</span><span class="n">datetime</span><span class="p">,</span>
                             <span class="o">**</span><span class="n">query</span><span class="p">,</span>
+                            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
                         <span class="p">)</span>
                         <span class="n">search_dict</span> <span class="o">=</span> <span class="n">stac_search_to_dict</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
                         <span class="n">item</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">search_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -8267,7 +8263,7 @@
 
 
 <h2 id="leafmap.toolbar.stac_gui" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">stac_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">stac_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.toolbar.stac_gui" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -8312,7 +8308,7 @@
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/toolbar.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates a tool GUI template using ipywidgets.</span>
 
 <span class="sd">    Args:</span>
@@ -8332,7 +8328,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid STAC_CATALOGS environment variable.&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;_STAC_CATALOGS&quot;</span><span class="p">):</span>
-        <span class="n">stac_custom_gui</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="n">stac_custom_gui</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">return</span>
 
     <span class="n">widget_width</span> <span class="o">=</span> <span class="s2">&quot;450px&quot;</span>
