@@ -629,6 +629,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add" class="md-nav__link">
+    add()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_basemap" class="md-nav__link">
     add_basemap()
   </a>
@@ -1203,6 +1210,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.leafmap.geojson_layer" class="md-nav__link">
     geojson_layer()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.leafmap.get_basemap" class="md-nav__link">
+    get_basemap()
   </a>
   
 </li>
@@ -2580,6 +2594,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add" class="md-nav__link">
+    add()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_basemap" class="md-nav__link">
     add_basemap()
   </a>
@@ -3159,6 +3180,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.leafmap.get_basemap" class="md-nav__link">
+    get_basemap()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.leafmap.linked_maps" class="md-nav__link">
     linked_maps()
   </a>
@@ -3396,6 +3424,10 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">if</span> <span class="s2">&quot;scroll_wheel_zoom&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;scroll_wheel_zoom&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
+        <span class="k">if</span> <span class="s2">&quot;basemap&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;basemap&quot;</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;basemap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;basemap&quot;</span><span class="p">])</span>
+
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">baseclass</span> <span class="o">=</span> <span class="s2">&quot;ipyleaflet&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span> <span class="o">=</span> <span class="kc">None</span>
@@ -3552,24 +3584,6 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;OpenStreetMap&quot;</span>
 
-        <span class="k">if</span> <span class="s2">&quot;google_map&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-            <span class="k">pass</span>
-        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;google_map&quot;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;google_map&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ROADMAP&quot;</span><span class="p">:</span>
-                <span class="n">layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;google_map&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;HYBRID&quot;</span><span class="p">:</span>
-                <span class="n">layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;HYBRID&quot;</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;google_map&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;TERRAIN&quot;</span><span class="p">:</span>
-                <span class="n">layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;TERRAIN&quot;</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;google_map&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SATELLITE&quot;</span><span class="p">:</span>
-                <span class="n">layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;SATELLITE&quot;</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;google_map&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> is invalid. google_map must be one of: [&quot;ROADMAP&quot;, &quot;HYBRID&quot;, &quot;TERRAIN&quot;, &quot;SATELLITE&quot;]. Adding the default ROADMAP.&#39;</span>
-                <span class="p">)</span>
-                <span class="n">layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
-
         <span class="k">if</span> <span class="s2">&quot;toolbar_control&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
             <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;toolbar_control&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;toolbar_control&quot;</span><span class="p">]:</span>
@@ -3582,6 +3596,18 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="k">if</span> <span class="s2">&quot;catalog_source&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_catalog_source</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;catalog_source&quot;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            layer (object): The layer to add to the map.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="nb">object</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Centers the map view at a given coordinates with the given zoom level.</span>
@@ -3668,6 +3694,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
         <span class="k">try</span><span class="p">:</span>
             <span class="n">layer_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_layer_names</span><span class="p">()</span>
+
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">basemap</span><span class="p">,</span> <span class="n">xyzservices</span><span class="o">.</span><span class="n">TileProvider</span><span class="p">):</span>
                 <span class="n">name</span> <span class="o">=</span> <span class="n">basemap</span><span class="o">.</span><span class="n">name</span>
                 <span class="n">url</span> <span class="o">=</span> <span class="n">basemap</span><span class="o">.</span><span class="n">build_url</span><span class="p">()</span>
@@ -3687,7 +3714,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
                 <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">basemaps</span> <span class="ow">and</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">layer_names</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">basemap</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="n">show</span>
                 <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">]</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">basemap</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">basemaps</span> <span class="ow">and</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">layer_names</span><span class="p">:</span>
@@ -3699,7 +3726,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                     <span class="p">)</span>
                 <span class="p">)</span>
 
-        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                 <span class="s2">&quot;Basemap can only be one of the following:</span><span class="se">\n</span><span class="s2">  </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                     <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -4340,13 +4367,13 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            zoom (int, optional): Initial map zoom level. Defaults to 5.</span>
 <span class="sd">            position (str, optional): Position of the minimap. Defaults to &quot;bottomright&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_basemap</span><span class="p">(</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">)]</span>
         <span class="n">minimap</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
             <span class="n">zoom_control</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">attribution_control</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">zoom</span><span class="o">=</span><span class="n">zoom</span><span class="p">,</span>
             <span class="n">center</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">,</span>
-            <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">]],</span>
+            <span class="n">layers</span><span class="o">=</span><span class="n">layers</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">minimap</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s2">&quot;150px&quot;</span>
         <span class="n">minimap</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="s2">&quot;150px&quot;</span>
@@ -4507,7 +4534,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="n">right_name</span> <span class="o">=</span> <span class="s2">&quot;Right Layer&quot;</span>
 
             <span class="k">if</span> <span class="n">left_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="n">left_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">left_layer</span><span class="p">]</span>
+                <span class="n">left_layer</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">left_layer</span><span class="p">)</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                     <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="o">**</span><span class="n">left_args</span><span class="p">)</span>
@@ -4565,7 +4592,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="p">)</span>
 
             <span class="k">if</span> <span class="n">right_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="n">right_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">right_layer</span><span class="p">]</span>
+                <span class="n">right_layer</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">right_layer</span><span class="p">)</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">right_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                     <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span>
@@ -4669,7 +4696,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="k">def</span> <span class="nf">on_click</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
             <span class="n">basemap_name</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
             <span class="n">old_basemap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">substitute_layer</span><span class="p">(</span><span class="n">old_basemap</span><span class="p">,</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">basemap_name</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">substitute_layer</span><span class="p">(</span><span class="n">old_basemap</span><span class="p">,</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">basemap_name</span><span class="p">))</span>
 
         <span class="n">dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
         <span class="n">basemap_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">dropdown</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">)</span>
@@ -7288,6 +7315,60 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
 
 
+<h3 id="leafmap.leafmap.Map.add" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds a layer to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>layer</code></td>
+        <td><code>object</code></td>
+        <td><p>The layer to add to the map.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">object</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a layer to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        layer (object): The layer to add to the map.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h3 id="leafmap.leafmap.Map.add_basemap" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">add_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basemap</span><span class="o">=</span><span class="s1">&#39;HYBRID&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -7343,6 +7424,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 
     <span class="k">try</span><span class="p">:</span>
         <span class="n">layer_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_layer_names</span><span class="p">()</span>
+
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">basemap</span><span class="p">,</span> <span class="n">xyzservices</span><span class="o">.</span><span class="n">TileProvider</span><span class="p">):</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">basemap</span><span class="o">.</span><span class="n">name</span>
             <span class="n">url</span> <span class="o">=</span> <span class="n">basemap</span><span class="o">.</span><span class="n">build_url</span><span class="p">()</span>
@@ -7362,7 +7444,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
             <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">basemaps</span> <span class="ow">and</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">layer_names</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">basemap</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="n">show</span>
             <span class="n">arc_add_layer</span><span class="p">(</span><span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">]</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">basemap</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">basemap</span> <span class="ow">in</span> <span class="n">basemaps</span> <span class="ow">and</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">basemap</span><span class="p">]</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">layer_names</span><span class="p">:</span>
@@ -7374,7 +7456,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="p">)</span>
             <span class="p">)</span>
 
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
             <span class="s2">&quot;Basemap can only be one of the following:</span><span class="se">\n</span><span class="s2">  </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
@@ -10334,13 +10416,13 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="sd">        zoom (int, optional): Initial map zoom level. Defaults to 5.</span>
 <span class="sd">        position (str, optional): Position of the minimap. Defaults to &quot;bottomright&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
+    <span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_basemap</span><span class="p">(</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">)]</span>
     <span class="n">minimap</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span>
         <span class="n">zoom_control</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">attribution_control</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">zoom</span><span class="o">=</span><span class="n">zoom</span><span class="p">,</span>
         <span class="n">center</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">center</span><span class="p">,</span>
-        <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">basemaps</span><span class="p">[</span><span class="s2">&quot;ROADMAP&quot;</span><span class="p">]],</span>
+        <span class="n">layers</span><span class="o">=</span><span class="n">layers</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">minimap</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="s2">&quot;150px&quot;</span>
     <span class="n">minimap</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="s2">&quot;150px&quot;</span>
@@ -14572,7 +14654,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="k">def</span> <span class="nf">on_click</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="n">basemap_name</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span>
         <span class="n">old_basemap</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">substitute_layer</span><span class="p">(</span><span class="n">old_basemap</span><span class="p">,</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">basemap_name</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">substitute_layer</span><span class="p">(</span><span class="n">old_basemap</span><span class="p">,</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">basemap_name</span><span class="p">))</span>
 
     <span class="n">dropdown</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
     <span class="n">basemap_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">dropdown</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">)</span>
@@ -15776,7 +15858,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="n">right_name</span> <span class="o">=</span> <span class="s2">&quot;Right Layer&quot;</span>
 
         <span class="k">if</span> <span class="n">left_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">left_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">left_layer</span><span class="p">]</span>
+            <span class="n">left_layer</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">left_layer</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                 <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="o">**</span><span class="n">left_args</span><span class="p">)</span>
@@ -15834,7 +15916,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">right_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">right_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">right_layer</span><span class="p">]</span>
+            <span class="n">right_layer</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">right_layer</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">right_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                 <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span>
@@ -16888,6 +16970,104 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 
+<h2 id="leafmap.leafmap.get_basemap" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_basemap</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.get_basemap" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets a basemap tile layer by name.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>str</code></td>
+        <td><p>The name of the basemap.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ipylealfet.TileLayer | ipyleaflet.WMSLayer</code></td>
+      <td><p>The basemap layer.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_basemap</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets a basemap tile layer by name.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        name (str): The name of the basemap.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        ipylealfet.TileLayer | ipyleaflet.WMSLayer: The basemap layer.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">basemap</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;xyz&quot;</span><span class="p">:</span>
+                <span class="n">layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+                    <span class="n">url</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>
+                    <span class="n">attribution</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;attribution&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;wms&quot;</span><span class="p">:</span>
+                <span class="n">layer</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WMSLayer</span><span class="p">(</span>
+                    <span class="n">url</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span>
+                    <span class="n">layers</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;layers&quot;</span><span class="p">],</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span>
+                    <span class="n">attribution</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;attribution&quot;</span><span class="p">],</span>
+                    <span class="nb">format</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;format&quot;</span><span class="p">],</span>
+                    <span class="n">transparent</span><span class="o">=</span><span class="n">basemap</span><span class="p">[</span><span class="s2">&quot;transparent&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">layer</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Basemap must be a string. Please choose from: &quot;</span>
+                <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Basemap must be a string. Please choose from: &quot;</span>
+            <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="leafmap.leafmap.linked_maps" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">linked_maps</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="s1">&#39;400px&#39;</span><span class="p">,</span> <span class="n">layers</span><span class="o">=</span><span class="p">[],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[],</span> <span class="n">label_position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">,</span> <span class="n">layer_args</span><span class="o">=</span><span class="p">[],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
@@ -17060,7 +17240,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">]]</span>
+                <span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                     <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="o">**</span><span class="n">layer_args</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
@@ -17228,7 +17408,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
     <span class="k">try</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">left_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">left_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">left_layer</span><span class="p">]</span>
+            <span class="n">left_layer</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">left_layer</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">left_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                 <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span><span class="n">left_layer</span><span class="p">,</span> <span class="o">**</span><span class="n">left_args</span><span class="p">)</span>
@@ -17277,7 +17457,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">right_layer</span> <span class="ow">in</span> <span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="n">right_layer</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">right_layer</span><span class="p">]</span>
+            <span class="n">right_layer</span> <span class="o">=</span> <span class="n">get_basemap</span><span class="p">(</span><span class="n">right_layer</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">right_layer</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">right_layer</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.tif&quot;</span><span class="p">):</span>
                 <span class="n">url</span> <span class="o">=</span> <span class="n">cog_tile</span><span class="p">(</span>
@@ -17472,7 +17652,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">layers_dict</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">keys</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">basemaps</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">basemaps</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WMSLayer</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;wms&#39;</span><span class="p">:</span>
                 <span class="k">pass</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">layers_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">basemaps</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
