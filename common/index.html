@@ -25706,7 +25706,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 
 
 <h2 id="leafmap.common.shp_to_geojson" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">shp_to_geojson</span><span class="p">(</span><span class="n">in_shp</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">shp_to_geojson</span><span class="p">(</span><span class="n">in_shp</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.common.shp_to_geojson" class="headerlink" title="Permanent link">&para;</a></h2>
@@ -25757,7 +25757,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/common.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">shp_to_geojson</span><span class="p">(</span><span class="n">in_shp</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">shp_to_geojson</span><span class="p">(</span><span class="n">in_shp</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Converts a shapefile to GeoJSON.</span>
 
 <span class="sd">    Args:</span>
@@ -25771,6 +25771,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
         <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">in_shp</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">crs</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">gdf</span><span class="o">.</span><span class="n">__geo_interface__</span>
         <span class="k">else</span><span class="p">:</span>
