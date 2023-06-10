@@ -788,6 +788,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.check_html_string" class="md-nav__link">
+    check_html_string()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.classify" class="md-nav__link">
     classify()
   </a>
@@ -3637,6 +3644,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.check_file_path" class="md-nav__link">
     check_file_path()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.check_html_string" class="md-nav__link">
+    check_html_string()
   </a>
   
 </li>
@@ -8166,6 +8180,89 @@ WhiteboxTools            (<span title="whitebox.whitebox_tools.WhiteboxTools">Wh
 
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The provided file path must be a string.&quot;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.check_html_string" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">check_html_string</span><span class="p">(</span><span class="n">html_string</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.check_html_string" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Check if an HTML string contains local images and convert them to base64.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>html_string</code></td>
+        <td><code>str</code></td>
+        <td><p>The HTML string.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>The HTML string with local images converted to base64.</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_html_string</span><span class="p">(</span><span class="n">html_string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if an HTML string contains local images and convert them to base64.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        html_string (str): The HTML string.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str: The HTML string with local images converted to base64.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">re</span>
+    <span class="kn">import</span> <span class="nn">base64</span>
+
+    <span class="c1"># Search for img tags with src attribute</span>
+    <span class="n">img_regex</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;&lt;img[^&gt;]+src\s*=\s*[&quot;</span><span class="se">\&#39;</span><span class="s1">]([^&quot;</span><span class="se">\&#39;</span><span class="s1">:]+)[&quot;</span><span class="se">\&#39;</span><span class="s1">][^&gt;]*&gt;&#39;</span>
+
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">img_regex</span><span class="p">,</span> <span class="n">html_string</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">match</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">img_file</span><span class="p">:</span>
+            <span class="n">img_data</span> <span class="o">=</span> <span class="n">img_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="n">base64_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">img_data</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+            <span class="n">html_string</span> <span class="o">=</span> <span class="n">html_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="s1">&#39;src=&quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">match</span><span class="p">),</span>
+                <span class="s1">&#39;src=&quot;data:image/png;base64,&#39;</span> <span class="o">+</span> <span class="n">base64_data</span> <span class="o">+</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">html_string</span>
 </code></pre></div>
         </details>
     </div>

@@ -7197,6 +7197,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            position (str, optional): The position of the HTML, can be one of &quot;topleft&quot;,</span>
 <span class="sd">                &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Check if an HTML string contains local images and convert them to base64.</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">check_html_string</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_text</span><span class="p">(</span>
@@ -9346,6 +9348,8 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 <span class="sd">        position (str, optional): The position of the HTML, can be one of &quot;topleft&quot;,</span>
 <span class="sd">            &quot;topright&quot;, &quot;bottomleft&quot;, &quot;bottomright&quot;. Defaults to &quot;bottomright&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check if an HTML string contains local images and convert them to base64.</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">check_html_string</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">add_widget</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </code></pre></div>
         </details>
