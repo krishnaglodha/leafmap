@@ -3937,9 +3937,9 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
-
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
-<span class="sd">            if the raster does not render properly, try running the following code before calling this function:</span>
+<span class="sd">            if the raster does not render properly, try installing jupyter-server-proxy using `pip install jupyter-server-proxy`,</span>
+<span class="sd">            then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</span>
 
 <span class="sd">            import os</span>
 <span class="sd">            os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;</span>
@@ -5517,7 +5517,7 @@ Map            (<span title="folium.folium.Map">Map</span>)
         <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
         <span class="k">if</span> <span class="s2">&quot;maxClusterRadius&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;maxClusterRadius&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_cluster_radius</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;maxClusterRadius&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_cluster_radius</span>
 
         <span class="n">color_options</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s2">&quot;red&quot;</span><span class="p">,</span>
@@ -8984,15 +8984,12 @@ style = {
 
     <div class="doc doc-contents ">
 
-      <p>Add a local raster dataset to the map.</p>
+      <p>Add a local raster dataset to the map.
+    If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and
+    if the raster does not render properly, try installing jupyter-server-proxy using <code>pip install jupyter-server-proxy</code>,
+    then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and
-if the raster does not render properly, try running the following code before calling this function:
-
-import os
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import os
 os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 </code></pre></div></td></tr></table></div>
 
@@ -9072,9 +9069,9 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
-
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
-<span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
+<span class="sd">        if the raster does not render properly, try installing jupyter-server-proxy using `pip install jupyter-server-proxy`,</span>
+<span class="sd">        then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</span>
 
 <span class="sd">        import os</span>
 <span class="sd">        os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;</span>
@@ -10842,7 +10839,7 @@ see https://github.com/Leaflet/Leaflet.markercluster. For example, to change the
     <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
     <span class="k">if</span> <span class="s2">&quot;maxClusterRadius&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;maxClusterRadius&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_cluster_radius</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;maxClusterRadius&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_cluster_radius</span>
 
     <span class="n">color_options</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">&quot;red&quot;</span><span class="p">,</span>
@@ -10973,15 +10970,12 @@ see https://github.com/Leaflet/Leaflet.markercluster. For example, to change the
 
     <div class="doc doc-contents ">
 
-      <p>Add a local raster dataset to the map.</p>
+      <p>Add a local raster dataset to the map.
+    If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and
+    if the raster does not render properly, try installing jupyter-server-proxy using <code>pip install jupyter-server-proxy</code>,
+    then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and
-if the raster does not render properly, try running the following code before calling this function:
-
-import os
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import os
 os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 </code></pre></div></td></tr></table></div>
 
@@ -11061,9 +11055,9 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
-
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
-<span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
+<span class="sd">        if the raster does not render properly, try installing jupyter-server-proxy using `pip install jupyter-server-proxy`,</span>
+<span class="sd">        then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</span>
 
 <span class="sd">        import os</span>
 <span class="sd">        os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;</span>

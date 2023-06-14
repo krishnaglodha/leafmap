@@ -5291,7 +5291,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">            If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
-<span class="sd">            if the raster does not render properly, try running the following code before calling this function:</span>
+<span class="sd">            if the raster does not render properly, try installing jupyter-server-proxy using `pip install jupyter-server-proxy`,</span>
+<span class="sd">            then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</span>
 
 <span class="sd">            import os</span>
 <span class="sd">            os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;</span>
@@ -5572,6 +5573,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
+        <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
@@ -5584,6 +5586,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            style_callback (function, optional): Styling function that is called for each feature, and should return the feature style. This styling function takes the feature as argument. Defaults to None.</span>
 <span class="sd">            fill_colors (list, optional): The random colors to use for filling polygons. Defaults to [&quot;black&quot;].</span>
 <span class="sd">            info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
+<span class="sd">            zoom_to_layer (bool, optional): Whether to zoom to the layer after adding it to the map. Defaults to True.</span>
+<span class="sd">            encoding (str, optional): The encoding of the shapefile. Defaults to &quot;utf-8&quot;.</span>
 
 <span class="sd">        Raises:</span>
 <span class="sd">            FileNotFoundError: The provided shapefile could not be found.</span>
@@ -5620,6 +5624,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">style_callback</span><span class="p">,</span>
             <span class="n">fill_colors</span><span class="p">,</span>
             <span class="n">info_mode</span><span class="p">,</span>
+            <span class="n">zoom_to_layer</span><span class="p">,</span>
             <span class="n">encoding</span><span class="p">,</span>
         <span class="p">)</span>
 
@@ -5646,6 +5651,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
 <span class="sd">            style_callback (function, optional): Styling function that is called for each feature, and should return the feature style. This styling function takes the feature as argument. Defaults to None.</span>
 <span class="sd">            fill_colors (list, optional): The random colors to use for filling polygons. Defaults to [&quot;black&quot;].</span>
 <span class="sd">            info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
+<span class="sd">            zoom_to_layer (bool, optional): Whether to zoom to the layer after adding it to the map. Defaults to True.</span>
 <span class="sd">            encoding (str, optional): The encoding of the GeoJSON file. Defaults to &quot;utf-8&quot;.</span>
 
 <span class="sd">        Raises:</span>
@@ -5913,6 +5919,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">style_callback</span><span class="p">,</span>
             <span class="n">fill_colors</span><span class="p">,</span>
             <span class="n">info_mode</span><span class="p">,</span>
+            <span class="n">zoom_to_layer</span><span class="p">,</span>
             <span class="n">encoding</span><span class="p">,</span>
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
@@ -6025,6 +6032,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
         <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
+        <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">):</span>
@@ -6069,6 +6077,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="n">style_callback</span><span class="p">,</span>
                 <span class="n">fill_colors</span><span class="p">,</span>
                 <span class="n">info_mode</span><span class="p">,</span>
+                <span class="n">zoom_to_layer</span><span class="p">,</span>
                 <span class="n">encoding</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
@@ -6089,6 +6098,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="n">style_callback</span><span class="p">,</span>
                 <span class="n">fill_colors</span><span class="p">,</span>
                 <span class="n">info_mode</span><span class="p">,</span>
+                <span class="n">zoom_to_layer</span><span class="p">,</span>
                 <span class="n">encoding</span><span class="p">,</span>
             <span class="p">)</span>
 
@@ -8696,6 +8706,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <span class="n">style_callback</span><span class="p">,</span>
         <span class="n">fill_colors</span><span class="p">,</span>
         <span class="n">info_mode</span><span class="p">,</span>
+        <span class="n">zoom_to_layer</span><span class="p">,</span>
         <span class="n">encoding</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
@@ -8914,6 +8925,12 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
         <td><code>&#39;on_hover&#39;</code></td>
       </tr>
       <tr>
+        <td><code>zoom_to_layer</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to zoom to the layer after adding it to the map. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
         <td><code>encoding</code></td>
         <td><code>str</code></td>
         <td><p>The encoding of the GeoJSON file. Defaults to "utf-8".</p></td>
@@ -8961,6 +8978,7 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 <span class="sd">        style_callback (function, optional): Styling function that is called for each feature, and should return the feature style. This styling function takes the feature as argument. Defaults to None.</span>
 <span class="sd">        fill_colors (list, optional): The random colors to use for filling polygons. Defaults to [&quot;black&quot;].</span>
 <span class="sd">        info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
+<span class="sd">        zoom_to_layer (bool, optional): Whether to zoom to the layer after adding it to the map. Defaults to True.</span>
 <span class="sd">        encoding (str, optional): The encoding of the GeoJSON file. Defaults to &quot;utf-8&quot;.</span>
 
 <span class="sd">    Raises:</span>
@@ -10194,7 +10212,8 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
       <p>Add a local raster dataset to the map.
     If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and
-    if the raster does not render properly, try running the following code before calling this function:</p>
+    if the raster does not render properly, try installing jupyter-server-proxy using <code>pip install jupyter-server-proxy</code>,
+    then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import os
 os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
@@ -10284,7 +10303,8 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
-<span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
+<span class="sd">        if the raster does not render properly, try installing jupyter-server-proxy using `pip install jupyter-server-proxy`,</span>
+<span class="sd">        then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</span>
 
 <span class="sd">        import os</span>
 <span class="sd">        os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;</span>
@@ -12534,7 +12554,8 @@ see https://github.com/Leaflet/Leaflet.markercluster.</p></td>
 
       <p>Add a local raster dataset to the map.
     If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and
-    if the raster does not render properly, try running the following code before calling this function:</p>
+    if the raster does not render properly, try installing jupyter-server-proxy using <code>pip install jupyter-server-proxy</code>,
+    then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>import os
 os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
@@ -12624,7 +12645,8 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Add a local raster dataset to the map.</span>
 <span class="sd">        If you are using this function in JupyterHub on a remote server (e.g., Binder, Microsoft Planetary Computer) and</span>
-<span class="sd">        if the raster does not render properly, try running the following code before calling this function:</span>
+<span class="sd">        if the raster does not render properly, try installing jupyter-server-proxy using `pip install jupyter-server-proxy`,</span>
+<span class="sd">        then running the following code before calling this function. For more info, see https://bit.ly/3JbmF93.</span>
 
 <span class="sd">        import os</span>
 <span class="sd">        os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;</span>
@@ -13084,7 +13106,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 <h3 id="leafmap.leafmap.Map.add_shp" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shp</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_shp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shp</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_shp" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -13146,6 +13168,18 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <td><p>Displays the attributes by either on_hover or on_click. Any value other than "on_hover" or "on_click" will be treated as None. Defaults to "on_hover".</p></td>
         <td><code>&#39;on_hover&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>zoom_to_layer</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to zoom to the layer after adding it to the map. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>encoding</code></td>
+        <td><code>str</code></td>
+        <td><p>The encoding of the shapefile. Defaults to "utf-8".</p></td>
+        <td><code>&#39;utf-8&#39;</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Exceptions:</strong></p>
@@ -13174,6 +13208,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
+    <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds a shapefile to the map.</span>
@@ -13186,6 +13221,8 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 <span class="sd">        style_callback (function, optional): Styling function that is called for each feature, and should return the feature style. This styling function takes the feature as argument. Defaults to None.</span>
 <span class="sd">        fill_colors (list, optional): The random colors to use for filling polygons. Defaults to [&quot;black&quot;].</span>
 <span class="sd">        info_mode (str, optional): Displays the attributes by either on_hover or on_click. Any value other than &quot;on_hover&quot; or &quot;on_click&quot; will be treated as None. Defaults to &quot;on_hover&quot;.</span>
+<span class="sd">        zoom_to_layer (bool, optional): Whether to zoom to the layer after adding it to the map. Defaults to True.</span>
+<span class="sd">        encoding (str, optional): The encoding of the shapefile. Defaults to &quot;utf-8&quot;.</span>
 
 <span class="sd">    Raises:</span>
 <span class="sd">        FileNotFoundError: The provided shapefile could not be found.</span>
@@ -13222,6 +13259,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">style_callback</span><span class="p">,</span>
         <span class="n">fill_colors</span><span class="p">,</span>
         <span class="n">info_mode</span><span class="p">,</span>
+        <span class="n">zoom_to_layer</span><span class="p">,</span>
         <span class="n">encoding</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></div>
@@ -13717,7 +13755,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
 
 <h3 id="leafmap.leafmap.Map.add_vector" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">add_vector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">,</span> <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#leafmap.leafmap.Map.add_vector" class="headerlink" title="Permanent link">&para;</a></h3>
@@ -13819,6 +13857,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
     <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;black&quot;</span><span class="p">],</span>
     <span class="n">info_mode</span><span class="o">=</span><span class="s2">&quot;on_hover&quot;</span><span class="p">,</span>
+    <span class="n">zoom_to_layer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
@@ -13863,6 +13902,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="n">style_callback</span><span class="p">,</span>
             <span class="n">fill_colors</span><span class="p">,</span>
             <span class="n">info_mode</span><span class="p">,</span>
+            <span class="n">zoom_to_layer</span><span class="p">,</span>
             <span class="n">encoding</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -13883,6 +13923,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
             <span class="n">style_callback</span><span class="p">,</span>
             <span class="n">fill_colors</span><span class="p">,</span>
             <span class="n">info_mode</span><span class="p">,</span>
+            <span class="n">zoom_to_layer</span><span class="p">,</span>
             <span class="n">encoding</span><span class="p">,</span>
         <span class="p">)</span>
 </code></pre></div>
