@@ -18217,9 +18217,9 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="kn">import</span> <span class="nn">rasterio</span>
 
-    <span class="c1"># from osgeo import gdal</span>
-    <span class="c1"># # ... and suppress errors</span>
-    <span class="c1"># gdal.PushErrorHandler(&#39;CPLQuietErrorHandler&#39;)</span>
+    <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+    <span class="c1"># ... and suppress errors</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">PushErrorHandler</span><span class="p">(</span><span class="s1">&#39;CPLQuietErrorHandler&#39;</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
