@@ -1481,6 +1481,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.merge_rasters" class="md-nav__link">
+    merge_rasters()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.meters_to_lnglat" class="md-nav__link">
     meters_to_lnglat()
   </a>
@@ -1868,6 +1875,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.skip_mkdocs_build" class="md-nav__link">
     skip_mkdocs_build()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.split_raster" class="md-nav__link">
+    split_raster()
   </a>
   
 </li>
@@ -4342,6 +4356,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#leafmap.common.merge_rasters" class="md-nav__link">
+    merge_rasters()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leafmap.common.meters_to_lnglat" class="md-nav__link">
     meters_to_lnglat()
   </a>
@@ -4729,6 +4750,13 @@
         <li class="md-nav__item">
   <a href="#leafmap.common.skip_mkdocs_build" class="md-nav__link">
     skip_mkdocs_build()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leafmap.common.split_raster" class="md-nav__link">
+    split_raster()
   </a>
   
 </li>
@@ -18218,8 +18246,9 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
     <span class="kn">import</span> <span class="nn">rasterio</span>
 
     <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+
     <span class="c1"># ... and suppress errors</span>
-    <span class="n">gdal</span><span class="o">.</span><span class="n">PushErrorHandler</span><span class="p">(</span><span class="s1">&#39;CPLQuietErrorHandler&#39;</span><span class="p">)</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">PushErrorHandler</span><span class="p">(</span><span class="s2">&quot;CPLQuietErrorHandler&quot;</span><span class="p">)</span>
 
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
@@ -19364,6 +19393,135 @@ see https://numpy.org/doc/stable/user/basics.types.html. Defaults to 'uint8'.</p
             <span class="s2">&quot;gifsicle is not installed. Run &#39;sudo apt-get install -y gifsicle&#39; to install it.&quot;</span>
         <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.merge_rasters" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">merge_rasters</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">input_pattern</span><span class="o">=</span><span class="s1">&#39;*.tif&#39;</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s1">&#39;GTiff&#39;</span><span class="p">,</span> <span class="n">output_nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;COMPRESS=DEFLATE&#39;</span><span class="p">])</span></code>
+
+
+<a href="#leafmap.common.merge_rasters" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Merge a directory of rasters into a single raster.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>input_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the input directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>output</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the output raster.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>input_pattern</code></td>
+        <td><code>str</code></td>
+        <td><p>The pattern to match the input files. Defaults to "*.tif".</p></td>
+        <td><code>&#39;*.tif&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>output_format</code></td>
+        <td><code>str</code></td>
+        <td><p>The output format. Defaults to "GTiff".</p></td>
+        <td><code>&#39;GTiff&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>output_nodata</code></td>
+        <td><code>float</code></td>
+        <td><p>The output nodata value. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>output_options</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of output options. Defaults to ["COMPRESS=DEFLATE"].</p></td>
+        <td><code>[&#39;COMPRESS=DEFLATE&#39;]</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>ImportError</code></td>
+        <td><p>Raised if GDAL is not installed.</p></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">merge_rasters</span><span class="p">(</span>
+    <span class="n">input_dir</span><span class="p">,</span>
+    <span class="n">output</span><span class="p">,</span>
+    <span class="n">input_pattern</span><span class="o">=</span><span class="s2">&quot;*.tif&quot;</span><span class="p">,</span>
+    <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;GTiff&quot;</span><span class="p">,</span>
+    <span class="n">output_nodata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_options</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;COMPRESS=DEFLATE&quot;</span><span class="p">],</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Merge a directory of rasters into a single raster.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_dir (str): The path to the input directory.</span>
+<span class="sd">        output (str): The path to the output raster.</span>
+<span class="sd">        input_pattern (str, optional): The pattern to match the input files. Defaults to &quot;*.tif&quot;.</span>
+<span class="sd">        output_format (str, optional): The output format. Defaults to &quot;GTiff&quot;.</span>
+<span class="sd">        output_nodata (float, optional): The output nodata value. Defaults to None.</span>
+<span class="sd">        output_options (list, optional): A list of output options. Defaults to [&quot;COMPRESS=DEFLATE&quot;].</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ImportError: Raised if GDAL is not installed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">import</span> <span class="nn">glob</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;GDAL is required to use this function. Install it with `conda install gdal -c conda-forge`&quot;</span>
+        <span class="p">)</span>
+    <span class="c1"># Get a list of all the input files</span>
+    <span class="n">input_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">input_dir</span><span class="p">,</span> <span class="n">input_pattern</span><span class="p">))</span>
+
+    <span class="c1"># Merge the input files into a single output file</span>
+    <span class="n">gdal</span><span class="o">.</span><span class="n">Warp</span><span class="p">(</span>
+        <span class="n">output</span><span class="p">,</span>
+        <span class="n">input_files</span><span class="p">,</span>
+        <span class="nb">format</span><span class="o">=</span><span class="n">output_format</span><span class="p">,</span>
+        <span class="n">dstNodata</span><span class="o">=</span><span class="n">output_nodata</span><span class="p">,</span>
+        <span class="n">options</span><span class="o">=</span><span class="n">output_options</span><span class="p">,</span>
+    <span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -20553,7 +20711,9 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The provided profile must be a file path or a dictionary.&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">bounds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;warning: bounds is not set. Using the default bounds (-180.0, -85.0511, 180.0, 85.0511)&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;warning: bounds is not set. Using the default bounds (-180.0, -85.0511, 180.0, 85.0511)&quot;</span>
+        <span class="p">)</span>
         <span class="n">bounds</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">85.0511287798066</span><span class="p">,</span> <span class="mf">180.0</span><span class="p">,</span> <span class="mf">85.0511287798066</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
@@ -25925,6 +26085,194 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="leafmap.common.split_raster" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">split_raster</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">tile_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.common.split_raster" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Split a raster into tiles.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>filename</code></td>
+        <td><code>str</code></td>
+        <td><p>The path or http URL to the raster file.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>out_dir</code></td>
+        <td><code>str</code></td>
+        <td><p>The path to the output directory.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>tile_size</code></td>
+        <td><code>int | tuple</code></td>
+        <td><p>The size of the tiles. Can be an integer or a tuple of (width, height). Defaults to 256.</p></td>
+        <td><code>256</code></td>
+      </tr>
+      <tr>
+        <td><code>overlap</code></td>
+        <td><code>int</code></td>
+        <td><p>The number of pixels to overlap between tiles. Defaults to 0.</p></td>
+        <td><code>0</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>ImportError</code></td>
+        <td><p>Raised if GDAL is not installed.</p></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/common.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">split_raster</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">tile_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Split a raster into tiles.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        filename (str): The path or http URL to the raster file.</span>
+<span class="sd">        out_dir (str): The path to the output directory.</span>
+<span class="sd">        tile_size (int | tuple, optional): The size of the tiles. Can be an integer or a tuple of (width, height). Defaults to 256.</span>
+<span class="sd">        overlap (int, optional): The number of pixels to overlap between tiles. Defaults to 0.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ImportError: Raised if GDAL is not installed.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">&quot;GDAL is required to use this function. Install it with `conda install gdal -c conda-forge`&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">download_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">output</span>
+
+    <span class="c1"># Open the input GeoTIFF file</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_dir</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tile_size</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">tile_width</span> <span class="o">=</span> <span class="n">tile_size</span>
+        <span class="n">tile_height</span> <span class="o">=</span> <span class="n">tile_size</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tile_size</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="n">tile_width</span> <span class="o">=</span> <span class="n">tile_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">tile_height</span> <span class="o">=</span> <span class="n">tile_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Get the size of the input raster</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">RasterXSize</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">RasterYSize</span>
+
+    <span class="c1"># Calculate the number of tiles needed in both directions, taking into account the overlap</span>
+    <span class="n">num_tiles_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">tile_width</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="n">tile_width</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="p">)</span>
+    <span class="n">num_tiles_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">//</span> <span class="p">(</span><span class="n">tile_height</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="n">tile_height</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Get the georeferencing information of the input raster</span>
+    <span class="n">geotransform</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetGeoTransform</span><span class="p">()</span>
+
+    <span class="c1"># Loop over all the tiles</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tiles_x</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_tiles_y</span><span class="p">):</span>
+            <span class="c1"># Calculate the pixel coordinates of the tile, taking into account the overlap and clamping to the edge of the raster</span>
+            <span class="n">x_min</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">tile_width</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span>
+            <span class="n">y_min</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="p">(</span><span class="n">tile_height</span> <span class="o">-</span> <span class="n">overlap</span><span class="p">)</span>
+            <span class="n">x_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">x_min</span> <span class="o">+</span> <span class="n">tile_width</span><span class="p">,</span> <span class="n">width</span><span class="p">)</span>
+            <span class="n">y_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">y_min</span> <span class="o">+</span> <span class="n">tile_height</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+            <span class="c1"># Adjust the size of the last tile in each row and column to include any remaining pixels</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">num_tiles_x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">x_min</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x_max</span> <span class="o">-</span> <span class="n">tile_width</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">num_tiles_y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">y_min</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y_max</span> <span class="o">-</span> <span class="n">tile_height</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># Calculate the size of the tile, taking into account the overlap</span>
+            <span class="n">tile_width</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+            <span class="n">tile_height</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+
+            <span class="c1"># Set the output file name</span>
+            <span class="n">output_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">out_dir</span><span class="si">}</span><span class="s2">/tile_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">.tif&quot;</span>
+
+            <span class="c1"># Create a new dataset for the tile</span>
+            <span class="n">driver</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GetDriverByName</span><span class="p">(</span><span class="s2">&quot;GTiff&quot;</span><span class="p">)</span>
+            <span class="n">tile_ds</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span>
+                <span class="n">output_file</span><span class="p">,</span>
+                <span class="n">tile_width</span><span class="p">,</span>
+                <span class="n">tile_height</span><span class="p">,</span>
+                <span class="n">ds</span><span class="o">.</span><span class="n">RasterCount</span><span class="p">,</span>
+                <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">DataType</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Calculate the georeferencing information for the output tile</span>
+            <span class="n">tile_geotransform</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">geotransform</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x_min</span> <span class="o">*</span> <span class="n">geotransform</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">geotransform</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="n">geotransform</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">y_min</span> <span class="o">*</span> <span class="n">geotransform</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+                <span class="mi">0</span><span class="p">,</span>
+                <span class="n">geotransform</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Set the geotransform and projection of the tile</span>
+            <span class="n">tile_ds</span><span class="o">.</span><span class="n">SetGeoTransform</span><span class="p">(</span><span class="n">tile_geotransform</span><span class="p">)</span>
+            <span class="n">tile_ds</span><span class="o">.</span><span class="n">SetProjection</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">GetProjection</span><span class="p">())</span>
+
+            <span class="c1"># Read the data from the input raster band(s) and write it to the tile band(s)</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">RasterCount</span><span class="p">):</span>
+                <span class="n">band</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">tile_band</span> <span class="o">=</span> <span class="n">tile_ds</span><span class="o">.</span><span class="n">GetRasterBand</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="n">tile_data</span> <span class="o">=</span> <span class="n">band</span><span class="o">.</span><span class="n">ReadAsArray</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">tile_width</span><span class="p">,</span> <span class="n">tile_height</span><span class="p">)</span>
+                <span class="n">tile_band</span><span class="o">.</span><span class="n">WriteArray</span><span class="p">(</span><span class="n">tile_data</span><span class="p">)</span>
+
+            <span class="c1"># Close the tile dataset</span>
+            <span class="n">tile_ds</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Close the input dataset</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="kc">None</span>
 </code></pre></div>
         </details>
     </div>
