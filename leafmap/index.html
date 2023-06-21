@@ -643,6 +643,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_basemap_gui" class="md-nav__link">
+    add_basemap_gui()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_census_data" class="md-nav__link">
     add_census_data()
   </a>
@@ -727,6 +734,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_inspector_gui" class="md-nav__link">
+    add_inspector_gui()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_kml" class="md-nav__link">
     add_kml()
   </a>
@@ -806,6 +820,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_netcdf" class="md-nav__link">
     add_netcdf()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_oam_gui" class="md-nav__link">
+    add_oam_gui()
   </a>
   
 </li>
@@ -918,6 +939,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_shp" class="md-nav__link">
     add_shp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_stac_gui" class="md-nav__link">
+    add_stac_gui()
   </a>
   
 </li>
@@ -1460,8 +1488,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../workshops/EarthCube_2023.ipynb" class="md-nav__link">
-        None
+      <a href="../workshops/EarthCube_2023/" class="md-nav__link">
+        EarthCube 2023
       </a>
     </li>
   
@@ -2664,6 +2692,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_basemap_gui" class="md-nav__link">
+    add_basemap_gui()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_census_data" class="md-nav__link">
     add_census_data()
   </a>
@@ -2748,6 +2783,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_inspector_gui" class="md-nav__link">
+    add_inspector_gui()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_kml" class="md-nav__link">
     add_kml()
   </a>
@@ -2827,6 +2869,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_netcdf" class="md-nav__link">
     add_netcdf()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_oam_gui" class="md-nav__link">
+    add_oam_gui()
   </a>
   
 </li>
@@ -2939,6 +2988,13 @@
           <li class="md-nav__item">
   <a href="#leafmap.leafmap.Map.add_shp" class="md-nav__link">
     add_shp()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leafmap.leafmap.Map.add_stac_gui" class="md-nav__link">
+    add_stac_gui()
   </a>
   
 </li>
@@ -7345,8 +7401,8 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">layer_args</span><span class="p">[</span><span class="s2">&quot;hover_style&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">layer_args</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">}</span>
 
         <span class="k">if</span> <span class="n">gdf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add_gdf</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="n">info_mode</span><span class="p">,</span> <span class="o">**</span><span class="n">layer_args</span><span class="p">)</span>
             <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;oam_gdf&quot;</span><span class="p">,</span> <span class="n">gdf</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_gdf</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="n">info_mode</span><span class="p">,</span> <span class="o">**</span><span class="n">layer_args</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">add_image</span><span class="p">:</span>
                 <span class="n">ids</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
@@ -7402,6 +7458,50 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
         <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">layer_manager_gui</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">layer_manager_widget</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="n">layer_manager_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_widget</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_oam_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add the OpenAerialMap search widget to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">            opened (bool, optional): Whether the widget is open. Defaults to True.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">oam_search_gui</span>
+
+        <span class="n">oam_search_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">opened</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_stac_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add the STAC search widget to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">            opened (bool, optional): Whether the widget is open. Defaults to True.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">stac_gui</span>
+
+        <span class="n">stac_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">opened</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_inspector_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add the Inspector widget to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">            opened (bool, optional): Whether the widget is open. Defaults to True.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">inspector_gui</span>
+
+        <span class="n">inspector_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">opened</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_basemap_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add the basemap widget to the map.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">change_basemap</span>
+
+        <span class="n">change_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
 </code></pre></div>
         </details>
 
@@ -7572,6 +7672,58 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                 <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
             <span class="p">)</span>
         <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_basemap_gui" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_basemap_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_basemap_gui" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add the basemap widget to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the widget. Defaults to "topright".</p></td>
+        <td><code>&#39;topright&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_basemap_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add the basemap widget to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">change_basemap</span>
+
+    <span class="n">change_basemap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -9481,6 +9633,66 @@ style_callback = lambda feat: {"fillColor": feat["properties"][&quot;color&quot;
 
 
 
+<h3 id="leafmap.leafmap.Map.add_inspector_gui" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_inspector_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_inspector_gui" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add the Inspector widget to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the widget. Defaults to "topright".</p></td>
+        <td><code>&#39;topright&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>opened</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether the widget is open. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_inspector_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add the Inspector widget to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">        opened (bool, optional): Whether the widget is open. Defaults to True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">inspector_gui</span>
+
+    <span class="n">inspector_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">opened</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h3 id="leafmap.leafmap.Map.add_kml" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">add_kml</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_kml</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Untitled&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="p">{},</span> <span class="n">hover_style</span><span class="o">=</span><span class="p">{},</span> <span class="n">style_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;black&#39;</span><span class="p">],</span> <span class="n">info_mode</span><span class="o">=</span><span class="s1">&#39;on_hover&#39;</span><span class="p">)</span></code>
 
@@ -10928,6 +11140,65 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="n">layer_name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">,</span>
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_oam_gui" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_oam_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_oam_gui" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add the OpenAerialMap search widget to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the widget. Defaults to "topright".</p></td>
+        <td><code>&#39;topright&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>opened</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether the widget is open. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_oam_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add the OpenAerialMap search widget to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">        opened (bool, optional): Whether the widget is open. Defaults to True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">oam_search_gui</span>
+
+    <span class="n">oam_search_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">opened</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -13290,6 +13561,65 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">zoom_to_layer</span><span class="p">,</span>
         <span class="n">encoding</span><span class="p">,</span>
     <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.leafmap.Map.add_stac_gui" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_stac_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.leafmap.Map.add_stac_gui" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Add the STAC search widget to the map.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>position</code></td>
+        <td><code>str</code></td>
+        <td><p>The position of the widget. Defaults to "topright".</p></td>
+        <td><code>&#39;topright&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>opened</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether the widget is open. Defaults to True.</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/leafmap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_stac_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Add the STAC search widget to the map.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        position (str, optional): The position of the widget. Defaults to &quot;topright&quot;.</span>
+<span class="sd">        opened (bool, optional): Whether the widget is open. Defaults to True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">.toolbar</span> <span class="kn">import</span> <span class="n">stac_gui</span>
+
+    <span class="n">stac_gui</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">opened</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
@@ -15693,8 +16023,8 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
         <span class="n">layer_args</span><span class="p">[</span><span class="s2">&quot;hover_style&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="n">layer_args</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">][</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span><span class="p">}</span>
 
     <span class="k">if</span> <span class="n">gdf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add_gdf</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="n">info_mode</span><span class="p">,</span> <span class="o">**</span><span class="n">layer_args</span><span class="p">)</span>
         <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;oam_gdf&quot;</span><span class="p">,</span> <span class="n">gdf</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_gdf</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">info_mode</span><span class="o">=</span><span class="n">info_mode</span><span class="p">,</span> <span class="o">**</span><span class="n">layer_args</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">add_image</span><span class="p">:</span>
             <span class="n">ids</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
