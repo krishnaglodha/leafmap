@@ -3685,7 +3685,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
                     <span class="kn">import</span> <span class="nn">ipysheet</span>
 
                     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">edit_output</span><span class="p">:</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">edit_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">edit_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">edit_sheet</span> <span class="o">=</span> <span class="n">ipysheet</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
                             <span class="bp">self</span><span class="o">.</span><span class="n">get_draw_props</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">num_attributes</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                         <span class="p">)</span>
@@ -5089,7 +5089,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">display</span><span class="p">(</span><span class="n">colormap</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">colormap_ctrl</span>
@@ -5141,7 +5141,7 @@ Map            (<span title="ipyleaflet.leaflet.Map">Map</span>)
             <span class="n">transparent_bg</span><span class="o">=</span><span class="n">transparent_bg</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">plot_colormap</span><span class="p">(</span>
                 <span class="n">cmap</span><span class="p">,</span>
                 <span class="n">colors</span><span class="p">,</span>
@@ -8247,7 +8247,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="n">display</span><span class="p">(</span><span class="n">colormap</span><span class="p">)</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">colorbar</span> <span class="o">=</span> <span class="n">colormap_ctrl</span>
@@ -8419,7 +8419,7 @@ apply a rescaling to multiple bands, use something like <code>rescale=["164,223"
         <span class="n">transparent_bg</span><span class="o">=</span><span class="n">transparent_bg</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="n">plot_colormap</span><span class="p">(</span>
             <span class="n">cmap</span><span class="p">,</span>
             <span class="n">colors</span><span class="p">,</span>

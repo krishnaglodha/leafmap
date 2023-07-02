@@ -2554,7 +2554,7 @@
 
             <span class="c1"># with output:</span>
             <span class="c1">#     w = WebMapService(census_dict[wms.value][&quot;url&quot;])</span>
-            <span class="c1">#     output.clear_output()</span>
+            <span class="c1">#     output.outputs = ()</span>
             <span class="c1">#     print(w[layer.value].abstract)</span>
 
     <span class="n">layer</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">layer_change</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
@@ -2613,7 +2613,7 @@
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/toolbar.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">change_basemap</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">change_basemap</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Widget for changing basemaps.</span>
 
 <span class="sd">    Args:</span>
@@ -2667,9 +2667,7 @@
 
     <span class="n">close_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">close_click</span><span class="p">)</span>
 
-    <span class="n">basemap_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span>
-        <span class="n">widget</span><span class="o">=</span><span class="n">basemap_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span>
-    <span class="p">)</span>
+    <span class="n">basemap_control</span> <span class="o">=</span> <span class="n">ipyleaflet</span><span class="o">.</span><span class="n">WidgetControl</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">basemap_widget</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="n">position</span><span class="p">)</span>
     <span class="n">m</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">basemap_control</span><span class="p">)</span>
     <span class="n">m</span><span class="o">.</span><span class="n">basemap_ctrl</span> <span class="o">=</span> <span class="n">basemap_control</span>
 </code></pre></div>
@@ -2899,11 +2897,11 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Apply&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running ...&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">textarea</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
@@ -3075,7 +3073,7 @@
     <span class="n">buttons</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">button_width</span> <span class="o">=</span> <span class="s2">&quot;64px&quot;</span>
 
     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">int_slider_changed</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
@@ -3084,7 +3082,7 @@
             <span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="n">int_slider</span><span class="o">.</span><span class="n">value</span>
             <span class="n">m</span><span class="o">.</span><span class="n">num_attributes</span> <span class="o">=</span> <span class="n">int_slider</span><span class="o">.</span><span class="n">value</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span> <span class="o">=</span> <span class="n">ipysheet</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">get_draw_props</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">int_slider</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
                 <span class="p">)</span>
@@ -3244,7 +3242,7 @@
                             <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Key&quot;</span><span class="p">:</span> <span class="n">props</span><span class="p">,</span> <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="n">values</span><span class="p">})</span>
                             <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
                             <span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span> <span class="o">=</span> <span class="n">ipysheet</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-                            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                             <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span><span class="p">)</span>
 
     <span class="n">refresh_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">refresh_btn_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
@@ -3252,7 +3250,7 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Apply&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span><span class="p">)</span>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">draw_control</span><span class="o">.</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please draw a feature first.&quot;</span><span class="p">)</span>
@@ -3265,7 +3263,7 @@
                 <span class="n">m</span><span class="o">.</span><span class="n">get_draw_props</span><span class="p">(</span><span class="n">int_slider</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="p">)</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">edit_sheet</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -3379,7 +3377,7 @@
             <span class="nb">setattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;inspector_output&quot;</span><span class="p">,</span> <span class="n">inspector_output</span><span class="p">)</span>
 
         <span class="n">output</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">inspector_output</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;inspector_add_marker&quot;</span><span class="p">):</span>
             <span class="n">inspector_add_marker</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Checkbox</span><span class="p">(</span>
@@ -3481,7 +3479,7 @@
             <span class="n">m</span><span class="o">.</span><span class="n">pixel_values</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;marker_cluster&quot;</span><span class="p">):</span>
             <span class="n">m</span><span class="o">.</span><span class="n">marker_cluster</span><span class="o">.</span><span class="n">markers</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">bands_chk</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">chk_change</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
@@ -3537,7 +3535,7 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Download&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pixel_values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span>
                         <span class="s2">&quot;No pixel values available. Click on the map to start collection data.&quot;</span>
@@ -3549,11 +3547,11 @@
                     <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">temp_csv</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
                     <span class="n">link</span> <span class="o">=</span> <span class="n">create_download_link</span><span class="p">(</span><span class="n">temp_csv</span><span class="p">)</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="n">display</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">label</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;pixel_values&quot;</span><span class="p">):</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">pixel_values</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;marker_cluster&quot;</span><span class="p">):</span>
@@ -3599,7 +3597,7 @@
             <span class="n">m</span><span class="o">.</span><span class="n">default_style</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cursor&quot;</span><span class="p">:</span> <span class="s2">&quot;wait&quot;</span><span class="p">}</span>
 
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Getting pixel value ...&quot;</span><span class="p">)</span>
 
                 <span class="n">layer_dict</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cog_layer_dict</span><span class="p">[</span><span class="n">dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">]</span>
@@ -3622,7 +3620,7 @@
                 <span class="p">)</span>
                 <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;lat/lon: </span><span class="si">{</span><span class="n">lat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lon</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
                         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
                             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -3638,7 +3636,7 @@
 
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No pixel value available&quot;</span><span class="p">)</span>
                         <span class="n">bounds</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cog_layer_dict</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">inspector_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">][</span><span class="s2">&quot;bounds&quot;</span><span class="p">]</span>
                         <span class="n">m</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -3646,7 +3644,7 @@
                 <span class="n">result</span> <span class="o">=</span> <span class="n">cog_pixel_value</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">layer_dict</span><span class="p">[</span><span class="s2">&quot;url&quot;</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;lat/lon: </span><span class="si">{</span><span class="n">lat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lon</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
                         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
                             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -3661,7 +3659,7 @@
                         <span class="n">m</span><span class="o">.</span><span class="n">marker_cluster</span><span class="o">.</span><span class="n">markers</span> <span class="o">=</span> <span class="n">markers</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No pixel value available&quot;</span><span class="p">)</span>
                         <span class="n">bounds</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cog_layer_dict</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">inspector_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">][</span><span class="s2">&quot;bounds&quot;</span><span class="p">]</span>
                         <span class="n">m</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -3680,7 +3678,7 @@
                             <span class="n">sel_bands</span> <span class="o">=</span> <span class="p">[</span><span class="n">band_names</span><span class="p">[</span><span class="n">b</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">band</span><span class="p">]</span>
                             <span class="n">result</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">sel_bands</span><span class="p">}</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;lat/lon: </span><span class="si">{</span><span class="n">lat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">lon</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
                         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
                             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -3695,7 +3693,7 @@
                         <span class="n">m</span><span class="o">.</span><span class="n">marker_cluster</span><span class="o">.</span><span class="n">markers</span> <span class="o">=</span> <span class="n">markers</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No pixel value available&quot;</span><span class="p">)</span>
                         <span class="n">bounds</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">cog_layer_dict</span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">inspector_dropdown</span><span class="o">.</span><span class="n">value</span><span class="p">][</span><span class="s2">&quot;bounds&quot;</span><span class="p">]</span>
                         <span class="n">m</span><span class="o">.</span><span class="n">zoom_to_bounds</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span>
@@ -4481,7 +4479,7 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Search&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">dropdown</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Map bounds&quot;</span><span class="p">:</span>
                         <span class="n">bbox</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">get_bbox</span><span class="p">()</span>
@@ -4519,7 +4517,7 @@
             <span class="n">end_date</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">checkbox</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="n">int_slider</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">100</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
@@ -4823,7 +4821,7 @@
         <span class="n">layer_name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">file_type</span><span class="o">.</span><span class="n">value</span>
         <span class="n">csv_widget</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">filepath</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Shapefile&quot;</span><span class="p">:</span>
             <span class="n">file_chooser</span><span class="o">.</span><span class="n">filter_pattern</span> <span class="o">=</span> <span class="s2">&quot;*.shp&quot;</span>
@@ -4868,7 +4866,7 @@
             <span class="n">file_path</span> <span class="o">=</span> <span class="n">filepath</span><span class="o">.</span><span class="n">value</span>
 
             <span class="k">with</span> <span class="n">tool_output</span><span class="p">:</span>
-                <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">if</span> <span class="n">file_path</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
                     <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
                     <span class="k">if</span> <span class="n">point_check</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
@@ -4932,7 +4930,7 @@
 
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">file_chooser</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-            <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">filepath</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
             <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
@@ -5256,7 +5254,7 @@
                         <span class="n">red</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bandnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="n">green</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bandnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="n">blue</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">bandnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
                 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
@@ -5336,7 +5334,7 @@
         <span class="n">file_chooser</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="n">layer_name</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">file_type</span><span class="o">.</span><span class="n">value</span>
         <span class="n">http_url</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="n">red</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">green</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">blue</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
@@ -5390,7 +5388,7 @@
             <span class="c1"># file_path = http_url.value</span>
 
             <span class="k">with</span> <span class="n">tool_output</span><span class="p">:</span>
-                <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">file_type</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;GeoTIFF&quot;</span> <span class="ow">and</span> <span class="n">file_chooser</span><span class="o">.</span><span class="n">selected</span><span class="p">:</span>
                     <span class="n">band</span> <span class="o">=</span> <span class="kc">None</span>
@@ -5442,10 +5440,10 @@
                         <span class="n">vmax</span><span class="o">=</span><span class="n">vis_max</span><span class="p">,</span>
                         <span class="n">nodata</span><span class="o">=</span><span class="n">vis_nodata</span><span class="p">,</span>
                     <span class="p">)</span>
-                    <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">elif</span> <span class="n">file_type</span><span class="o">.</span><span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;COG&quot;</span><span class="p">,</span> <span class="s2">&quot;STAC&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">http_url</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
                     <span class="k">try</span><span class="p">:</span>
-                        <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">)</span>
 
                         <span class="k">if</span> <span class="p">(</span>
@@ -5489,7 +5487,7 @@
                                 <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
                                 <span class="o">**</span><span class="n">vis_params</span><span class="p">,</span>
                             <span class="p">)</span>
-                        <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error loading data.&quot;</span><span class="p">)</span>
@@ -5497,7 +5495,7 @@
 
                 <span class="k">elif</span> <span class="n">file_type</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Microsoft&quot;</span><span class="p">:</span>
                     <span class="k">try</span><span class="p">:</span>
-                        <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">)</span>
 
                         <span class="k">if</span> <span class="p">(</span>
@@ -5536,14 +5534,14 @@
                             <span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
                             <span class="o">**</span><span class="n">vis_params</span><span class="p">,</span>
                         <span class="p">)</span>
-                        <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error loading data.&quot;</span><span class="p">)</span>
                         <span class="k">return</span>
 
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please select a file and enter an http URL.&quot;</span><span class="p">)</span>
 
             <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
@@ -5551,7 +5549,7 @@
 
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">file_chooser</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-            <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">http_url</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
             <span class="n">add_params</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
             <span class="n">checkbox</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
@@ -5815,14 +5813,14 @@
             <span class="k">if</span> <span class="n">provider</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">provider</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;qms&quot;</span><span class="p">):</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding data. Please wait...&quot;</span><span class="p">)</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="n">provider</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
                     <span class="n">qms_provider</span> <span class="o">=</span> <span class="n">TileProvider</span><span class="o">.</span><span class="n">from_qms</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
                     <span class="n">url</span> <span class="o">=</span> <span class="n">qms_provider</span><span class="o">.</span><span class="n">build_url</span><span class="p">()</span>
                     <span class="n">attribution</span> <span class="o">=</span> <span class="n">qms_provider</span><span class="o">.</span><span class="n">attribution</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribution</span><span class="p">)</span>
-                    <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">elif</span> <span class="n">provider</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;xyz&quot;</span><span class="p">):</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="n">provider</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
                     <span class="n">xyz_provider</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span>
@@ -5830,7 +5828,7 @@
                     <span class="n">attribution</span> <span class="o">=</span> <span class="n">xyz_provider</span><span class="o">.</span><span class="n">attribution</span>
                     <span class="k">if</span> <span class="n">xyz_provider</span><span class="o">.</span><span class="n">requires_token</span><span class="p">():</span>
                         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">provider</span><span class="si">}</span><span class="s2"> requires an API Key.&quot;</span><span class="p">)</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribution</span><span class="p">)</span>
 
@@ -5885,7 +5883,7 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Search&quot;</span><span class="p">:</span>
             <span class="n">providers</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="k">if</span> <span class="n">keyword</span><span class="o">.</span><span class="n">value</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
                 <span class="n">tiles</span> <span class="o">=</span> <span class="n">search_xyz_services</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="n">keyword</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">checkbox</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
@@ -5897,7 +5895,7 @@
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">keyword</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
             <span class="n">providers</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="n">canvas</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
             <span class="n">toolbar_widget</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -6105,7 +6103,7 @@
             <span class="n">map_widget</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">map_min_width</span>
             <span class="k">if</span> <span class="n">map_refresh</span><span class="p">:</span>
                 <span class="k">with</span> <span class="n">map_widget</span><span class="p">:</span>
-                    <span class="n">map_widget</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">map_widget</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
             <span class="n">layers_button</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="n">toolbar_widget</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[</span><span class="n">toolbar_header</span><span class="p">,</span> <span class="n">toolbar_footer</span><span class="p">]</span>
@@ -6116,7 +6114,7 @@
                 <span class="n">toolbar_widget</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[</span><span class="n">toolbar_button</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">map_refresh</span><span class="p">:</span>
                 <span class="k">with</span> <span class="n">map_widget</span><span class="p">:</span>
-                    <span class="n">map_widget</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">map_widget</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="n">display</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 
     <span class="n">toolbar_button</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">toolbar_btn_click</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
@@ -6406,7 +6404,7 @@
 
     <span class="n">tool_output</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
     <span class="n">m</span><span class="o">.</span><span class="n">tool_output</span> <span class="o">=</span> <span class="n">tool_output</span>
-    <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">save_map_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">()</span>
 
     <span class="n">save_type</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">ToggleButtons</span><span class="p">(</span>
@@ -6451,10 +6449,10 @@
             <span class="n">file_path</span> <span class="o">=</span> <span class="n">file_chooser</span><span class="o">.</span><span class="n">selected</span>
             <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">file_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">save_type</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;HTML&quot;</span> <span class="ow">and</span> <span class="n">ext</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;.HTML&quot;</span><span class="p">:</span>
-                <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">save_type</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;PNG&quot;</span> <span class="ow">and</span> <span class="n">ext</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;.PNG&quot;</span><span class="p">:</span>
-                <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_button</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
                 <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">save_map_control</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">remove_control</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">save_map_control</span><span class="p">)</span>
@@ -6462,7 +6460,7 @@
                 <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
                 <span class="n">screen_capture</span><span class="p">(</span><span class="n">outfile</span><span class="o">=</span><span class="n">file_path</span><span class="p">)</span>
             <span class="k">elif</span> <span class="n">save_type</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;JPG&quot;</span> <span class="ow">and</span> <span class="n">ext</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;.JPG&quot;</span><span class="p">:</span>
-                <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_button</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">False</span>
                 <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">save_map_control</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">remove_control</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">save_map_control</span><span class="p">)</span>
@@ -6475,7 +6473,7 @@
                 <span class="p">)</span>
                 <span class="n">save_map_widget</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[</span><span class="n">save_type</span><span class="p">,</span> <span class="n">file_chooser</span><span class="p">,</span> <span class="n">label</span><span class="p">]</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Cancel&quot;</span><span class="p">:</span>
-            <span class="n">tool_output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">tool_output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">file_chooser</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">save_map_control</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -6634,7 +6632,7 @@
             <span class="k">if</span> <span class="n">provider</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">provider</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;qms&quot;</span><span class="p">):</span>
                     <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adding data. Please wait...&quot;</span><span class="p">)</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="n">provider</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
                     <span class="n">qms_provider</span> <span class="o">=</span> <span class="n">TileProvider</span><span class="o">.</span><span class="n">from_qms</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -6642,7 +6640,7 @@
                     <span class="n">attribution</span> <span class="o">=</span> <span class="n">qms_provider</span><span class="o">.</span><span class="n">attribution</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribution</span><span class="p">)</span>
-                    <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                    <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">elif</span> <span class="n">provider</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;xyz&quot;</span><span class="p">):</span>
                     <span class="n">name</span> <span class="o">=</span> <span class="n">provider</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
                     <span class="n">xyz_provider</span> <span class="o">=</span> <span class="n">xyz</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span>
@@ -6651,7 +6649,7 @@
                     <span class="n">m</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">layers</span>
                     <span class="k">if</span> <span class="n">xyz_provider</span><span class="o">.</span><span class="n">requires_token</span><span class="p">():</span>
                         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">provider</span><span class="si">}</span><span class="s2"> requires an API Key.&quot;</span><span class="p">)</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">add_tile_layer</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">attribution</span><span class="p">)</span>
 
@@ -6716,12 +6714,12 @@
                     <span class="n">tiles</span> <span class="o">=</span> <span class="n">tiles</span> <span class="o">+</span> <span class="n">search_qms</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="n">keyword</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
                 <span class="n">providers</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">tiles</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="c1"># print(&quot;Running ...&quot;)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">keyword</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
             <span class="n">providers</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
@@ -6958,9 +6956,9 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">m</span><span class="o">.</span><span class="n">search_control</span><span class="o">.</span><span class="n">property_name</span> <span class="o">=</span> <span class="n">attributes</span><span class="o">.</span><span class="n">value</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">layers</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="n">attributes</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -7168,7 +7166,7 @@
                 <span class="n">df</span> <span class="o">=</span> <span class="n">geojson_to_df</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
                 <span class="n">show_table_gui</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">layers</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
@@ -7286,7 +7284,7 @@
     <span class="n">sheet</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span>
 
     <span class="k">def</span> <span class="nf">checkbox_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]:</span>
             <span class="n">sheet</span> <span class="o">=</span> <span class="n">ipysheet</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -7346,7 +7344,7 @@
 
         <span class="n">sheet</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span>
         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="n">display</span><span class="p">(</span><span class="n">sheet</span><span class="p">)</span>
 
     <span class="n">fullscreen_btn</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">fullscreen_btn_clicked</span><span class="p">)</span>
@@ -7391,7 +7389,7 @@
                 <span class="n">sheet</span> <span class="o">=</span> <span class="n">ipysheet</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
             <span class="n">sheet</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">width</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">display</span><span class="p">(</span><span class="n">sheet</span><span class="p">)</span>
 
     <span class="n">width_slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">width_changed</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
@@ -7422,7 +7420,7 @@
 
             <span class="n">sheet</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">max_height</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="n">display</span><span class="p">(</span><span class="n">sheet</span><span class="p">)</span>
 
     <span class="n">height_slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">height_changed</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
@@ -8013,7 +8011,7 @@
         <span class="n">add_params</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="n">reset_bands</span><span class="p">()</span>
         <span class="n">vis_option</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;3 bands (RGB)&quot;</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">params_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">()</span>
 
@@ -8133,7 +8131,7 @@
 
     <span class="k">def</span> <span class="nf">endpoint_changed</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Retrieving collections...&quot;</span><span class="p">)</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">endpoint</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -8147,7 +8145,7 @@
                         <span class="n">collections</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
                         <span class="n">collection</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">collections</span>
                         <span class="n">collection</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No collections found.&quot;</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
@@ -8222,7 +8220,7 @@
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Collections&quot;</span><span class="p">:</span>
             <span class="n">collection</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Retrieving collections...&quot;</span><span class="p">)</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">endpoint</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -8240,7 +8238,7 @@
                             <span class="n">collections</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
                             <span class="n">collection</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">collections</span>
                             <span class="n">collection</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">collections</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
                             <span class="n">m</span><span class="o">.</span><span class="n">_STAC_COLLECTIONS</span><span class="p">[</span><span class="n">catalog</span><span class="o">.</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">collections</span>
                         <span class="k">else</span><span class="p">:</span>
@@ -8252,7 +8250,7 @@
 
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Items&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">if</span> <span class="n">endpoint</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">start_date</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">end_date</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">datetime</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_date</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end_date</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
@@ -8289,7 +8287,7 @@
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Retrieving items...&quot;</span><span class="p">)</span>
                 <span class="k">try</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">collection</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please click on &#39;Collections&#39; to retrieve collections.&quot;</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">item</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="p">[]</span>
@@ -8336,7 +8334,7 @@
                         <span class="n">stac_data</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
                         <span class="n">stac_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">search_dict</span><span class="p">)</span>
                         <span class="n">update_bands</span><span class="p">()</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">except</span> <span class="ne">NotImplementedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
@@ -8345,7 +8343,7 @@
 
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Display&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
                 <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">)</span>
@@ -8388,7 +8386,7 @@
 
                     <span class="k">try</span><span class="p">:</span>
                         <span class="k">if</span> <span class="s2">&quot;Planetary Computer&quot;</span> <span class="ow">in</span> <span class="n">catalog</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
-                            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                             <span class="n">m</span><span class="o">.</span><span class="n">add_stac_layer</span><span class="p">(</span>
                                 <span class="n">collection</span><span class="o">=</span><span class="n">collection</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
                                 <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
@@ -8405,7 +8403,7 @@
                             <span class="n">m</span><span class="o">.</span><span class="n">stac_item</span><span class="p">[</span><span class="s2">&quot;collection&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">value</span>
 
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                             <span class="n">m</span><span class="o">.</span><span class="n">add_stac_layer</span><span class="p">(</span>
                                 <span class="n">url</span><span class="o">=</span><span class="n">stac_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">][</span><span class="s2">&quot;href&quot;</span><span class="p">],</span>
                                 <span class="n">assets</span><span class="o">=</span><span class="n">assets</span><span class="p">,</span>
@@ -8415,7 +8413,7 @@
                             <span class="p">)</span>
                             <span class="nb">setattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;stac_item&quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">stac_dict</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
                             <span class="k">if</span> <span class="s2">&quot;rescale&quot;</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
-                                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
@@ -8508,7 +8506,7 @@
 </table>
         <details class="quote">
           <summary>Source code in <code>leafmap/toolbar.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s1">&#39;topright&#39;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">stac_gui</span><span class="p">(</span><span class="n">m</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">position</span><span class="o">=</span><span class="s2">&quot;topright&quot;</span><span class="p">,</span> <span class="n">opened</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates a tool GUI template using ipywidgets.</span>
 
 <span class="sd">    Args:</span>
@@ -8814,7 +8812,7 @@
         <span class="n">nodata</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="n">palette</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">add_params</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
     <span class="n">params_widget</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">()</span>
 
@@ -8913,7 +8911,7 @@
 
     <span class="k">def</span> <span class="nf">http_url_changed</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Searching...&quot;</span><span class="p">)</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Custom STAC API Endpoint&quot;</span><span class="p">:</span>
@@ -8935,7 +8933,7 @@
                     <span class="n">item</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">custom_cols</span>
                     <span class="n">stac_data</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
                 <span class="n">update_bands</span><span class="p">()</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
@@ -9005,7 +9003,7 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Search&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">if</span> <span class="n">http_url</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">start_date</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">end_date</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="n">datetime</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start_date</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">end_date</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
@@ -9045,7 +9043,7 @@
                         <span class="s2">&quot;Google Earth Engine&quot;</span><span class="p">,</span>
                         <span class="s2">&quot;NASA Common Metadata Repository&quot;</span><span class="p">,</span>
                     <span class="p">]:</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">connection</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2"> is not supported yet.&quot;</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">value</span> <span class="o">==</span> <span class="s2">&quot;Custom STAC API Endpoint&quot;</span><span class="p">:</span>
@@ -9096,7 +9094,7 @@
                         <span class="n">stac_data</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
                         <span class="n">stac_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">search_dict</span><span class="p">)</span>
                         <span class="n">update_bands</span><span class="p">()</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="k">except</span> <span class="ne">NotImplementedError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
@@ -9105,7 +9103,7 @@
 
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Display&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
 
                 <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="ow">and</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading data...&quot;</span><span class="p">)</span>
@@ -9170,7 +9168,7 @@
                                 <span class="o">**</span><span class="n">vis_params</span><span class="p">,</span>
                             <span class="p">)</span>
                             <span class="nb">setattr</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s2">&quot;stac_item&quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">stac_dict</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
-                        <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                        <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
@@ -9506,10 +9504,10 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Apply&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running ...&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>
@@ -9762,11 +9760,11 @@
     <span class="k">def</span> <span class="nf">button_clicked</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Apply&quot;</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">output</span><span class="p">:</span>
-                <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+                <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running ...&quot;</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reset&quot;</span><span class="p">:</span>
             <span class="n">textarea</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-            <span class="n">output</span><span class="o">.</span><span class="n">clear_output</span><span class="p">()</span>
+            <span class="n">output</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">elif</span> <span class="n">change</span><span class="p">[</span><span class="s2">&quot;new&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Close&quot;</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">m</span><span class="o">.</span><span class="n">toolbar_reset</span><span class="p">()</span>

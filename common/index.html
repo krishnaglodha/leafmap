@@ -25751,7 +25751,7 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = f&#39;{os.environ[&#39;JUP
         <span class="n">out</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Output</span><span class="p">()</span>
         <span class="c1"># layout={&#39;border&#39;: &#39;1px solid black&#39;})</span>
         <span class="c1"># layout={&#39;border&#39;: &#39;1px solid black&#39;, &#39;width&#39;: str(width + 20) + &#39;px&#39;, &#39;height&#39;: str(height + 10) + &#39;px&#39;},)</span>
-        <span class="n">out</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">outputs</span> <span class="o">=</span> <span class="p">()</span>
         <span class="n">display</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">out</span><span class="p">:</span>
             <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">img_path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span>
