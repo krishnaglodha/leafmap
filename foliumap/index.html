@@ -748,6 +748,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.foliumap.Map.add_markers_from_xy" class="md-nav__link">
+    add_markers_from_xy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.foliumap.Map.add_minimap" class="md-nav__link">
     add_minimap()
   </a>
@@ -2837,6 +2844,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#leafmap.foliumap.Map.add_markers_from_xy" class="md-nav__link">
+    add_markers_from_xy()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#leafmap.foliumap.Map.add_minimap" class="md-nav__link">
     add_minimap()
   </a>
@@ -4156,6 +4170,79 @@ Map            (<span title="folium.folium.Map">Map</span>)
             <span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_markers_from_xy</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+        <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">min_width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">max_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+        <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Markers&quot;</span><span class="p">,</span>
+        <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">icon_shape</span><span class="o">=</span><span class="s2">&quot;circle-dot&quot;</span><span class="p">,</span>
+        <span class="n">border_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">border_color</span><span class="o">=</span><span class="s2">&quot;#0000ff&quot;</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Adds markers to the map from a csv or Pandas DataFrame containing x, y values.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
+<span class="sd">            x (str, optional): The column name for the x values. Defaults to &quot;longitude&quot;.</span>
+<span class="sd">            y (str, optional): The column name for the y values. Defaults to &quot;latitude&quot;.</span>
+<span class="sd">            popup (list, optional): A list of column names to be used as the popup. Defaults to None.</span>
+<span class="sd">            min_width (int, optional): The minimum width of the popup. Defaults to 100.</span>
+<span class="sd">            max_width (int, optional): The maximum width of the popup. Defaults to 200.</span>
+<span class="sd">            layer_name (str, optional): The name of the layer. Defaults to &quot;Marker Cluster&quot;.</span>
+<span class="sd">            icon (str, optional): The Font-Awesome icon name to use to render the marker. Defaults to None.</span>
+<span class="sd">            icon_shape (str, optional): The shape of the marker, such as &quot;retangle-dot&quot;, &quot;circle-dot&quot;. Defaults to &#39;circle-dot&#39;.</span>
+<span class="sd">            border_width (int, optional): The width of the border. Defaults to 3.</span>
+<span class="sd">            border_color (str, optional): The color of the border. Defaults to &#39;#0000ff&#39;.</span>
+<span class="sd">            kwargs (dict, optional): Additional keyword arguments to pass to BeautifyIcon. See</span>
+<span class="sd">                https://python-visualization.github.io/folium/plugins.html#folium.plugins.BeautifyIcon.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+        <span class="kn">from</span> <span class="nn">folium.plugins</span> <span class="kn">import</span> <span class="n">BeautifyIcon</span>
+
+        <span class="n">layer_group</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;The specified input csv does not exist.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+        <span class="n">col_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">popup</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">popup</span> <span class="o">=</span> <span class="n">col_names</span>
+
+        <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x must be one of the following: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">y</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y must be one of the following: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+            <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">popup</span><span class="p">:</span>
+                <span class="n">html</span> <span class="o">=</span> <span class="n">html</span> <span class="o">+</span> <span class="s2">&quot;&lt;b&gt;&quot;</span> <span class="o">+</span> <span class="n">p</span> <span class="o">+</span> <span class="s2">&quot;&lt;/b&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span>
+            <span class="n">popup_html</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">min_width</span><span class="o">=</span><span class="n">min_width</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="n">max_width</span><span class="p">)</span>
+
+            <span class="n">marker_icon</span> <span class="o">=</span> <span class="n">BeautifyIcon</span><span class="p">(</span>
+                <span class="n">icon</span><span class="p">,</span> <span class="n">icon_shape</span><span class="p">,</span> <span class="n">border_width</span><span class="p">,</span> <span class="n">border_color</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">)</span>
+            <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+                <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">x</span><span class="p">)],</span>
+                <span class="n">popup</span><span class="o">=</span><span class="n">popup_html</span><span class="p">,</span>
+                <span class="n">icon</span><span class="o">=</span><span class="n">marker_icon</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">layer_group</span><span class="p">)</span>
+
+        <span class="n">layer_group</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">add_osm_from_geocode</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -9234,6 +9321,188 @@ os.environ[&#39;LOCALTILESERVER_CLIENT_PREFIX&#39;] = &#39;proxy/{port}&#39;
 
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;The location must be a list or a tuple.&quot;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h3 id="leafmap.foliumap.Map.add_markers_from_xy" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">add_markers_from_xy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">layer_name</span><span class="o">=</span><span class="s1">&#39;Markers&#39;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">icon_shape</span><span class="o">=</span><span class="s1">&#39;circle-dot&#39;</span><span class="p">,</span> <span class="n">border_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">border_color</span><span class="o">=</span><span class="s1">&#39;#0000ff&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#leafmap.foliumap.Map.add_markers_from_xy" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Adds markers to the map from a csv or Pandas DataFrame containing x, y values.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>data</code></td>
+        <td><code>str | pd.DataFrame</code></td>
+        <td><p>A csv or Pandas DataFrame containing x, y, z values.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>x</code></td>
+        <td><code>str</code></td>
+        <td><p>The column name for the x values. Defaults to "longitude".</p></td>
+        <td><code>&#39;longitude&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>y</code></td>
+        <td><code>str</code></td>
+        <td><p>The column name for the y values. Defaults to "latitude".</p></td>
+        <td><code>&#39;latitude&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>popup</code></td>
+        <td><code>list</code></td>
+        <td><p>A list of column names to be used as the popup. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>min_width</code></td>
+        <td><code>int</code></td>
+        <td><p>The minimum width of the popup. Defaults to 100.</p></td>
+        <td><code>100</code></td>
+      </tr>
+      <tr>
+        <td><code>max_width</code></td>
+        <td><code>int</code></td>
+        <td><p>The maximum width of the popup. Defaults to 200.</p></td>
+        <td><code>200</code></td>
+      </tr>
+      <tr>
+        <td><code>layer_name</code></td>
+        <td><code>str</code></td>
+        <td><p>The name of the layer. Defaults to "Marker Cluster".</p></td>
+        <td><code>&#39;Markers&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>icon</code></td>
+        <td><code>str</code></td>
+        <td><p>The Font-Awesome icon name to use to render the marker. Defaults to None.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>icon_shape</code></td>
+        <td><code>str</code></td>
+        <td><p>The shape of the marker, such as "retangle-dot", "circle-dot". Defaults to 'circle-dot'.</p></td>
+        <td><code>&#39;circle-dot&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>border_width</code></td>
+        <td><code>int</code></td>
+        <td><p>The width of the border. Defaults to 3.</p></td>
+        <td><code>3</code></td>
+      </tr>
+      <tr>
+        <td><code>border_color</code></td>
+        <td><code>str</code></td>
+        <td><p>The color of the border. Defaults to '#0000ff'.</p></td>
+        <td><code>&#39;#0000ff&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>dict</code></td>
+        <td><p>Additional keyword arguments to pass to BeautifyIcon. See
+https://python-visualization.github.io/folium/plugins.html#folium.plugins.BeautifyIcon.</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>leafmap/foliumap.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">add_markers_from_xy</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+    <span class="n">popup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">min_width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">layer_name</span><span class="o">=</span><span class="s2">&quot;Markers&quot;</span><span class="p">,</span>
+    <span class="n">icon</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">icon_shape</span><span class="o">=</span><span class="s2">&quot;circle-dot&quot;</span><span class="p">,</span>
+    <span class="n">border_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">border_color</span><span class="o">=</span><span class="s2">&quot;#0000ff&quot;</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Adds markers to the map from a csv or Pandas DataFrame containing x, y values.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (str | pd.DataFrame): A csv or Pandas DataFrame containing x, y, z values.</span>
+<span class="sd">        x (str, optional): The column name for the x values. Defaults to &quot;longitude&quot;.</span>
+<span class="sd">        y (str, optional): The column name for the y values. Defaults to &quot;latitude&quot;.</span>
+<span class="sd">        popup (list, optional): A list of column names to be used as the popup. Defaults to None.</span>
+<span class="sd">        min_width (int, optional): The minimum width of the popup. Defaults to 100.</span>
+<span class="sd">        max_width (int, optional): The maximum width of the popup. Defaults to 200.</span>
+<span class="sd">        layer_name (str, optional): The name of the layer. Defaults to &quot;Marker Cluster&quot;.</span>
+<span class="sd">        icon (str, optional): The Font-Awesome icon name to use to render the marker. Defaults to None.</span>
+<span class="sd">        icon_shape (str, optional): The shape of the marker, such as &quot;retangle-dot&quot;, &quot;circle-dot&quot;. Defaults to &#39;circle-dot&#39;.</span>
+<span class="sd">        border_width (int, optional): The width of the border. Defaults to 3.</span>
+<span class="sd">        border_color (str, optional): The color of the border. Defaults to &#39;#0000ff&#39;.</span>
+<span class="sd">        kwargs (dict, optional): Additional keyword arguments to pass to BeautifyIcon. See</span>
+<span class="sd">            https://python-visualization.github.io/folium/plugins.html#folium.plugins.BeautifyIcon.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+    <span class="kn">from</span> <span class="nn">folium.plugins</span> <span class="kn">import</span> <span class="n">BeautifyIcon</span>
+
+    <span class="n">layer_group</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">FeatureGroup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">layer_name</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">data</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;The specified input csv does not exist.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">col_names</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">popup</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">popup</span> <span class="o">=</span> <span class="n">col_names</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x must be one of the following: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">y</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">col_names</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y must be one of the following: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">col_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">itertuples</span><span class="p">():</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">popup</span><span class="p">:</span>
+            <span class="n">html</span> <span class="o">=</span> <span class="n">html</span> <span class="o">+</span> <span class="s2">&quot;&lt;b&gt;&quot;</span> <span class="o">+</span> <span class="n">p</span> <span class="o">+</span> <span class="s2">&quot;&lt;/b&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span>
+        <span class="n">popup_html</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Popup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">min_width</span><span class="o">=</span><span class="n">min_width</span><span class="p">,</span> <span class="n">max_width</span><span class="o">=</span><span class="n">max_width</span><span class="p">)</span>
+
+        <span class="n">marker_icon</span> <span class="o">=</span> <span class="n">BeautifyIcon</span><span class="p">(</span>
+            <span class="n">icon</span><span class="p">,</span> <span class="n">icon_shape</span><span class="p">,</span> <span class="n">border_width</span><span class="p">,</span> <span class="n">border_color</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">(</span>
+            <span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">x</span><span class="p">)],</span>
+            <span class="n">popup</span><span class="o">=</span><span class="n">popup_html</span><span class="p">,</span>
+            <span class="n">icon</span><span class="o">=</span><span class="n">marker_icon</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">layer_group</span><span class="p">)</span>
+
+    <span class="n">layer_group</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
