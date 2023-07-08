@@ -7964,6 +7964,9 @@ unmarshalling errors. Defaults to None.</p></td>
     <span class="n">titiler_endpoint</span> <span class="o">=</span> <span class="n">check_titiler_endpoint</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">)</span>
     <span class="n">mosaic_json</span> <span class="o">=</span> <span class="kc">False</span>
 
+    <span class="k">if</span> <span class="s2">&quot;expression&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;asset_as_band&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;asset_as_band&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">titiler_endpoint</span><span class="p">,</span> <span class="n">PlanetaryComputerEndpoint</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">bands</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">bands</span> <span class="o">=</span> <span class="n">bands</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
